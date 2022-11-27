@@ -25,7 +25,7 @@ export default function Home() {
       >
         <section className="min-h-screen">
           <nav
-            className={` sticky py-10 mb-12 border-b border-slate-500 flex justify-between ${
+            className={`sticky py-10 mb-12 border-b border-slate-500 flex justify-between ${
               darkMode ? "text-slate-100" : "text-slate-800"
             }`}
           >
@@ -78,11 +78,16 @@ export default function Home() {
               give you tips and tricks to level it up.
             </p>
             <h3 className="py-4 text-teal-600">{translations.skillsTitle}</h3>
-            {translations.skills.map((skill) => (
-              <p key={skill.id} className="text-gray-800 py-1">
-                {skill.name}
-              </p>
-            ))}
+            <ul className="flex justify-center flex-wrap gap-2">
+              {translations.skills.map((skill) => (
+                <li
+                  key={skill.id}
+                  className={`${switchText} border px-3 border-teal-600 rounded-xl  py-1`}
+                >
+                  {skill.name}
+                </li>
+              ))}
+            </ul>
           </div>
           <div
             className={`text-center shadow-lg p-10 rounded-xl my-10  flex-1 ${switchText}`}
@@ -92,7 +97,7 @@ export default function Home() {
             </h3>
             <ul>
               {translations.projects.map((project) => (
-                <li key={project.id} className="text-gray-800 py-1">
+                <li key={project.id} className={`${switchText} py-1`}>
                   {project.name}
                 </li>
               ))}
@@ -106,7 +111,7 @@ export default function Home() {
             </h3>
             <ul>
               {translations.experience.map((exp) => (
-                <li key={exp.id} className="text-gray-800 py-1">
+                <li key={exp.id} className={`${switchText} py-1`}>
                   {exp.role}
                 </li>
               ))}
