@@ -25,7 +25,7 @@ export default function Home() {
       >
         <section className="min-h-screen">
           <nav
-            className={`py-10 mb-12 flex justify-between ${
+            className={` sticky py-10 mb-12 border-b border-slate-500 flex justify-between ${
               darkMode ? "text-slate-100" : "text-slate-800"
             }`}
           >
@@ -72,16 +72,45 @@ export default function Home() {
           <div
             className={`text-center shadow-lg p-10 rounded-xl my-10  flex-1 ${switchText}`}
           >
-            <h3 className="text-lg font-medium pt-8 pb-2 ">Consulting</h3>
+            <h3 className="py-4 text-lg text-teal-600">Consulting</h3>
             <p className="py-2">
               Are you interested in feedback for your current project? I can
               give you tips and tricks to level it up.
             </p>
-            <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-            <p className="text-gray-800 py-1">Photoshop</p>
-            <p className="text-gray-800 py-1">Illustrator</p>
-            <p className="text-gray-800 py-1">Figma</p>
-            <p className="text-gray-800 py-1">Indesign</p>
+            <h3 className="py-4 text-teal-600">{translations.skillsTitle}</h3>
+            {translations.skills.map((skill) => (
+              <p key={skill.id} className="text-gray-800 py-1">
+                {skill.name}
+              </p>
+            ))}
+          </div>
+          <div
+            className={`text-center shadow-lg p-10 rounded-xl my-10  flex-1 ${switchText}`}
+          >
+            <h3 className="py-4 text-lg text-teal-600">
+              {translations.projectsTitle}
+            </h3>
+            <ul>
+              {translations.projects.map((project) => (
+                <li key={project.id} className="text-gray-800 py-1">
+                  {project.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div
+            className={`text-center shadow-lg p-10 rounded-xl my-10  flex-1 ${switchText}`}
+          >
+            <h3 className="py-4 text-lg text-teal-600">
+              {translations.experienceTitle}
+            </h3>
+            <ul>
+              {translations.experience.map((exp) => (
+                <li key={exp.id} className="text-gray-800 py-1">
+                  {exp.role}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
         <section className="py-10"></section>
