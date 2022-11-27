@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { BsFillMoonStarsFill } from "react-icons/bs";
+import { BsFillMoonStarsFill, BsPhone } from "react-icons/bs";
 import { useState } from "react";
 
 import {
@@ -7,18 +7,29 @@ import {
   AiFillGooglePlusCircle,
   AiFillGithub,
 } from "react-icons/ai";
+import { translationHelper } from "./translationHelper";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [locale, setLocale] = useState("EN");
+  const switchBg = darkMode ? "bg-slate-800" : "bg-slate-200";
+  const switchText = darkMode ? "text-slate-100" : "text-slate-800";
+  const { translations } = translationHelper(locale);
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div>
       <Head>
-        <title>Omer's Portfolio</title>
+        <title>{translations.title}</title>
       </Head>
-      <main className="px-10  text-blue-100 bg-slate-800 font-bold">
+      <main
+        className={`px-5 md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg}`}
+      >
         <section className="min-h-screen">
-          <nav className="py-10 mb-12 flex justify-between">
-            <h1 className="text-xl font-burtons">Omer's Portfolio</h1>
+          <nav
+            className={`py-10 mb-12 flex justify-between ${
+              darkMode ? "text-slate-100" : "text-slate-800"
+            }`}
+          >
+            <h1 className="text-2xl font-burtons">{translations.title}</h1>
             <ul className="flex items-center">
               <li>
                 <BsFillMoonStarsFill
@@ -27,25 +38,30 @@ export default function Home() {
                 />
               </li>
               <li>
-                <a
-                  className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8"
-                  href=""
+                <button
+                  onClick={() => setLocale(locale === "EN" ? "NL" : "EN")}
+                  className={`bg-gradient-to-r from-teal-900 to-teal-500 px-4 py-2 rounded-md ml-8`}
                 >
-                  Resume
-                </a>
+                  <span className={`${locale === "NL" && "text-gray-500"}`}>
+                    EN
+                  </span>
+                  |
+                  <span className={`${locale === "EN" && "text-gray-500"}`}>
+                    NL
+                  </span>
+                </button>
               </li>
             </ul>
           </nav>
-          <div className=" text-center p-10">
+          <div className=" text-center py-10">
             <h2 className="text-4xl py-2 text-teal-600 font-medium">
               Omer Degirmenci
             </h2>
-            <h3 className="text-2xl py-2">Frontend Web Developer</h3>
-            <p className="text-md py-5 leading-8 text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-              quaerat sit suscipit accusantium sapiente, rerum placeat,
-              molestias totam ut perferendis dolores! Autem laudantium nemo
-              animi veritatis ut dolor atque vitae!
+            <h3 className={`text-2xl ${switchText} py-2 pb-8`}>
+              {translations.occupationText}
+            </h3>
+            <p className={`text-md py-2 leading-8 ${switchText}`}>
+              {translations.briefDescription}
             </p>
           </div>
           <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
@@ -53,7 +69,9 @@ export default function Home() {
             <AiFillGooglePlusCircle />
             <AiFillGithub />
           </div>
-          <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
+          <div
+            className={`text-center shadow-lg p-10 rounded-xl my-10  flex-1 ${switchText}`}
+          >
             <h3 className="text-lg font-medium pt-8 pb-2 ">Consulting</h3>
             <p className="py-2">
               Are you interested in feedback for your current project? I can
