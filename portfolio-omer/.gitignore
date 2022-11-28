@@ -11,6 +11,7 @@
 # next.js
 /.next/
 /out/
+.vscode/settings.json
 
 # production
 /build
