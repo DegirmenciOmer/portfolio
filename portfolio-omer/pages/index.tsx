@@ -8,6 +8,7 @@ import {
   AiFillGithub,
 } from "react-icons/ai";
 import { translationHelper } from "./translationHelper";
+import Link from "next/link";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -45,7 +46,7 @@ export default function Home() {
                   <span className={`${locale === "NL" && "text-gray-500"}`}>
                     EN
                   </span>
-                  |
+                  &nbsp;|&nbsp;
                   <span className={`${locale === "EN" && "text-gray-500"}`}>
                     NL
                   </span>
@@ -55,7 +56,7 @@ export default function Home() {
           </nav>
           <div className=" text-center py-10">
             <h2 className="text-4xl py-2 text-teal-600 font-medium">
-              Omer Degirmenci
+              {translations.ownerName}
             </h2>
             <h3 className={`text-2xl ${switchText} py-2 pb-8`}>
               {translations.occupationText}
@@ -72,13 +73,8 @@ export default function Home() {
           <div
             className={`text-center shadow-lg p-10 rounded-xl my-10  flex-1 ${switchText}`}
           >
-            <h3 className="py-4 text-lg text-teal-600">Consulting</h3>
-            <p className="py-2">
-              Are you interested in feedback for your current project? I can
-              give you tips and tricks to level it up.
-            </p>
             <h3 className="py-4 text-teal-600">{translations.skillsTitle}</h3>
-            <ul className="flex justify-center flex-wrap gap-2">
+            <ul className="flex m-auto justify-center flex-wrap gap-2 max-w-xl">
               {translations.skills.map((skill) => (
                 <li
                   key={skill.id}
@@ -90,15 +86,26 @@ export default function Home() {
             </ul>
           </div>
           <div
-            className={`text-center shadow-lg p-10 rounded-xl my-10  flex-1 ${switchText}`}
+            className={` shadow-lg p-10 rounded-xl my-10  flex-1 ${switchText}`}
           >
-            <h3 className="py-4 text-lg text-teal-600">
+            <h3 className="text-center py-4 text-lg text-teal-600">
               {translations.projectsTitle}
             </h3>
             <ul>
               {translations.projects.map((project) => (
-                <li key={project.id} className={`${switchText} py-1`}>
-                  {project.name}
+                <li
+                  key={project.id}
+                  className={`${switchText} flex justify-between max-w-xl mx-auto gap-1 my-2`}
+                >
+                  <Link className="hover:text-teal-600" href={project.demoUrl}>
+                    {project.name}
+                  </Link>
+                  <Link
+                    className={`text-teal-800 underline hover:text-teal-600 rounded-md ml-8`}
+                    href={project.sourceUrl}
+                  >
+                    {translations.sourceText}
+                  </Link>
                 </li>
               ))}
             </ul>
