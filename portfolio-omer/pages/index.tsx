@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { BsFillMoonStarsFill, BsPhone } from "react-icons/bs";
 import { useState } from "react";
+import profileImg from "../public/images/profile.png";
 
 import {
   AiFillLinkedin,
@@ -9,6 +10,7 @@ import {
 } from "react-icons/ai";
 import { translationHelper } from "./translationHelper";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -21,12 +23,10 @@ export default function Home() {
       <Head>
         <title>{translations.title}</title>
       </Head>
-      <main
-        className={`px-5 md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg}`}
-      >
+      <main className={`md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg}`}>
         <section className="min-h-screen">
           <nav
-            className={`sticky py-10 mb-12 border-b border-slate-500 flex justify-between ${
+            className={`sticky px-5 py-10 mb-12 border-b border-slate-500 flex justify-between ${
               darkMode ? "text-slate-100" : "text-slate-800"
             }`}
           >
@@ -54,7 +54,12 @@ export default function Home() {
               </li>
             </ul>
           </nav>
-          <div className=" text-center py-10">
+          <div className="px-5 text-center py-10">
+            <Image
+              className="mx-auto rounded-full xs:w-1/3"
+              src={profileImg}
+              alt="profile"
+            />
             <h2 className="text-4xl py-2 text-teal-600 font-medium">
               {translations.ownerName}
             </h2>
