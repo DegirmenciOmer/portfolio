@@ -28,7 +28,7 @@ export default function Home() {
       >
         <section className="min-h-screen max-w-3xl mx-auto">
           <nav
-            className={` ${switchBg} sticky top-0 z-10 px-5 py-10 mb-12 border-b border-slate-500 flex items-center justify-between ${
+            className={` ${switchBg} sticky top-0 z-10 p-5 sm:py-10 mb-12 border-b border-slate-500 flex items-center justify-between ${
               darkMode ? "text-slate-100" : "text-slate-800"
             }`}
           >
@@ -113,7 +113,7 @@ export default function Home() {
                   <div className="align-left">
                     <Link
                       className={`text-teal-800 underline hover:text-teal-600 rounded-md `}
-                      href={project.sourceUrl}
+                      href={project.demoUrl}
                     >
                       {translations.demoText}
                     </Link>
