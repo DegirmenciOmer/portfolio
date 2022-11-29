@@ -8,7 +8,7 @@ import {
   AiFillGooglePlusCircle,
   AiFillGithub,
 } from "react-icons/ai";
-import { translationHelper } from "./translationHelper";
+import { translationHelper } from "../components/translationHelper";
 import Link from "next/link";
 import Image from "next/image";
 
