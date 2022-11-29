@@ -23,10 +23,12 @@ export default function Home() {
       <Head>
         <title>{translations.title}</title>
       </Head>
-      <main className={`md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg}`}>
-        <section className="min-h-screen">
+      <main
+        className={`md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg} `}
+      >
+        <section className="min-h-screen max-w-3xl mx-auto">
           <nav
-            className={`sticky px-5 py-10 mb-12 border-b border-slate-500 flex justify-between ${
+            className={` ${switchBg} sticky top-0 z-10 px-5 py-10 mb-12 border-b border-slate-500 flex justify-between ${
               darkMode ? "text-slate-100" : "text-slate-800"
             }`}
           >
@@ -41,7 +43,7 @@ export default function Home() {
               <li>
                 <button
                   onClick={() => setLocale(locale === "EN" ? "NL" : "EN")}
-                  className={`bg-gradient-to-r from-teal-900 to-teal-500 px-4 py-2 rounded-md ml-8`}
+                  className={`px-4 py-2 ml-8`}
                 >
                   <span className={`${locale === "NL" && "text-gray-500"}`}>
                     EN
@@ -71,7 +73,10 @@ export default function Home() {
             </p>
           </div>
           <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
-            <AiFillLinkedin />
+            <Link href="https://www.linkedin.com/in/omer-degirmenci-5777051b9">
+              <AiFillLinkedin />
+            </Link>
+
             <AiFillGooglePlusCircle />
             <AiFillGithub />
           </div>
@@ -105,12 +110,22 @@ export default function Home() {
                   <Link className="hover:text-teal-600" href={project.demoUrl}>
                     {project.name}
                   </Link>
-                  <Link
-                    className={`text-teal-800 underline hover:text-teal-600 rounded-md ml-8`}
-                    href={project.sourceUrl}
-                  >
-                    {translations.sourceText}
-                  </Link>
+                  <div className="align-left">
+                    <Link
+                      className={`text-teal-800 underline hover:text-teal-600 rounded-md `}
+                      href={project.sourceUrl}
+                    >
+                      {translations.demoText}
+                    </Link>
+                    {project.sourceUrl && (
+                      <Link
+                        className={`text-teal-800 underline hover:text-teal-600 rounded-md`}
+                        href={project.sourceUrl}
+                      >
+                        &nbsp;|&nbsp;{translations.sourceText}
+                      </Link>
+                    )}
+                  </div>
                 </li>
               ))}
             </ul>
@@ -123,14 +138,18 @@ export default function Home() {
             </h3>
             <ul>
               {translations.experience.map((exp) => (
-                <li key={exp.id} className={`${switchText} py-1`}>
-                  {exp.role}
+                <li
+                  className={`${switchText} border px-2 mb-4 border-teal-600 rounded-xl  py-1`}
+                  key={exp.id}
+                >
+                  <p>{exp.date}</p>
+                  <p>{exp.role}</p>
+                  <p>{exp.company}</p>
                 </li>
               ))}
             </ul>
           </div>
         </section>
-        <section className="py-10"></section>
       </main>
     </div>
   );
