@@ -161,7 +161,7 @@ export default function Home() {
             </ul>
           </div>
         </main>
-        <footer className="py-4">
+        <footer id="contact" className="py-4">
           <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 my-5">
             <Link target="_blank" href={translations.linkedinUrl}>
               <AiFillLinkedin />
