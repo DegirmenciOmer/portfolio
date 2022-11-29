@@ -30,27 +30,28 @@ export const translationHelper = (language: string) => {
         { id: "8", name: "Git" },
         { id: "9", name: "NextJS" },
         { id: "10", name: "Strapi CMS" },
+        { id: "10", name: "Storybook" },
+        { id: "11", name: "Angular" },
       ],
       projectsTitle: NL ? "Projecten" : "Projects",
       projects: [
         {
           id: "1",
-          name: "Shopify Headless CMS Bath Bombs Webshop",
-          demoUrl: "https://shopify-bath-bombs.netlify.app/",
-          sourceUrl:
-            "https://github.com/DegirmenciOmer/react-shopify-custom-storefront/tree/main/shopify-storefront",
+          name: "Income & Expense Tracker",
+          sourceUrl: "https://github.com/DegirmenciOmer/React-expense-tracker",
+          demoUrl: "https://expensetracker-omer.netlify.app/",
         },
         {
           id: "2",
-          name: "Shopify organicpro.nl Webshop",
-          sourceUrl: "",
-          demoUrl: "https://www.organicpro.nl",
+          name: "Star Wars (SWAPI)",
+          sourceUrl: "https://github.com/DegirmenciOmer/SWAPI-Project",
+          demoUrl: "https://starwars-react-app.netlify.app/",
         },
         {
           id: "3",
-          name: "Dev Blog",
-          sourceUrl: "https://github.com/DegirmenciOmer/NextJs-Blog-Project",
-          demoUrl: "https://next-js-blog-project-pi.vercel.app/",
+          name: "Todo App",
+          sourceUrl: "https://github.com/DegirmenciOmer/PERN-Stack-Todo-App",
+          demoUrl: "https://pern-todo-omer.netlify.app/",
         },
         {
           id: "4",
@@ -60,21 +61,28 @@ export const translationHelper = (language: string) => {
         },
         {
           id: "5",
-          name: "Todo App",
-          sourceUrl: "https://github.com/DegirmenciOmer/PERN-Stack-Todo-App",
-          demoUrl: "https://pern-todo-omer.netlify.app/",
+          name: "Dev Blog",
+          sourceUrl: "https://github.com/DegirmenciOmer/NextJs-Blog-Project",
+          demoUrl: "https://next-js-blog-project-pi.vercel.app/",
         },
         {
           id: "6",
-          name: "Star Wars (SWAPI)",
-          sourceUrl: "https://github.com/DegirmenciOmer/SWAPI-Project",
-          demoUrl: "https://starwars-react-app.netlify.app/",
+          name: "Shopify organicpro.nl Webshop",
+          sourceUrl: "",
+          demoUrl: "https://www.organicpro.nl",
         },
         {
           id: "7",
-          name: "Income & Expense Tracker",
-          sourceUrl: "https://github.com/DegirmenciOmer/React-expense-tracker",
-          demoUrl: "https://expensetracker-omer.netlify.app/",
+          name: "Shopify Headless CMS Bath Bombs Webshop",
+          demoUrl: "https://shopify-bath-bombs.netlify.app/",
+          sourceUrl:
+            "https://github.com/DegirmenciOmer/react-shopify-custom-storefront/tree/main/shopify-storefront",
+        },
+        {
+          id: "8",
+          name: "Kwynt (System4)",
+          demoUrl: "",
+          sourceUrl: "",
         },
       ],
       experienceTitle: NL ? "Ervaring" : "Experience",
@@ -82,7 +90,7 @@ export const translationHelper = (language: string) => {
         {
           id: "1",
           role: NL ? "Frontend Webontwikkelaar" : "Frontend Web Developer",
-          company: "Sytem4, Uden",
+          company: "System4, Uden",
           date: NL ? "jul 2022 - Momenteel" : "Jul 2022 - Current",
         },
         {
@@ -90,13 +98,13 @@ export const translationHelper = (language: string) => {
           role: NL
             ? "Stagiaire Frontend Webontwikkelaar"
             : "Intern Frontend Web Developer",
-          company: "Sytem4, Uden",
+          company: "System4, Uden",
           date: NL ? "jan 2022-jul 2022 " : "Jan 2022 - Jul 2022",
         },
         {
           id: "3",
           role: NL ? "Vrijwillige Leraar Engels" : "English Teacher Volunteer",
-          company: "Paplos American Language Center,  Athens.",
+          company: "Paplos American Language Center,  Athens",
           date: "2019",
         },
         {
