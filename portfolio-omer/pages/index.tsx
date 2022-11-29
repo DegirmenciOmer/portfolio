@@ -28,7 +28,7 @@ export default function Home() {
       >
         <section className="min-h-screen max-w-3xl mx-auto">
           <nav
-            className={` ${switchBg} sticky top-0 z-10 px-5 py-10 mb-12 border-b border-slate-500 flex justify-between ${
+            className={` ${switchBg} sticky top-0 z-10 px-5 py-10 mb-12 border-b border-slate-500 flex items-center justify-between ${
               darkMode ? "text-slate-100" : "text-slate-800"
             }`}
           >
