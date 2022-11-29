@@ -7,6 +7,7 @@ export const translationHelper = (language: string) => {
       ownerName: "Omer Degirmenci",
       sourceText: "Code",
       demoText: "Demo",
+      liveText: "Live Site",
       occupationText: NL
         ? "Frontend Webontwikkelaar"
         : "Frontend Web Developer",
@@ -22,16 +23,16 @@ export const translationHelper = (language: string) => {
       skills: [
         { id: "1", name: "HTML" },
         { id: "2", name: "CSS" },
-        { id: "3", name: "Javascript" },
-        { id: "4", name: "Typescript" },
-        { id: "5", name: "React" },
-        { id: "6", name: "GraphQL" },
-        { id: "7", name: "MongoDB" },
-        { id: "8", name: "Git" },
-        { id: "9", name: "NextJS" },
-        { id: "10", name: "Strapi CMS" },
-        { id: "10", name: "Storybook" },
-        { id: "11", name: "Angular" },
+        { id: "3", name: "Git" },
+        { id: "4", name: "Javascript" },
+        { id: "5", name: "Typescript" },
+        { id: "6", name: "React" },
+        { id: "7", name: "NextJS" },
+        { id: "8", name: "Storybook" },
+        { id: "9", name: "GraphQL" },
+        { id: "10", name: "MongoDB" },
+        { id: "11", name: "Strapi CMS" },
+        { id: "12", name: "Angular" },
       ],
       projectsTitle: NL ? "Projecten" : "Projects",
       projects: [
@@ -84,23 +85,40 @@ export const translationHelper = (language: string) => {
           demoUrl: "",
           sourceUrl: "",
         },
+        {
+          id: "9",
+          name: "Admin Theme (System4)",
+          demoUrl: "",
+          sourceUrl: "",
+        },
+        {
+          id: "10",
+          name: "Online Hearing Aids (System4)",
+          demoUrl: "",
+          sourceUrl: "",
+        },
+        {
+          id: "11",
+          name: "My Pump (System4)",
+          liveUrl: "mypump.nl",
+          sourceUrl: "",
+        },
       ],
       experienceTitle: NL ? "Ervaring" : "Experience",
       experience: [
         {
           id: "1",
-          role: NL ? "Frontend Webontwikkelaar" : "Frontend Web Developer",
-          company: "System4, Uden",
-          date: NL ? "jul 2022 - Momenteel" : "Jul 2022 - Current",
+          role: NL ? "Leraar Engels" : "English Teacher",
+          company: "Ministry of Education, Ankara",
+          date: "2011-2018",
         },
         {
           id: "2",
-          role: NL
-            ? "Stagiaire Frontend Webontwikkelaar"
-            : "Intern Frontend Web Developer",
-          company: "System4, Uden",
-          date: NL ? "jan 2022-jul 2022 " : "Jan 2022 - Jul 2022",
+          role: NL ? "Leraar Engels" : "English Teacher",
+          company: "Kultur Private Schools, Ankara",
+          date: "2018",
         },
+
         {
           id: "3",
           role: NL ? "Vrijwillige Leraar Engels" : "English Teacher Volunteer",
@@ -109,15 +127,17 @@ export const translationHelper = (language: string) => {
         },
         {
           id: "4",
-          role: NL ? "Leraar Engels" : "English Teacher",
-          company: "Kultur Private Schools, Ankara",
-          date: "2018",
+          role: NL
+            ? "Stagiaire Frontend Webontwikkelaar"
+            : "Intern Frontend Web Developer",
+          company: "System4, Uden",
+          date: NL ? "jan 2022-jul 2022 " : "Jan 2022 - Jul 2022",
         },
         {
           id: "5",
-          role: NL ? "Leraar Engels" : "English Teacher",
-          company: "Ministry of Education, Ankara",
-          date: "2011-2018",
+          role: NL ? "Frontend Webontwikkelaar" : "Frontend Web Developer",
+          company: "System4, Uden",
+          date: NL ? "jul 2022 - Momenteel" : "Jul 2022 - Current",
         },
       ],
     },

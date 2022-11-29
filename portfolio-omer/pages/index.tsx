@@ -96,38 +96,47 @@ export default function Home() {
             </ul>
           </div>
           <div
-            className={` shadow-lg p-10 rounded-xl my-10  flex-1 ${switchText}`}
+            className={`shadow-lg p-10 rounded-xl my-10 flex-1 ${switchText}`}
           >
             <h3 className="text-center py-4 text-lg text-teal-600">
               {translations.projectsTitle}
             </h3>
             <ul>
-              {translations.projects.map((project) => (
-                <li
-                  key={project.id}
-                  className={`${switchText}  flex justify-between max-w-xl mx-auto gap-1 my-4`}
-                >
-                  <Link className="hover:text-teal-600" href={project.demoUrl}>
-                    {project.name}
-                  </Link>
-                  <div className="align-left">
+              {translations.projects
+                .sort((a, b) => +b.id - +a.id)
+                .map((project) => (
+                  <li
+                    key={project.id}
+                    className={`${switchText} flex justify-between max-w-xl mx-auto gap-1 my-4`}
+                  >
                     <Link
-                      className={`text-teal-800 underline hover:text-teal-600 rounded-md `}
-                      href={project.demoUrl}
+                      className="hover:text-teal-600"
+                      href={project.liveUrl ? project.liveUrl : project.demoUrl}
                     >
-                      {translations.demoText}
+                      {project.name}
                     </Link>
-                    {project.sourceUrl && (
+                    <div className="align-left">
                       <Link
-                        className={`text-teal-800 underline hover:text-teal-600 rounded-md`}
-                        href={project.sourceUrl}
+                        className={`text-teal-800 underline hover:text-teal-600 rounded-md `}
+                        href={
+                          project.liveUrl ? project.liveUrl : project.demoUrl
+                        }
                       >
-                        &nbsp;|&nbsp;{translations.sourceText}
+                        {project.liveUrl
+                          ? translations.liveText
+                          : translations.demoText}
                       </Link>
-                    )}
-                  </div>
-                </li>
-              ))}
+                      {project.sourceUrl && (
+                        <Link
+                          className={`text-teal-800 underline hover:text-teal-600 rounded-md`}
+                          href={project.sourceUrl}
+                        >
+                          &nbsp;|&nbsp;{translations.sourceText}
+                        </Link>
+                      )}
+                    </div>
+                  </li>
+                ))}
             </ul>
           </div>
           <div
@@ -137,16 +146,18 @@ export default function Home() {
               {translations.experienceTitle}
             </h3>
             <ul>
-              {translations.experience.map((exp) => (
-                <li
-                  className={`${switchText} border mb-4 border-teal-600 rounded-xl px-2 py-5`}
-                  key={exp.id}
-                >
-                  <p>{exp.date}</p>
-                  <p>{exp.role}</p>
-                  <p>{exp.company}</p>
-                </li>
-              ))}
+              {translations.experience
+                .sort((a, b) => +b.id - +a.id)
+                .map((exp) => (
+                  <li
+                    className={`${switchText} border mb-4 border-teal-600 rounded-xl px-2 py-5`}
+                    key={exp.id}
+                  >
+                    <p>{exp.date}</p>
+                    <p>{exp.role}</p>
+                    <p>{exp.company}</p>
+                  </li>
+                ))}
             </ul>
           </div>
         </main>
