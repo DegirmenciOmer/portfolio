@@ -101,6 +101,7 @@ export const translationHelper = (language: string) => {
           id: "11",
           name: "My Pump (System4)",
           liveUrl: "mypump.nl",
+          demoUrl: "",
           sourceUrl: "",
         },
       ],
