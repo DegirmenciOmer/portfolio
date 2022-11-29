@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { BsFillMoonStarsFill, BsPhone } from "react-icons/bs";
+import { BsFillMoonStarsFill, BsTelephoneFill } from "react-icons/bs";
 import { useState } from "react";
 import profileImg from "../public/images/profile.png";
 
@@ -23,27 +23,27 @@ export default function Home() {
       <Head>
         <title>{translations.title}</title>
       </Head>
-      <main
-        className={`md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg} `}
-      >
-        <section className="min-h-screen max-w-3xl mx-auto">
+      <div className={`md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg} `}>
+        <header className="sticky top-0 z-10">
           <nav
-            className={` ${switchBg} sticky top-0 z-10 px-5 py-10 mb-12 border-b border-slate-500 flex justify-between ${
+            className={` ${switchBg} p-5 sm:py-10 mb-12 border-b border-slate-500 flex items-center justify-between ${
               darkMode ? "text-slate-100" : "text-slate-800"
             }`}
           >
             <h1 className="text-2xl font-burtons">{translations.title}</h1>
             <ul className="flex items-center">
               <li>
-                <BsFillMoonStarsFill
-                  onClick={() => setDarkMode((prev) => !prev)}
-                  className=" cursor-pointer text-xl"
-                />
+                <Link
+                  href="#contact"
+                  className={`ml-8 ${switchText} hover:underline`}
+                >
+                  Contact
+                </Link>
               </li>
               <li>
                 <button
                   onClick={() => setLocale(locale === "EN" ? "NL" : "EN")}
-                  className={`px-4 py-2 ml-8`}
+                  className={`px-4 py-2`}
                 >
                   <span className={`${locale === "NL" && "text-gray-500"}`}>
                     EN
@@ -54,11 +54,19 @@ export default function Home() {
                   </span>
                 </button>
               </li>
+              <li>
+                <BsFillMoonStarsFill
+                  onClick={() => setDarkMode((prev) => !prev)}
+                  className=" cursor-pointer text-xl"
+                />
+              </li>
             </ul>
           </nav>
-          <div className="px-5 text-center py-10">
+        </header>
+        <main className="min-h-screen max-w-3xl mx-auto">
+          <div className="px-5 text-center">
             <Image
-              className="mx-auto rounded-full xs:w-1/3"
+              className="mx-auto rounded-full w-1/3 my-5"
               src={profileImg}
               alt="profile"
             />
@@ -71,14 +79,6 @@ export default function Home() {
             <p className={`text-md py-2 leading-8 ${switchText}`}>
               {translations.briefDescription}
             </p>
-          </div>
-          <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
-            <Link href="https://www.linkedin.com/in/omer-degirmenci-5777051b9">
-              <AiFillLinkedin />
-            </Link>
-
-            <AiFillGooglePlusCircle />
-            <AiFillGithub />
           </div>
           <div
             className={`text-center shadow-lg p-10 rounded-xl my-10  flex-1 ${switchText}`}
@@ -105,7 +105,7 @@ export default function Home() {
               {translations.projects.map((project) => (
                 <li
                   key={project.id}
-                  className={`${switchText} flex justify-between max-w-xl mx-auto gap-1 my-2`}
+                  className={`${switchText}  flex justify-between max-w-xl mx-auto gap-1 my-4`}
                 >
                   <Link className="hover:text-teal-600" href={project.demoUrl}>
                     {project.name}
@@ -113,7 +113,7 @@ export default function Home() {
                   <div className="align-left">
                     <Link
                       className={`text-teal-800 underline hover:text-teal-600 rounded-md `}
-                      href={project.sourceUrl}
+                      href={project.demoUrl}
                     >
                       {translations.demoText}
                     </Link>
@@ -131,7 +131,7 @@ export default function Home() {
             </ul>
           </div>
           <div
-            className={`text-center shadow-lg p-10 rounded-xl my-10  flex-1 ${switchText}`}
+            className={`text-center shadow-lg p-10  rounded-xl my-10  flex-1 ${switchText}`}
           >
             <h3 className="py-4 text-lg text-teal-600">
               {translations.experienceTitle}
@@ -139,7 +139,7 @@ export default function Home() {
             <ul>
               {translations.experience.map((exp) => (
                 <li
-                  className={`${switchText} border px-2 mb-4 border-teal-600 rounded-xl  py-1`}
+                  className={`${switchText} border mb-4 border-teal-600 rounded-xl px-2 py-5`}
                   key={exp.id}
                 >
                   <p>{exp.date}</p>
@@ -149,8 +149,28 @@ export default function Home() {
               ))}
             </ul>
           </div>
-        </section>
-      </main>
+        </main>
+        <footer className="py-4">
+          <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 my-5">
+            <Link target="_blank" href={translations.linkedinUrl}>
+              <AiFillLinkedin />
+            </Link>
+
+            <Link href="mailto:rumidegirmenci0@gmail.com">
+              <AiFillGooglePlusCircle />
+            </Link>
+
+            <Link target="_blank" href={translations.githubUrl}>
+              <AiFillGithub />
+            </Link>
+          </div>
+          <Link href="tel:+31642587180" className={`${switchText} text-center`}>
+            <p className="flex justify-center items-center gap-2">
+              <BsTelephoneFill /> 06 42 587 180
+            </p>
+          </Link>
+        </footer>
+      </div>
     </div>
   );
 }
