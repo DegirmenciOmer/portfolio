@@ -81,7 +81,9 @@ export default function Home() {
           <div
             className={`text-center shadow-lg p-10 rounded-xl my-10  flex-1 ${switchText}`}
           >
-            <h3 className="py-4 text-teal-600">{translations.skillsTitle}</h3>
+            <h3 className="py-4 text-teal-600 text-2xl mb-5">
+              {translations.skillsTitle}
+            </h3>
             <ul className="flex m-auto justify-center flex-wrap gap-2 max-w-xl">
               {translations.skills.map((skill) => (
                 <li
@@ -96,7 +98,7 @@ export default function Home() {
           <div
             className={`shadow-lg p-10 rounded-xl my-10 flex-1 ${switchText}`}
           >
-            <h3 className="text-center py-4 text-lg text-teal-600">
+            <h3 className="text-center py-4 text-2xl mb-5 text-teal-600">
               {translations.projectsTitle}
             </h3>
             <ul>
@@ -140,15 +142,15 @@ export default function Home() {
           <div
             className={`text-center shadow-lg p-10  rounded-xl my-10  flex-1 ${switchText}`}
           >
-            <h3 className="py-4 text-lg text-teal-600">
+            <h3 className="py-4 text-2xl mb-5 text-teal-600">
               {translations.experienceTitle}
             </h3>
-            <ul>
+            <ul className="flex gap-4 flex-wrap items-center justify-center">
               {translations.experience
                 .sort((a, b) => +b.id - +a.id)
                 .map((exp) => (
                   <li
-                    className={`${switchText} border mb-4 border-teal-600 rounded-xl px-2 py-5`}
+                    className={`${switchText} flex flex-col gap-4 border h-40 w-80 border-teal-600 rounded-xl px-2 py-5`}
                     key={exp.id}
                   >
                     <p>{exp.date}</p>
