@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { BsFillMoonStarsFill, BsTelephoneFill } from "react-icons/bs";
 import { useState } from "react";
-import profileImg from "../public/images/profile.png";
 
 import {
   AiFillLinkedin,
@@ -10,7 +9,6 @@ import {
 } from "react-icons/ai";
 import { translationHelper } from "../components/translationHelper";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -65,9 +63,9 @@ export default function Home() {
         </header>
         <main className="min-h-screen max-w-3xl mx-auto">
           <div className="px-5 text-center">
-            <Image
+            <img
               className="mx-auto rounded-full w-1/3 my-5"
-              src={profileImg}
+              src="/images/profile.png"
               alt="profile"
             />
             <h2 className="text-4xl py-2 text-teal-600 font-medium">
