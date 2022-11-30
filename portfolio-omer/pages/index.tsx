@@ -24,7 +24,7 @@ export default function Home() {
       <div className={`md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg} `}>
         <header className="sticky top-0 z-10">
           <nav
-            className={` ${switchBg} p-5 sm:py-10 mb-12 border-b border-slate-500 flex items-center justify-between ${
+            className={` ${switchBg} p-5 sm:py-10 mb-12 max-w-3xl mx-auto border-b border-slate-500 flex items-center justify-between ${
               darkMode ? "text-slate-100" : "text-slate-800"
             }`}
           >
