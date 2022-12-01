@@ -1,16 +1,14 @@
 import Head from "next/head";
 import { BsFillMoonStarsFill, BsTelephoneFill } from "react-icons/bs";
 import { useState } from "react";
-import profileImg from "../public/images/profile.png";
 
 import {
   AiFillLinkedin,
   AiFillGooglePlusCircle,
   AiFillGithub,
 } from "react-icons/ai";
-import { translationHelper } from "./translationHelper";
+import { translationHelper } from "../components/translationHelper";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -26,7 +24,7 @@ export default function Home() {
       <div className={`md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg} `}>
         <header className="sticky top-0 z-10">
           <nav
-            className={` ${switchBg} p-5 sm:py-10 mb-12 border-b border-slate-500 flex items-center justify-between ${
+            className={` ${switchBg} p-5 sm:py-10 mb-12 max-w-3xl mx-auto border-b border-slate-500 flex items-center justify-between ${
               darkMode ? "text-slate-100" : "text-slate-800"
             }`}
           >
@@ -65,9 +63,9 @@ export default function Home() {
         </header>
         <main className="min-h-screen max-w-3xl mx-auto">
           <div className="px-5 text-center">
-            <Image
+            <img
               className="mx-auto rounded-full w-1/3 my-5"
-              src={profileImg}
+              src="/images/profile.png"
               alt="profile"
             />
             <h2 className="text-4xl py-2 text-teal-600 font-medium">
@@ -83,7 +81,9 @@ export default function Home() {
           <div
             className={`text-center shadow-lg p-10 rounded-xl my-10  flex-1 ${switchText}`}
           >
-            <h3 className="py-4 text-teal-600">{translations.skillsTitle}</h3>
+            <h3 className="py-4 text-teal-600 text-2xl mb-5">
+              {translations.skillsTitle}
+            </h3>
             <ul className="flex m-auto justify-center flex-wrap gap-2 max-w-xl">
               {translations.skills.map((skill) => (
                 <li
@@ -98,7 +98,7 @@ export default function Home() {
           <div
             className={`shadow-lg p-10 rounded-xl my-10 flex-1 ${switchText}`}
           >
-            <h3 className="text-center py-4 text-lg text-teal-600">
+            <h3 className="text-center py-4 text-2xl mb-5 text-teal-600">
               {translations.projectsTitle}
             </h3>
             <ul>
@@ -142,15 +142,15 @@ export default function Home() {
           <div
             className={`text-center shadow-lg p-10  rounded-xl my-10  flex-1 ${switchText}`}
           >
-            <h3 className="py-4 text-lg text-teal-600">
+            <h3 className="py-4 text-2xl mb-5 text-teal-600">
               {translations.experienceTitle}
             </h3>
-            <ul>
+            <ul className="flex gap-4 flex-wrap items-center justify-center">
               {translations.experience
                 .sort((a, b) => +b.id - +a.id)
                 .map((exp) => (
                   <li
-                    className={`${switchText} border mb-4 border-teal-600 rounded-xl px-2 py-5`}
+                    className={`${switchText} flex flex-col gap-4 border h-40 w-80 border-teal-600 rounded-xl px-2 py-5`}
                     key={exp.id}
                   >
                     <p>{exp.date}</p>
@@ -161,7 +161,7 @@ export default function Home() {
             </ul>
           </div>
         </main>
-        <footer className="py-4">
+        <footer id="contact" className="py-4">
           <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 my-5">
             <Link target="_blank" href={translations.linkedinUrl}>
               <AiFillLinkedin />
