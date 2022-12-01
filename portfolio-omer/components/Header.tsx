@@ -25,7 +25,7 @@ const Header: FC<THeaderProps> = ({
   return (
     <header className="sticky top-0 z-10">
       <nav
-        className={` ${switchBg} p-5 sm:py-10 mb-12 max-w-3xl mx-auto border-b border-slate-500 flex items-center justify-between ${
+        className={` ${switchBg} p-5 sm:py-10 max-w-3xl mx-auto border-b border-slate-500 flex items-center justify-between ${
           darkMode ? "text-slate-100" : "text-slate-800"
         }`}
       >
