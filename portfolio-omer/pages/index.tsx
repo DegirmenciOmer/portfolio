@@ -7,8 +7,9 @@ import {
   AiFillGooglePlusCircle,
   AiFillGithub,
 } from "react-icons/ai";
-import { translationHelper } from "../components/translationHelper";
+import { translationHelper } from "../data/translationHelper";
 import Link from "next/link";
+import Header from "../components/Header";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -22,45 +23,14 @@ export default function Home() {
         <title>{translations.title}</title>
       </Head>
       <div className={`md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg} `}>
-        <header className="sticky top-0 z-10">
-          <nav
-            className={` ${switchBg} p-5 sm:py-10 mb-12 max-w-3xl mx-auto border-b border-slate-500 flex items-center justify-between ${
-              darkMode ? "text-slate-100" : "text-slate-800"
-            }`}
-          >
-            <h1 className="text-2xl font-burtons">{translations.title}</h1>
-            <ul className="flex items-center">
-              <li>
-                <Link
-                  href="#contact"
-                  className={`ml-8 ${switchText} hover:underline`}
-                >
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <button
-                  onClick={() => setLocale(locale === "EN" ? "NL" : "EN")}
-                  className={`px-4 py-2`}
-                >
-                  <span className={`${locale === "NL" && "text-gray-500"}`}>
-                    EN
-                  </span>
-                  &nbsp;|&nbsp;
-                  <span className={`${locale === "EN" && "text-gray-500"}`}>
-                    NL
-                  </span>
-                </button>
-              </li>
-              <li>
-                <BsFillMoonStarsFill
-                  onClick={() => setDarkMode((prev) => !prev)}
-                  className=" cursor-pointer text-xl"
-                />
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <Header
+          switchText={switchText}
+          locale={locale}
+          switchBg={switchBg}
+          darkMode={darkMode}
+          setLocale={setLocale}
+          setDarkMode={setDarkMode}
+        />
         <main className="min-h-screen max-w-3xl mx-auto">
           <div className="px-5 text-center">
             <img
