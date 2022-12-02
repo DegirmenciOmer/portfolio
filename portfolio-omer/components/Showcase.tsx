@@ -1,12 +1,14 @@
-import React, { FC } from "react";
+import React, { FC, Dispatch, SetStateAction } from "react";
+import { useAppContext } from "../context/AppContext";
 import { translationHelper } from "../data/translationHelper";
 
 interface TShowcaseProps {
   switchText: string;
-  locale: string;
+  locale?: string | Dispatch<SetStateAction<string>>;
 }
 
-const Showcase: FC<TShowcaseProps> = ({ switchText, locale }) => {
+const Showcase: FC<TShowcaseProps> = ({ switchText }) => {
+  const { locale } = useAppContext();
   const { translations } = translationHelper(locale);
 
   return (

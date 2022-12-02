@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { useAppContext } from "../context/AppContext";
 import { translationHelper } from "../data/translationHelper";
 
 interface TSkillsProps {
@@ -6,7 +7,9 @@ interface TSkillsProps {
   locale: string;
 }
 
-const Skills: FC<TSkillsProps> = ({ switchText, locale }) => {
+const Skills: FC<TSkillsProps> = ({ switchText }) => {
+  const { locale } = useAppContext();
+
   const { translations } = translationHelper(locale);
 
   return (

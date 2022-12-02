@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { Dispatch, FC, SetStateAction } from "react";
 import { BsFillMoonStarsFill } from "react-icons/bs";
+import { useAppContext } from "../context/AppContext";
 import { translationHelper } from "../data/translationHelper";
 
 interface THeaderProps {
@@ -12,14 +13,9 @@ interface THeaderProps {
   setDarkMode: Dispatch<SetStateAction<boolean>>;
 }
 
-const Header: FC<THeaderProps> = ({
-  switchText,
-  locale,
-  switchBg,
-  darkMode,
-  setLocale,
-  setDarkMode,
-}) => {
+const Header: FC<THeaderProps> = ({ switchText, switchBg }) => {
+  const { locale, darkMode, setLocale, setDarkMode } = useAppContext();
+
   const { translations } = translationHelper(locale);
 
   return (

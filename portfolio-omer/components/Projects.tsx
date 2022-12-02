@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { FC } from "react";
+import { useAppContext } from "../context/AppContext";
 import { translationHelper } from "../data/translationHelper";
 
 interface TProjectsProps {
@@ -7,10 +8,15 @@ interface TProjectsProps {
   locale: string;
 }
 
-const Projects: FC<TProjectsProps> = ({ switchText, locale }) => {
+const Projects: FC<TProjectsProps> = ({ switchText }) => {
+  const { locale } = useAppContext();
+
   const { translations } = translationHelper(locale);
   return (
-    <section className={`shadow-lg p-10 rounded-xl my-10 flex-1 ${switchText}`}>
+    <section
+      id="projects"
+      className={`shadow-lg p-10 rounded-xl my-10 flex-1 ${switchText}`}
+    >
       <h3 className="text-center py-4 text-2xl mb-5 text-teal-600">
         {translations.projectsTitle}
       </h3>

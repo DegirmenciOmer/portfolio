@@ -1,4 +1,7 @@
-export const translationHelper = (language: string) => {
+import React, { Dispatch, SetStateAction } from "react";
+export const translationHelper = (
+  language?: string | Dispatch<SetStateAction<string>>
+) => {
   const NL = language === "NL";
 
   return {
