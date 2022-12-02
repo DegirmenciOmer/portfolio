@@ -95,6 +95,7 @@ export const translationHelper = (language: string) => {
           id: "10",
           name: "Online Hearing Aids (System4)",
           demoUrl: "",
+          liveUrl: "https://online-hearingaids.com/",
           sourceUrl: "",
         },
         {
