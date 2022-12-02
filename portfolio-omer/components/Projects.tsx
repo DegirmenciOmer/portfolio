@@ -22,12 +22,16 @@ const Projects: FC<TProjectsProps> = ({ switchText, locale }) => {
               key={project.id}
               className={`${switchText} flex justify-between max-w-xl mx-auto gap-1 my-4`}
             >
-              <Link
-                className="hover:text-teal-600"
-                href={project.liveUrl ? project.liveUrl : project.demoUrl}
-              >
-                {project.name}
-              </Link>
+              {project.liveUrl || project.demoUrl ? (
+                <Link
+                  className="hover:text-teal-600"
+                  href={project.liveUrl ? project.liveUrl : project.demoUrl}
+                >
+                  {project.name}
+                </Link>
+              ) : (
+                <p>{project.name}</p>
+              )}
               <div className="align-left">
                 <Link
                   className={`text-teal-800 underline hover:text-teal-600 rounded-md `}
@@ -35,7 +39,9 @@ const Projects: FC<TProjectsProps> = ({ switchText, locale }) => {
                 >
                   {project.liveUrl
                     ? translations.liveText
-                    : translations.demoText}
+                    : project.demoUrl
+                    ? translations.demoText
+                    : ""}
                 </Link>
                 {project.sourceUrl && (
                   <Link
