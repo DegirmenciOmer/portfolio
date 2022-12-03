@@ -46,11 +46,9 @@ export const translationHelper = (
           sourceUrl: "https://github.com/DegirmenciOmer/React-expense-tracker",
           technologies: ["react", "react hooks"],
           locale: "nl",
-          description: NL
-            ? ["Technologieën die ik gebruik"]
-            : [
-                "My first React project in which I used react hooks (useState, useContext, useReducer) and the context API.",
-              ],
+          description: [
+            "Mijn eerst React project waarin I used react hooks (useState, useContext, useReducer) and the context API.",
+          ],
           demoUrl: "https://expensetracker-omer.netlify.app/",
         },
         {
@@ -205,22 +203,20 @@ export const translationHelper = (
       ],
       projectsEn: [
         {
-          id: "0",
+          id: "11",
           name: "Income & Expense Tracker",
           sourceUrl: "https://github.com/DegirmenciOmer/React-expense-tracker",
           technologies: ["react", "react hooks"],
           locale: "en",
-          description: NL
-            ? ["Technologieën die ik gebruik"]
-            : [
-                "My first React project in which I used react hooks (useState, useContext, useReducer) and the context API.",
-              ],
+          description: [
+            "My first React project in which I used react hooks (useState, useContext, useReducer) and the context API.",
+          ],
           demoUrl: "https://expensetracker-omer.netlify.app/",
         },
         {
-          id: "1",
-          name: "Star Wars (SWAPI)",
           locale: "en",
+          id: "12",
+          name: "Star Wars (SWAPI)",
           sourceUrl: "https://github.com/DegirmenciOmer/SWAPI-Project",
           description: [
             "A web app that uses the Star wars API (SWAPI) to display list of films and some other features about the StarWars universe.",
@@ -231,9 +227,9 @@ export const translationHelper = (
           demoUrl: "https://starwars-react-app.netlify.app/",
         },
         {
-          id: "2",
-          name: "Todo App",
           locale: "en",
+          id: "13",
+          name: "Todo App",
           sourceUrl: "https://github.com/DegirmenciOmer/PERN-Stack-Todo-App",
           technologies: [
             "NodeJS",
@@ -249,9 +245,9 @@ export const translationHelper = (
           demoUrl: "https://pern-todo-omer.netlify.app/",
         },
         {
-          id: "3",
-          name: "Chat App",
           locale: "en",
+          id: "14",
+          name: "Chat App",
           sourceUrl: "https://github.com/DegirmenciOmer/Chat-App",
           technologies: [
             "NodeJS",
@@ -269,9 +265,9 @@ export const translationHelper = (
           demoUrl: "https://fun-chat-omer.netlify.app/",
         },
         {
-          id: "4",
-          name: "Dev Blog",
           locale: "en",
+          id: "15",
+          name: "Dev Blog",
           sourceUrl: "https://github.com/DegirmenciOmer/NextJs-Blog-Project",
           technologies: ["react", "react hooks"],
           description: [
@@ -282,17 +278,17 @@ export const translationHelper = (
         },
         {
           locale: "en",
-          id: "5",
+          id: "16",
           name: "Shopify organicpro.nl Webshop",
           sourceUrl: "",
           technologies: ["Shopify CMS", "Theme Development", "Liquid"],
           description: [
             "I contributed to this project in terms of theme development",
           ],
-          demoUrl: "https://www.organicpro.nl",
+          demoUrl: "https://www.organicpro.en",
         },
         {
-          id: "6",
+          id: "17",
           locale: "en",
           name: "Shopify Headless CMS Bath Bombs Webshop",
           demoUrl: "https://shopify-bath-bombs.netlify.app/",
@@ -302,7 +298,7 @@ export const translationHelper = (
           description: ["A webshop example using Shopify Headless CMS"],
         },
         {
-          id: "7",
+          id: "18",
           locale: "en",
           name: "Kwynt (System4)",
           demoUrl: "",
@@ -324,7 +320,7 @@ export const translationHelper = (
           ],
         },
         {
-          id: "8",
+          id: "19",
           locale: "en",
           name: "Admin Theme (System4)",
           demoUrl: "",
@@ -343,7 +339,7 @@ export const translationHelper = (
           ],
         },
         {
-          id: "9",
+          id: "20",
           name: "Online Hearing Aids (System4)",
           locale: "en",
           demoUrl: "",
@@ -355,7 +351,7 @@ export const translationHelper = (
           ],
         },
         {
-          id: "10",
+          id: "21",
           name: "My Pump (System4)",
           locale: "en",
           liveUrl: "https://mypump.nl/",
@@ -367,6 +363,7 @@ export const translationHelper = (
           ],
         },
       ],
+
       experienceTitle: NL ? "Ervaring" : "Experience",
       experience: [
         {

@@ -21,7 +21,7 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
         {translations.projectsTitle}
       </h3>
       <ul>
-        {translations.projects
+        {translations.projectsNl
           .sort((a, b) => +b.id - +a.id)
           .map((project) => (
             <li

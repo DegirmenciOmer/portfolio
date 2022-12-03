@@ -5,7 +5,8 @@ import Link from "next/link";
 const {
   translations: { projectsNl, projectsEn },
 } = translationHelper("EN");
-const allProjects = [...projectsEn, ...projectsNl];
+
+const allProjects = projectsNl.concat(projectsEn);
 
 export default function DynamicPage({ project }) {
   const translatedProject = allProjects[project.id];
@@ -30,11 +31,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const paths = allProjects.map((project) => ({
-    params: { id: project.id.toString() },
-    locale: project.locale,
-  }));
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = allProjects.map((project) => {
+    return {
+      params: { id: project.id.toString() },
+      locale: project.locale,
+    };
+  });
 
   return { paths, fallback: false };
 };
