@@ -31,7 +31,11 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
               {project.liveUrl || project.demoUrl ? (
                 <Link
                   className="hover:text-teal-600"
-                  href={`/projects/${project.id}`}
+                  href={
+                    locale === "en"
+                      ? `en/projects/${+project.id + 11}`
+                      : `projects/${+project.id}`
+                  }
                 >
                   {project.name}
                 </Link>
