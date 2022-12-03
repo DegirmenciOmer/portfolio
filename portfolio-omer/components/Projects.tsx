@@ -28,20 +28,16 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
               key={project.id}
               className={`${switchText} flex justify-between max-w-xl mx-auto gap-1 my-4`}
             >
-              {project.liveUrl || project.demoUrl ? (
-                <Link
-                  className="hover:text-teal-600"
-                  href={
-                    locale === "en"
-                      ? `en/projects/${+project.id + 11}`
-                      : `projects/${+project.id}`
-                  }
-                >
-                  {project.name}
-                </Link>
-              ) : (
-                <p>{project.name}</p>
-              )}
+              <Link
+                className="hover:text-teal-600"
+                href={
+                  locale === "en"
+                    ? `en/projects/${+project.id + 11}`
+                    : `projects/${+project.id}`
+                }
+              >
+                {project.name}
+              </Link>
               <div className="align-left">
                 <Link
                   className={`text-teal-800 underline hover:text-teal-600 rounded-md `}
