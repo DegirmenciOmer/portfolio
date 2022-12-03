@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { Dispatch, FC, SetStateAction } from "react";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useAppContext } from "../context/AppContext";
@@ -6,15 +7,15 @@ import { translationHelper } from "../data/translationHelper";
 
 interface THeaderProps {
   switchText: string;
-  locale: string;
   switchBg: string;
-  darkMode: boolean;
-  setLocale: Dispatch<SetStateAction<string>>;
-  setDarkMode: Dispatch<SetStateAction<boolean>>;
+  darkMode: Dispatch<SetStateAction<boolean>>;
+  setDarkMode: SetStateAction<boolean>;
 }
 
 const Header: FC<THeaderProps> = ({ switchText, switchBg }) => {
-  const { locale, darkMode, setLocale, setDarkMode } = useAppContext();
+  const { darkMode, setDarkMode } = useAppContext();
+  const router = useRouter();
+  const { pathname, asPath, query, locale } = router;
 
   const { translations } = translationHelper(locale);
 
@@ -37,14 +38,18 @@ const Header: FC<THeaderProps> = ({ switchText, switchBg }) => {
           </li>
           <li>
             <button
-              onClick={() => setLocale(locale === "EN" ? "NL" : "EN")}
+              onClick={() =>
+                router.push({ pathname, query }, asPath, {
+                  locale: locale === "en" ? "nl" : "en",
+                })
+              }
               className={`px-4 py-2`}
             >
-              <span className={`${locale === "NL" && "text-gray-500"}`}>
+              <span className={`${locale === "nl" && "text-gray-500"}`}>
                 EN
               </span>
               &nbsp;|&nbsp;
-              <span className={`${locale === "EN" && "text-gray-500"}`}>
+              <span className={`${locale === "en" && "text-gray-500"}`}>
                 NL
               </span>
             </button>

@@ -1,6 +1,6 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { FC } from "react";
-import { useAppContext } from "../context/AppContext";
 import { translationHelper } from "../data/translationHelper";
 
 interface TProjectsProps {
@@ -9,7 +9,7 @@ interface TProjectsProps {
 }
 
 const Projects: FC<TProjectsProps> = ({ switchText }) => {
-  const { locale } = useAppContext();
+  const { locale } = useRouter();
 
   const { translations } = translationHelper(locale);
   return (
@@ -31,7 +31,7 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
               {project.liveUrl || project.demoUrl ? (
                 <Link
                   className="hover:text-teal-600"
-                  href={project.liveUrl ? project.liveUrl : project.demoUrl}
+                  href={`/projects/${project.id}`}
                 >
                   {project.name}
                 </Link>

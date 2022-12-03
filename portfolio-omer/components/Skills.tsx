@@ -1,5 +1,5 @@
+import { useRouter } from "next/router";
 import React, { FC } from "react";
-import { useAppContext } from "../context/AppContext";
 import { translationHelper } from "../data/translationHelper";
 
 interface TSkillsProps {
@@ -8,7 +8,7 @@ interface TSkillsProps {
 }
 
 const Skills: FC<TSkillsProps> = ({ switchText }) => {
-  const { locale } = useAppContext();
+  const { locale } = useRouter();
 
   const { translations } = translationHelper(locale);
 

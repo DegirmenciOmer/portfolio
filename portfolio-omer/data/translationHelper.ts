@@ -1,8 +1,9 @@
-import React, { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 export const translationHelper = (
   language?: string | Dispatch<SetStateAction<string>>
 ) => {
-  const NL = language === "NL";
+  const locale = language === "nl" ? "nl" : "en";
+  const NL = language === "nl";
 
   return {
     translations: {
@@ -38,17 +39,22 @@ export const translationHelper = (
         { id: "12", name: "Angular" },
       ],
       projectsTitle: NL ? "Projecten" : "Projects",
-      projects: [
+      projectsNl: [
         {
           id: "0",
           name: "Income & Expense Tracker",
           sourceUrl: "https://github.com/DegirmenciOmer/React-expense-tracker",
           technologies: ["react", "react hooks"],
-          description:
-            "My first React project in which I used react hooks (useState, useContext, useReducer) and the context API.",
+          locale: "nl",
+          description: NL
+            ? ["Technologieën die ik gebruik"]
+            : [
+                "My first React project in which I used react hooks (useState, useContext, useReducer) and the context API.",
+              ],
           demoUrl: "https://expensetracker-omer.netlify.app/",
         },
         {
+          locale: "nl",
           id: "1",
           name: "Star Wars (SWAPI)",
           sourceUrl: "https://github.com/DegirmenciOmer/SWAPI-Project",
@@ -61,6 +67,7 @@ export const translationHelper = (
           demoUrl: "https://starwars-react-app.netlify.app/",
         },
         {
+          locale: "nl",
           id: "2",
           name: "Todo App",
           sourceUrl: "https://github.com/DegirmenciOmer/PERN-Stack-Todo-App",
@@ -78,6 +85,7 @@ export const translationHelper = (
           demoUrl: "https://pern-todo-omer.netlify.app/",
         },
         {
+          locale: "nl",
           id: "3",
           name: "Chat App",
           sourceUrl: "https://github.com/DegirmenciOmer/Chat-App",
@@ -97,6 +105,7 @@ export const translationHelper = (
           demoUrl: "https://fun-chat-omer.netlify.app/",
         },
         {
+          locale: "nl",
           id: "4",
           name: "Dev Blog",
           sourceUrl: "https://github.com/DegirmenciOmer/NextJs-Blog-Project",
@@ -108,6 +117,7 @@ export const translationHelper = (
           demoUrl: "https://next-js-blog-project-pi.vercel.app/",
         },
         {
+          locale: "nl",
           id: "5",
           name: "Shopify organicpro.nl Webshop",
           sourceUrl: "",
@@ -119,6 +129,7 @@ export const translationHelper = (
         },
         {
           id: "6",
+          locale: "nl",
           name: "Shopify Headless CMS Bath Bombs Webshop",
           demoUrl: "https://shopify-bath-bombs.netlify.app/",
           sourceUrl:
@@ -128,6 +139,7 @@ export const translationHelper = (
         },
         {
           id: "7",
+          locale: "nl",
           name: "Kwynt (System4)",
           demoUrl: "",
           sourceUrl: "",
@@ -149,6 +161,7 @@ export const translationHelper = (
         },
         {
           id: "8",
+          locale: "nl",
           name: "Admin Theme (System4)",
           demoUrl: "",
           sourceUrl: "",
@@ -168,6 +181,7 @@ export const translationHelper = (
         {
           id: "9",
           name: "Online Hearing Aids (System4)",
+          locale: "nl",
           demoUrl: "",
           liveUrl: "https://online-hearingaids.com/",
           sourceUrl: "",
@@ -179,6 +193,171 @@ export const translationHelper = (
         {
           id: "10",
           name: "My Pump (System4)",
+          locale: "nl",
+          liveUrl: "https://mypump.nl/",
+          demoUrl: "",
+          sourceUrl: "",
+          technologies: ["NextJS, Postgres, PM2"],
+          description: [
+            "I maintained the frontend implementations as well as editing some database issues requested by the customers.",
+          ],
+        },
+      ],
+      projectsEn: [
+        {
+          id: "0",
+          name: "Income & Expense Tracker",
+          sourceUrl: "https://github.com/DegirmenciOmer/React-expense-tracker",
+          technologies: ["react", "react hooks"],
+          locale: "en",
+          description: NL
+            ? ["Technologieën die ik gebruik"]
+            : [
+                "My first React project in which I used react hooks (useState, useContext, useReducer) and the context API.",
+              ],
+          demoUrl: "https://expensetracker-omer.netlify.app/",
+        },
+        {
+          id: "1",
+          name: "Star Wars (SWAPI)",
+          locale: "en",
+          sourceUrl: "https://github.com/DegirmenciOmer/SWAPI-Project",
+          description: [
+            "A web app that uses the Star wars API (SWAPI) to display list of films and some other features about the StarWars universe.",
+            "The app renders a UI that displays all the related movies.",
+            "User can enter character name into search box and see filtered list of characters.",
+            "No list displayed until <= 3 characters in search bar.",
+          ],
+          demoUrl: "https://starwars-react-app.netlify.app/",
+        },
+        {
+          id: "2",
+          name: "Todo App",
+          locale: "en",
+          sourceUrl: "https://github.com/DegirmenciOmer/PERN-Stack-Todo-App",
+          technologies: [
+            "NodeJS",
+            "Express",
+            "React",
+            "Bootstrap",
+            "PostgreSQL",
+          ],
+          description: [
+            "A basic todo app which has create, update, and delete features.",
+            "The app might not be working as expected anymore since the backend deployment service Heroku has updated its deploy policy",
+          ],
+          demoUrl: "https://pern-todo-omer.netlify.app/",
+        },
+        {
+          id: "3",
+          name: "Chat App",
+          locale: "en",
+          sourceUrl: "https://github.com/DegirmenciOmer/Chat-App",
+          technologies: [
+            "NodeJS",
+            "Express",
+            "Socket.io",
+            "React",
+            "React Bootstrap",
+          ],
+          description: [
+            "A chat application which can be used not only for private messaging, but also as a group chat.",
+            "It doesn't require a phone number, you can generate a unique ID instead to get started with the application. ",
+            "All you need to do is add your friends into your contact list with their IDs and enjoy this cool chat! 😎",
+            "The app might not be working as expected anymore since the backend deployment service Heroku has updated its deploy policy",
+          ],
+          demoUrl: "https://fun-chat-omer.netlify.app/",
+        },
+        {
+          id: "4",
+          name: "Dev Blog",
+          locale: "en",
+          sourceUrl: "https://github.com/DegirmenciOmer/NextJs-Blog-Project",
+          technologies: ["react", "react hooks"],
+          description: [
+            "A NextJS blog application",
+            "Could be reused easily to generate an awesome static website with markdown.",
+          ],
+          demoUrl: "https://next-js-blog-project-pi.vercel.app/",
+        },
+        {
+          locale: "en",
+          id: "5",
+          name: "Shopify organicpro.nl Webshop",
+          sourceUrl: "",
+          technologies: ["Shopify CMS", "Theme Development", "Liquid"],
+          description: [
+            "I contributed to this project in terms of theme development",
+          ],
+          demoUrl: "https://www.organicpro.nl",
+        },
+        {
+          id: "6",
+          locale: "en",
+          name: "Shopify Headless CMS Bath Bombs Webshop",
+          demoUrl: "https://shopify-bath-bombs.netlify.app/",
+          sourceUrl:
+            "https://github.com/DegirmenciOmer/react-shopify-custom-storefront/tree/main/shopify-storefront",
+          technologies: ["react", "Chakra UI", "Shopify CMS"],
+          description: ["A webshop example using Shopify Headless CMS"],
+        },
+        {
+          id: "7",
+          locale: "en",
+          name: "Kwynt (System4)",
+          demoUrl: "",
+          sourceUrl: "",
+          technologies: [
+            "React",
+            "Typescript",
+            "NextJS",
+            "Strapi CMS",
+            "Material UI",
+            "Docker",
+          ],
+          description: [
+            "I was busy With this awesome investment project throughout my internship at System4.",
+            "I implemented translations both in Strapi and in frontend",
+            "I built FAQ pages",
+            "I made connection with Jira API and Management Dashboard App and then provided with  autogenerating report for the customer to follow the activities of the dev team",
+            "The project deployment was unfortunately suspended",
+          ],
+        },
+        {
+          id: "8",
+          locale: "en",
+          name: "Admin Theme (System4)",
+          demoUrl: "",
+          sourceUrl: "",
+          technologies: [
+            "Javascript",
+            "React",
+            "Typescript",
+            "Angular",
+            "Storybook",
+            "Tailwind CSS",
+          ],
+          description: [
+            "The purpose of the project is to build an admin UI to make life easier for the frontend developers",
+            "Along with implementing some of the designs of the components by using Vanilla Javascript, Tailwind, and Storybook, I was basically responsible for the implementation of these components in React and Angular",
+          ],
+        },
+        {
+          id: "9",
+          name: "Online Hearing Aids (System4)",
+          locale: "en",
+          demoUrl: "",
+          liveUrl: "https://online-hearingaids.com/",
+          sourceUrl: "",
+          technologies: ["Wordpress"],
+          description: [
+            "I supported the dev team in terms of responsive stying and content management",
+          ],
+        },
+        {
+          id: "10",
+          name: "My Pump (System4)",
+          locale: "en",
           liveUrl: "https://mypump.nl/",
           demoUrl: "",
           sourceUrl: "",

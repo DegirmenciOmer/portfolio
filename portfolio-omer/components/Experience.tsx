@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { FC } from "react";
 import { translationHelper } from "../data/translationHelper";
 
@@ -6,7 +7,9 @@ interface TExperienceProps {
   locale: string;
 }
 
-const Experience: FC<TExperienceProps> = ({ switchText, locale }) => {
+const Experience: FC<TExperienceProps> = ({ switchText }) => {
+  const { locale } = useRouter();
+
   const { translations } = translationHelper(locale);
   return (
     <section
