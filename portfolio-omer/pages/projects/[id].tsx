@@ -42,8 +42,10 @@ const DynamicPage: FC<TProject> = ({ project }) => {
         <h2 className="py-4 text-center text-teal-600 text-2xl mb-5">
           {translatedProject.name}{" "}
         </h2>
-        {translatedProject.description.map((text) => (
-          <p className="text-center">{text}</p>
+        {translatedProject.description.map((text, idx) => (
+          <p key={idx} className="text-center">
+            {text}
+          </p>
         ))}
 
         <div className="text-center">
