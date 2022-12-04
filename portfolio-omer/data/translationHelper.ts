@@ -1,13 +1,16 @@
-export const translationHelper = (language: string) => {
-  const NL = language === "NL";
+import { Dispatch, SetStateAction } from "react";
+export const translationHelper = (language: any) => {
+  const NL = language === "nl";
 
   return {
     translations: {
       title: NL ? "Omer's Portfeulle" : "Omer's Portfolio",
       ownerName: "Omer Degirmenci",
+      seeText: NL ? "Zie" : "See",
       sourceText: "Code",
       demoText: "Demo",
       liveText: "Live Site",
+      techTitle: NL ? "Technologieën" : "Technologies",
       occupationText: NL
         ? "Frontend Webontwikkelaar"
         : "Frontend Web Developer",
@@ -37,73 +40,190 @@ export const translationHelper = (language: string) => {
       projectsTitle: NL ? "Projecten" : "Projects",
       projects: [
         {
-          id: "1",
+          id: "0",
           name: "Income & Expense Tracker",
           sourceUrl: "https://github.com/DegirmenciOmer/React-expense-tracker",
+          technologies: [
+            { id: "1", name: "react" },
+            { id: "2", name: "react hooks" },
+          ],
+          locale: "nl",
+          description: [
+            "Mijn eerst React project waarin I used react hooks (useState, useContext, useReducer) and the context API.",
+          ],
           demoUrl: "https://expensetracker-omer.netlify.app/",
         },
         {
-          id: "2",
+          locale: "nl",
+          id: "1",
           name: "Star Wars (SWAPI)",
           sourceUrl: "https://github.com/DegirmenciOmer/SWAPI-Project",
+          description: [
+            "A web app that uses the Star wars API (SWAPI) to display list of films and some other features about the StarWars universe.",
+            "The app renders a UI that displays all the related movies.",
+            "User can enter character name into search box and see filtered list of characters.",
+            "No list displayed until <= 3 characters in search bar.",
+          ],
           demoUrl: "https://starwars-react-app.netlify.app/",
+          technologies: [
+            { id: "1", name: "React" },
+            { id: "2", name: "Context API" },
+          ],
         },
         {
-          id: "3",
+          locale: "nl",
+          id: "2",
           name: "Todo App",
           sourceUrl: "https://github.com/DegirmenciOmer/PERN-Stack-Todo-App",
+          technologies: [
+            { id: "1", name: "NodeJS" },
+            { id: "2", name: "Express" },
+            { id: "3", name: "React" },
+            { id: "4", name: "Bootstrap" },
+            { id: "5", name: "Express" },
+            { id: "6", name: "PostgreSQL" },
+          ],
+          description: [
+            "A basic todo app which has create, update, and delete features.",
+            "The app might not be working as expected anymore since the backend deployment service Heroku has updated its deploy policy",
+          ],
           demoUrl: "https://pern-todo-omer.netlify.app/",
         },
         {
-          id: "4",
+          locale: "nl",
+          id: "3",
           name: "Chat App",
           sourceUrl: "https://github.com/DegirmenciOmer/Chat-App",
+          technologies: [
+            { id: "1", name: "NodeJS" },
+            { id: "2", name: "Express" },
+            { id: "3", name: "Socket.io" },
+            { id: "4", name: "React" },
+            { id: "5", name: "React Bootstrap" },
+          ],
+          description: [
+            "A chat application which can be used not only for private messaging, but also as a group chat.",
+            "It doesn't require a phone number, you can generate a unique ID instead to get started with the application. ",
+            "All you need to do is add your friends into your contact list with their IDs and enjoy this cool chat! 😎",
+            "The app might not be working as expected anymore since the backend deployment service Heroku has updated its deploy policy",
+          ],
           demoUrl: "https://fun-chat-omer.netlify.app/",
         },
         {
-          id: "5",
+          locale: "nl",
+          id: "4",
           name: "Dev Blog",
           sourceUrl: "https://github.com/DegirmenciOmer/NextJs-Blog-Project",
+          technologies: [
+            { id: "1", name: "NodeJS" },
+            { id: "2", name: "Express" },
+            { id: "3", name: "Socket.io" },
+            { id: "4", name: "React" },
+            { id: "5", name: "React Bootstrap" },
+          ],
+          description: [
+            "A NextJS blog application",
+            "Could be reused easily to generate an awesome static website with markdown.",
+          ],
           demoUrl: "https://next-js-blog-project-pi.vercel.app/",
         },
         {
-          id: "6",
+          locale: "nl",
+          id: "5",
           name: "Shopify organicpro.nl Webshop",
           sourceUrl: "",
-          demoUrl: "https://www.organicpro.nl",
+          technologies: [
+            { id: "1", name: "Shopify CMS" },
+            { id: "2", name: "Theme Development" },
+            { id: "3", name: "Liquid" },
+          ],
+          description: [
+            "I contributed to this project in terms of theme development",
+          ],
+          liveUrl: "https://www.organicpro.nl",
         },
         {
-          id: "7",
+          id: "6",
+          locale: "nl",
           name: "Shopify Headless CMS Bath Bombs Webshop",
           demoUrl: "https://shopify-bath-bombs.netlify.app/",
           sourceUrl:
             "https://github.com/DegirmenciOmer/react-shopify-custom-storefront/tree/main/shopify-storefront",
+          technologies: [
+            { id: "1", name: "React" },
+            { id: "2", name: "Shopify CMS" },
+            { id: "3", name: "Chakra UI" },
+          ],
+          description: ["A webshop example using Shopify Headless CMS"],
         },
         {
-          id: "8",
+          id: "7",
+          locale: "nl",
           name: "Kwynt (System4)",
           demoUrl: "",
           sourceUrl: "",
+          technologies: [
+            { id: "1", name: "Typescript" },
+            { id: "2", name: "Express" },
+            { id: "3", name: "Strapi CMS" },
+            { id: "4", name: "React" },
+            { id: "5", name: "Material UI" },
+            { id: "6", name: "Docker" },
+          ],
+          description: [
+            "I was busy With this awesome investment project throughout my internship at System4.",
+            "I implemented translations both in Strapi and in frontend",
+            "I built FAQ pages",
+            "I made connection with Jira API and Management Dashboard App and then provided with  autogenerating report for the customer to follow the activities of the dev team",
+            "The project deployment was unfortunately suspended",
+          ],
         },
         {
-          id: "9",
+          id: "8",
+          locale: "nl",
           name: "Admin Theme (System4)",
           demoUrl: "",
           sourceUrl: "",
+          technologies: [
+            { id: "1", name: "Typescript" },
+            { id: "2", name: "Angular" },
+            { id: "3", name: "Tailwind CSS" },
+            { id: "4", name: "React" },
+            { id: "5", name: "Javascript" },
+            { id: "6", name: "Storybook" },
+          ],
+          description: [
+            "The purpose of the project is to build an admin UI to make life easier for the frontend developers",
+            "Along with implementing some of the designs of the components by using Vanilla Javascript, Tailwind, and Storybook, I was basically responsible for the implementation of these components in React and Angular",
+          ],
         },
         {
-          id: "10",
+          id: "9",
           name: "Online Hearing Aids (System4)",
+          locale: "nl",
           demoUrl: "",
           liveUrl: "https://online-hearingaids.com/",
           sourceUrl: "",
+          technologies: [{ id: "1", name: "Wordpress" }],
+          description: [
+            "I supported the dev team in terms of responsive stying and content management",
+          ],
         },
         {
-          id: "11",
+          id: "10",
           name: "My Pump (System4)",
+          locale: "nl",
           liveUrl: "https://mypump.nl/",
           demoUrl: "",
           sourceUrl: "",
+          technologies: [
+            { id: "1", name: "Typescript" },
+            { id: "2", name: "NextJs" },
+            { id: "3", name: "PM2" },
+          ],
+          description: [
+            "I maintained the frontend implementations as well as editing some database issues requested by the customers.",
+          ],
         },
       ],
       experienceTitle: NL ? "Ervaring" : "Experience",
