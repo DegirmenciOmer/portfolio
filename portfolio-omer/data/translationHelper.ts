@@ -52,6 +52,7 @@ export const translationHelper = (language: any) => {
             "Mijn eerst React project waarin I used react hooks (useState, useContext, useReducer) and the context API.",
           ],
           demoUrl: "https://expensetracker-omer.netlify.app/",
+          img: "/images/expense.PNG",
         },
         {
           locale: "nl",
@@ -69,6 +70,7 @@ export const translationHelper = (language: any) => {
             { id: "1", name: "React" },
             { id: "2", name: "Context API" },
           ],
+          img: "/images/swapi.PNG",
         },
         {
           locale: "nl",
@@ -88,6 +90,7 @@ export const translationHelper = (language: any) => {
             "The app might not be working as expected anymore since the backend deployment service Heroku has updated its deploy policy",
           ],
           demoUrl: "https://pern-todo-omer.netlify.app/",
+          img: "/images/todo.png",
         },
         {
           locale: "nl",
@@ -108,6 +111,7 @@ export const translationHelper = (language: any) => {
             "The app might not be working as expected anymore since the backend deployment service Heroku has updated its deploy policy",
           ],
           demoUrl: "https://fun-chat-omer.netlify.app/",
+          img: "/images/chat.jpg",
         },
         {
           locale: "nl",
@@ -126,6 +130,7 @@ export const translationHelper = (language: any) => {
             "Could be reused easily to generate an awesome static website with markdown.",
           ],
           demoUrl: "https://next-js-blog-project-pi.vercel.app/",
+          img: "/images/devblog.PNG",
         },
         {
           locale: "nl",
@@ -141,12 +146,14 @@ export const translationHelper = (language: any) => {
             "I contributed to this project in terms of theme development",
           ],
           liveUrl: "https://www.organicpro.nl",
+          img: "/images/shopify.jpg",
         },
         {
           id: "6",
           locale: "nl",
           name: "Shopify Headless CMS Bath Bombs Webshop",
           demoUrl: "https://shopify-bath-bombs.netlify.app/",
+          img: "/images/bath-bombs.PNG",
           sourceUrl:
             "https://github.com/DegirmenciOmer/react-shopify-custom-storefront/tree/main/shopify-storefront",
           technologies: [
@@ -161,6 +168,7 @@ export const translationHelper = (language: any) => {
           locale: "nl",
           name: "Kwynt (System4)",
           demoUrl: "",
+          img: "/images/system4.jpg",
           sourceUrl: "",
           technologies: [
             { id: "1", name: "Typescript" },
@@ -183,6 +191,7 @@ export const translationHelper = (language: any) => {
           locale: "nl",
           name: "Admin Theme (System4)",
           demoUrl: "",
+          img: "/images/system4.jpg",
           sourceUrl: "",
           technologies: [
             { id: "1", name: "Typescript" },
@@ -202,6 +211,7 @@ export const translationHelper = (language: any) => {
           name: "Online Hearing Aids (System4)",
           locale: "nl",
           demoUrl: "",
+          img: "/images/logo-onlinehoortoestel-nl.png",
           liveUrl: "https://online-hearingaids.com/",
           sourceUrl: "",
           technologies: [{ id: "1", name: "Wordpress" }],
@@ -215,6 +225,7 @@ export const translationHelper = (language: any) => {
           locale: "nl",
           liveUrl: "https://mypump.nl/",
           demoUrl: "",
+          img: "/images/mypump.PNG",
           sourceUrl: "",
           technologies: [
             { id: "1", name: "Typescript" },

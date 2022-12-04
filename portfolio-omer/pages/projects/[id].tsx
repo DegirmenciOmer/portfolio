@@ -36,7 +36,7 @@ const DynamicPage: FC<TProject> = ({ project }) => {
     <div className={`md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg} `}>
       <Header switchText={switchText} switchBg={switchBg} />
       <main className={`${switchText} px-5 min-h-screen max-w-3xl mx-auto`}>
-        <Link href="/#projects">
+        <Link href={`"/#projects"`}>
           <button className="bg-teal-500 my-4 px-2 rounded-md">Back</button>
         </Link>
         <h2 className="py-4 text-center text-teal-600 text-2xl mb-5">
