@@ -6,9 +6,11 @@ export const translationHelper = (language: any) => {
     translations: {
       title: NL ? "Omer's Portfeulle" : "Omer's Portfolio",
       ownerName: "Omer Degirmenci",
+      seeText: NL ? "Zie" : "See",
       sourceText: "Code",
       demoText: "Demo",
       liveText: "Live Site",
+      techTitle: NL ? "Technologieën" : "Technologies",
       occupationText: NL
         ? "Frontend Webontwikkelaar"
         : "Frontend Web Developer",
@@ -41,7 +43,10 @@ export const translationHelper = (language: any) => {
           id: "0",
           name: "Income & Expense Tracker",
           sourceUrl: "https://github.com/DegirmenciOmer/React-expense-tracker",
-          technologies: ["react", "react hooks"],
+          technologies: [
+            { id: "1", name: "react" },
+            { id: "2", name: "react hooks" },
+          ],
           locale: "nl",
           description: [
             "Mijn eerst React project waarin I used react hooks (useState, useContext, useReducer) and the context API.",
@@ -60,6 +65,10 @@ export const translationHelper = (language: any) => {
             "No list displayed until <= 3 characters in search bar.",
           ],
           demoUrl: "https://starwars-react-app.netlify.app/",
+          technologies: [
+            { id: "1", name: "React" },
+            { id: "2", name: "Context API" },
+          ],
         },
         {
           locale: "nl",
@@ -67,11 +76,12 @@ export const translationHelper = (language: any) => {
           name: "Todo App",
           sourceUrl: "https://github.com/DegirmenciOmer/PERN-Stack-Todo-App",
           technologies: [
-            "NodeJS",
-            "Express",
-            "React",
-            "Bootstrap",
-            "PostgreSQL",
+            { id: "1", name: "NodeJS" },
+            { id: "2", name: "Express" },
+            { id: "3", name: "React" },
+            { id: "4", name: "Bootstrap" },
+            { id: "5", name: "Express" },
+            { id: "6", name: "PostgreSQL" },
           ],
           description: [
             "A basic todo app which has create, update, and delete features.",
@@ -85,11 +95,11 @@ export const translationHelper = (language: any) => {
           name: "Chat App",
           sourceUrl: "https://github.com/DegirmenciOmer/Chat-App",
           technologies: [
-            "NodeJS",
-            "Express",
-            "Socket.io",
-            "React",
-            "React Bootstrap",
+            { id: "1", name: "NodeJS" },
+            { id: "2", name: "Express" },
+            { id: "3", name: "Socket.io" },
+            { id: "4", name: "React" },
+            { id: "5", name: "React Bootstrap" },
           ],
           description: [
             "A chat application which can be used not only for private messaging, but also as a group chat.",
@@ -104,7 +114,13 @@ export const translationHelper = (language: any) => {
           id: "4",
           name: "Dev Blog",
           sourceUrl: "https://github.com/DegirmenciOmer/NextJs-Blog-Project",
-          technologies: ["react", "react hooks"],
+          technologies: [
+            { id: "1", name: "NodeJS" },
+            { id: "2", name: "Express" },
+            { id: "3", name: "Socket.io" },
+            { id: "4", name: "React" },
+            { id: "5", name: "React Bootstrap" },
+          ],
           description: [
             "A NextJS blog application",
             "Could be reused easily to generate an awesome static website with markdown.",
@@ -116,11 +132,15 @@ export const translationHelper = (language: any) => {
           id: "5",
           name: "Shopify organicpro.nl Webshop",
           sourceUrl: "",
-          technologies: ["Shopify CMS", "Theme Development", "Liquid"],
+          technologies: [
+            { id: "1", name: "Shopify CMS" },
+            { id: "2", name: "Theme Development" },
+            { id: "3", name: "Liquid" },
+          ],
           description: [
             "I contributed to this project in terms of theme development",
           ],
-          demoUrl: "https://www.organicpro.nl",
+          liveUrl: "https://www.organicpro.nl",
         },
         {
           id: "6",
@@ -129,7 +149,11 @@ export const translationHelper = (language: any) => {
           demoUrl: "https://shopify-bath-bombs.netlify.app/",
           sourceUrl:
             "https://github.com/DegirmenciOmer/react-shopify-custom-storefront/tree/main/shopify-storefront",
-          technologies: ["react", "Chakra UI", "Shopify CMS"],
+          technologies: [
+            { id: "1", name: "React" },
+            { id: "2", name: "Shopify CMS" },
+            { id: "3", name: "Chakra UI" },
+          ],
           description: ["A webshop example using Shopify Headless CMS"],
         },
         {
@@ -139,12 +163,12 @@ export const translationHelper = (language: any) => {
           demoUrl: "",
           sourceUrl: "",
           technologies: [
-            "React",
-            "Typescript",
-            "NextJS",
-            "Strapi CMS",
-            "Material UI",
-            "Docker",
+            { id: "1", name: "Typescript" },
+            { id: "2", name: "Express" },
+            { id: "3", name: "Strapi CMS" },
+            { id: "4", name: "React" },
+            { id: "5", name: "Material UI" },
+            { id: "6", name: "Docker" },
           ],
           description: [
             "I was busy With this awesome investment project throughout my internship at System4.",
@@ -161,12 +185,12 @@ export const translationHelper = (language: any) => {
           demoUrl: "",
           sourceUrl: "",
           technologies: [
-            "Javascript",
-            "React",
-            "Typescript",
-            "Angular",
-            "Storybook",
-            "Tailwind CSS",
+            { id: "1", name: "Typescript" },
+            { id: "2", name: "Angular" },
+            { id: "3", name: "Tailwind CSS" },
+            { id: "4", name: "React" },
+            { id: "5", name: "Javascript" },
+            { id: "6", name: "Storybook" },
           ],
           description: [
             "The purpose of the project is to build an admin UI to make life easier for the frontend developers",
@@ -180,7 +204,7 @@ export const translationHelper = (language: any) => {
           demoUrl: "",
           liveUrl: "https://online-hearingaids.com/",
           sourceUrl: "",
-          technologies: ["Wordpress"],
+          technologies: [{ id: "1", name: "Wordpress" }],
           description: [
             "I supported the dev team in terms of responsive stying and content management",
           ],
@@ -192,7 +216,11 @@ export const translationHelper = (language: any) => {
           liveUrl: "https://mypump.nl/",
           demoUrl: "",
           sourceUrl: "",
-          technologies: ["NextJS, Postgres, PM2"],
+          technologies: [
+            { id: "1", name: "Typescript" },
+            { id: "2", name: "NextJs" },
+            { id: "3", name: "PM2" },
+          ],
           description: [
             "I maintained the frontend implementations as well as editing some database issues requested by the customers.",
           ],

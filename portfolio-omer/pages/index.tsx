@@ -6,7 +6,7 @@ import Showcase from "../components/Showcase";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Experience from "../components/Experience";
-import Footer from "./Footer";
+import Footer from "../components/Footer";
 import { useAppContext } from "../context/AppContext";
 
 export default function Home() {
@@ -23,7 +23,11 @@ export default function Home() {
         <Header switchText={switchText} switchBg={switchBg} />
         <main className="min-h-screen max-w-3xl mx-auto">
           <Showcase switchText={switchText} />
-          <Skills switchText={switchText} />
+          <Skills
+            switchText={switchText}
+            skills={translations.skills}
+            skillsTitle={translations.skillsTitle}
+          />
           <Projects switchText={switchText} />
           <Experience switchText={switchText} />
         </main>
