@@ -1,14 +1,11 @@
-import { useRouter } from "next/router";
 import React, { FC, Dispatch, SetStateAction } from "react";
+import { useAppContext } from "../context/AppContext";
 import { translationHelper } from "../data/translationHelper";
-
-interface TShowcaseProps {
+interface TShowcase {
   switchText: string;
-  locale?: string | Dispatch<SetStateAction<string>>;
 }
-
-const Showcase: FC<TShowcaseProps> = ({ switchText }) => {
-  const { locale } = useRouter();
+const Showcase: FC<TShowcase> = ({ switchText }) => {
+  const { locale } = useAppContext();
   const { translations } = translationHelper(locale);
 
   return (

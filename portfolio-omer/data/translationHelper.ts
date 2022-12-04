@@ -1,8 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-export const translationHelper = (
-  language?: string | Dispatch<SetStateAction<string>>
-) => {
-  const locale = language === "nl" ? "nl" : "en";
+export const translationHelper = (language: any) => {
   const NL = language === "nl";
 
   return {
@@ -39,7 +36,7 @@ export const translationHelper = (
         { id: "12", name: "Angular" },
       ],
       projectsTitle: NL ? "Projecten" : "Projects",
-      projectsNl: [
+      projects: [
         {
           id: "0",
           name: "Income & Expense Tracker",
@@ -201,169 +198,6 @@ export const translationHelper = (
           ],
         },
       ],
-      projectsEn: [
-        {
-          id: "11",
-          name: "Income & Expense Tracker",
-          sourceUrl: "https://github.com/DegirmenciOmer/React-expense-tracker",
-          technologies: ["react", "react hooks"],
-          locale: "en",
-          description: [
-            "My first React project in which I used react hooks (useState, useContext, useReducer) and the context API.",
-          ],
-          demoUrl: "https://expensetracker-omer.netlify.app/",
-        },
-        {
-          locale: "en",
-          id: "12",
-          name: "Star Wars (SWAPI)",
-          sourceUrl: "https://github.com/DegirmenciOmer/SWAPI-Project",
-          description: [
-            "A web app that uses the Star wars API (SWAPI) to display list of films and some other features about the StarWars universe.",
-            "The app renders a UI that displays all the related movies.",
-            "User can enter character name into search box and see filtered list of characters.",
-            "No list displayed until <= 3 characters in search bar.",
-          ],
-          demoUrl: "https://starwars-react-app.netlify.app/",
-        },
-        {
-          locale: "en",
-          id: "13",
-          name: "Todo App",
-          sourceUrl: "https://github.com/DegirmenciOmer/PERN-Stack-Todo-App",
-          technologies: [
-            "NodeJS",
-            "Express",
-            "React",
-            "Bootstrap",
-            "PostgreSQL",
-          ],
-          description: [
-            "A basic todo app which has create, update, and delete features.",
-            "The app might not be working as expected anymore since the backend deployment service Heroku has updated its deploy policy",
-          ],
-          demoUrl: "https://pern-todo-omer.netlify.app/",
-        },
-        {
-          locale: "en",
-          id: "14",
-          name: "Chat App",
-          sourceUrl: "https://github.com/DegirmenciOmer/Chat-App",
-          technologies: [
-            "NodeJS",
-            "Express",
-            "Socket.io",
-            "React",
-            "React Bootstrap",
-          ],
-          description: [
-            "A chat application which can be used not only for private messaging, but also as a group chat.",
-            "It doesn't require a phone number, you can generate a unique ID instead to get started with the application. ",
-            "All you need to do is add your friends into your contact list with their IDs and enjoy this cool chat! 😎",
-            "The app might not be working as expected anymore since the backend deployment service Heroku has updated its deploy policy",
-          ],
-          demoUrl: "https://fun-chat-omer.netlify.app/",
-        },
-        {
-          locale: "en",
-          id: "15",
-          name: "Dev Blog",
-          sourceUrl: "https://github.com/DegirmenciOmer/NextJs-Blog-Project",
-          technologies: ["react", "react hooks"],
-          description: [
-            "A NextJS blog application",
-            "Could be reused easily to generate an awesome static website with markdown.",
-          ],
-          demoUrl: "https://next-js-blog-project-pi.vercel.app/",
-        },
-        {
-          locale: "en",
-          id: "16",
-          name: "Shopify organicpro.nl Webshop",
-          sourceUrl: "",
-          technologies: ["Shopify CMS", "Theme Development", "Liquid"],
-          description: [
-            "I contributed to this project in terms of theme development",
-          ],
-          demoUrl: "https://www.organicpro.en",
-        },
-        {
-          id: "17",
-          locale: "en",
-          name: "Shopify Headless CMS Bath Bombs Webshop",
-          demoUrl: "https://shopify-bath-bombs.netlify.app/",
-          sourceUrl:
-            "https://github.com/DegirmenciOmer/react-shopify-custom-storefront/tree/main/shopify-storefront",
-          technologies: ["react", "Chakra UI", "Shopify CMS"],
-          description: ["A webshop example using Shopify Headless CMS"],
-        },
-        {
-          id: "18",
-          locale: "en",
-          name: "Kwynt (System4)",
-          demoUrl: "",
-          sourceUrl: "",
-          technologies: [
-            "React",
-            "Typescript",
-            "NextJS",
-            "Strapi CMS",
-            "Material UI",
-            "Docker",
-          ],
-          description: [
-            "I was busy With this awesome investment project throughout my internship at System4.",
-            "I implemented translations both in Strapi and in frontend",
-            "I built FAQ pages",
-            "I made connection with Jira API and Management Dashboard App and then provided with  autogenerating report for the customer to follow the activities of the dev team",
-            "The project deployment was unfortunately suspended",
-          ],
-        },
-        {
-          id: "19",
-          locale: "en",
-          name: "Admin Theme (System4)",
-          demoUrl: "",
-          sourceUrl: "",
-          technologies: [
-            "Javascript",
-            "React",
-            "Typescript",
-            "Angular",
-            "Storybook",
-            "Tailwind CSS",
-          ],
-          description: [
-            "The purpose of the project is to build an admin UI to make life easier for the frontend developers",
-            "Along with implementing some of the designs of the components by using Vanilla Javascript, Tailwind, and Storybook, I was basically responsible for the implementation of these components in React and Angular",
-          ],
-        },
-        {
-          id: "20",
-          name: "Online Hearing Aids (System4)",
-          locale: "en",
-          demoUrl: "",
-          liveUrl: "https://online-hearingaids.com/",
-          sourceUrl: "",
-          technologies: ["Wordpress"],
-          description: [
-            "I supported the dev team in terms of responsive stying and content management",
-          ],
-        },
-        {
-          id: "21",
-          name: "My Pump (System4)",
-          locale: "en",
-          liveUrl: "https://mypump.nl/",
-          demoUrl: "",
-          sourceUrl: "",
-          technologies: ["NextJS, Postgres, PM2"],
-          description: [
-            "I maintained the frontend implementations as well as editing some database issues requested by the customers.",
-          ],
-        },
-      ],
-
       experienceTitle: NL ? "Ervaring" : "Experience",
       experience: [
         {

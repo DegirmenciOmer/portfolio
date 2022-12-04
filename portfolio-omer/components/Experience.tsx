@@ -1,15 +1,12 @@
-import { useRouter } from "next/router";
 import React, { FC } from "react";
+import { useAppContext } from "../context/AppContext";
 import { translationHelper } from "../data/translationHelper";
-
 interface TExperienceProps {
   switchText: string;
-  locale: string;
 }
 
 const Experience: FC<TExperienceProps> = ({ switchText }) => {
-  const { locale } = useRouter();
-
+  const { locale } = useAppContext();
   const { translations } = translationHelper(locale);
   return (
     <section

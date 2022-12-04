@@ -3,13 +3,11 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 
 const {
-  translations: { projectsNl, projectsEn },
+  translations: { projects },
 } = translationHelper("EN");
 
-const allProjects = projectsNl.concat(projectsEn);
-
 export default function DynamicPage({ project }) {
-  const translatedProject = allProjects[project.id];
+  const translatedProject = projects[project.id];
 
   return (
     <div>
@@ -24,7 +22,7 @@ export default function DynamicPage({ project }) {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context?.params?.id;
-  const project = id ? allProjects[+id] : undefined;
+  const project = id ? projects[+id] : undefined;
 
   return {
     props: { project },
@@ -32,10 +30,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = allProjects.map((project) => {
+  const paths = projects.map((project) => {
     return {
       params: { id: project.id.toString() },
-      locale: project.locale,
     };
   });
 

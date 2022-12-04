@@ -1,15 +1,13 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React, { FC } from "react";
+import { useAppContext } from "../context/AppContext";
 import { translationHelper } from "../data/translationHelper";
 
 interface TProjectsProps {
   switchText: string;
-  locale: string;
 }
-
 const Projects: FC<TProjectsProps> = ({ switchText }) => {
-  const { locale } = useRouter();
+  const { locale } = useAppContext();
 
   const { translations } = translationHelper(locale);
   return (
@@ -21,7 +19,7 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
         {translations.projectsTitle}
       </h3>
       <ul>
-        {translations.projectsNl
+        {translations.projects
           .sort((a, b) => +b.id - +a.id)
           .map((project) => (
             <li
@@ -30,11 +28,7 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
             >
               <Link
                 className="hover:text-teal-600"
-                href={
-                  locale === "en"
-                    ? `en/projects/${+project.id + 11}`
-                    : `projects/${+project.id}`
-                }
+                href={`projects/${+project.id}`}
               >
                 {project.name}
               </Link>

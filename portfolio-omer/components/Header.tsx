@@ -1,26 +1,19 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React, { Dispatch, FC, SetStateAction } from "react";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useAppContext } from "../context/AppContext";
 import { translationHelper } from "../data/translationHelper";
-
 interface THeaderProps {
   switchText: string;
   switchBg: string;
-  darkMode: Dispatch<SetStateAction<boolean>>;
-  setDarkMode: SetStateAction<boolean>;
 }
-
 const Header: FC<THeaderProps> = ({ switchText, switchBg }) => {
-  const { darkMode, setDarkMode } = useAppContext();
-  const router = useRouter();
-  const { pathname, asPath, query, locale } = router;
+  const { darkMode, setDarkMode, locale, setLocale } = useAppContext();
 
   const { translations } = translationHelper(locale);
 
   return (
-    <header className="sticky top-0 z-10">
+    <header className="sticky top-0 z-10 ">
       <nav
         className={` ${switchBg} p-5 sm:py-10 max-w-3xl mx-auto border-b border-slate-500 flex items-center justify-between ${
           darkMode ? "text-slate-100" : "text-slate-800"
@@ -38,11 +31,7 @@ const Header: FC<THeaderProps> = ({ switchText, switchBg }) => {
           </li>
           <li>
             <button
-              onClick={() =>
-                router.push({ pathname, query }, asPath, {
-                  locale: locale === "en" ? "nl" : "en",
-                })
-              }
+              onClick={() => setLocale(locale === "en" ? "nl" : "en")}
               className={`px-4 py-2`}
             >
               <span className={`${locale === "nl" && "text-gray-500"}`}>
@@ -56,7 +45,7 @@ const Header: FC<THeaderProps> = ({ switchText, switchBg }) => {
           </li>
           <li>
             <BsFillMoonStarsFill
-              onClick={() => setDarkMode((prev) => !prev)}
+              onClick={() => setDarkMode((prev: boolean) => !prev)}
               className=" cursor-pointer text-xl"
             />
           </li>

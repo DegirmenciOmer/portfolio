@@ -4,7 +4,6 @@ import { translationHelper } from "../data/translationHelper";
 
 interface TSkillsProps {
   switchText: string;
-  locale: string;
 }
 
 const Skills: FC<TSkillsProps> = ({ switchText }) => {

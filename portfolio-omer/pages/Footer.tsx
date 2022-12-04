@@ -6,14 +6,15 @@ import {
   AiFillLinkedin,
 } from "react-icons/ai";
 import { BsTelephoneFill } from "react-icons/bs";
+import { useAppContext } from "../context/AppContext";
 import { translationHelper } from "../data/translationHelper";
 
 interface TFooterProps {
   switchText: string;
-  locale: string;
 }
 
-const Footer: FC<TFooterProps> = ({ switchText, locale }) => {
+const Footer: FC<TFooterProps> = ({ switchText }) => {
+  const { locale } = useAppContext();
   const { translations } = translationHelper(locale);
   return (
     <footer id="contact" className="py-5">
