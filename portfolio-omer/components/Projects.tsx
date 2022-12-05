@@ -23,11 +23,11 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
           .sort((a, b) => +b.id - +a.id)
           .map((project) => (
             <Link
+              key={project.id}
               className="flex justify-center items-center"
               href={`projects/${+project.id}`}
             >
               <li
-                key={project.id}
                 className={`${switchText} flex items-center align-center justify-center`}
               >
                 <img src={project.img} alt="profile" />
