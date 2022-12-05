@@ -18,23 +18,22 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
       <h3 className="text-center py-4 text-2xl mb-5 text-teal-600">
         {translations.projectsTitle}
       </h3>
-      <ul className="flex flex-col gap-4 items-center justify-center">
+      <ul className="flex flex-col gap-8 items-center justify-center">
         {translations.projects
           .sort((a, b) => +b.id - +a.id)
           .map((project) => (
-            <li
-              key={project.id}
-              className={`${switchText} rounded-lg p-3 flex flex-col items-center max-w-xl mx-auto gap-1 my-4`}
+            <Link
+              className="flex justify-center items-center"
+              href={`projects/${+project.id}`}
             >
-              <Link href={`projects/${+project.id}`}>
-                <img
-                  className="mx-auto rounded-lg w-full my-5"
-                  src={project.img}
-                  alt="profile"
-                />
+              <li
+                key={project.id}
+                className={`${switchText} flex items-center align-center justify-center`}
+              >
+                <img src={project.img} alt="profile" />
                 <p className="text-center">{project.name}</p>
-              </Link>
-            </li>
+              </li>
+            </Link>
           ))}
       </ul>
     </section>
