@@ -87,15 +87,15 @@ const DynamicPage: FC<TProject> = ({ project }) => {
           skillsTitle={translations.techTitle}
         />
         <div className="flex gap-3 justify-center">
-          {projectId > 0 && (
-            <Link href={`/projects/${projectId - 1}`}>
+          {projectId < projects.length - 1 && (
+            <Link href={`/projects/${projectId + 1}`}>
               <button className="text-teal-500 my-4 p-2 px-3 rounded-md text-4xl">
                 <BsFillArrowLeftCircleFill />
               </button>
             </Link>
           )}
-          {projectId < projects.length - 1 && (
-            <Link href={`/projects/${projectId + 1}`}>
+          {projectId > 0 && (
+            <Link href={`/projects/${projectId - 1}`}>
               <button className="text-teal-500 my-4 p-2 px-3 rounded-md text-4xl">
                 <BsFillArrowRightCircleFill />
               </button>
