@@ -19,7 +19,9 @@ const Header: FC<THeaderProps> = ({ switchText, switchBg }) => {
           darkMode ? "text-slate-100" : "text-slate-800"
         }`}
       >
-        <h1 className="text-2xl font-burtons">{translations.title}</h1>
+        <Link href="/">
+          <h1 className="text-2xl font-burtons">{translations.title}</h1>
+        </Link>
         <ul className="flex items-center">
           <li>
             <Link
