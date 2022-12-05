@@ -136,7 +136,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = projects.map((project) => {
     return {
-      params: { id: project.toString() },
+      params: { id: project.id.toString() },
     };
   });
 
