@@ -17,9 +17,12 @@ const Skills: FC<TSkillsProps> = ({ switchText, skills, skillsTitle }) => {
       <h3 className="py-4 text-teal-600 text-2xl mb-5">{skillsTitle}</h3>
       <ul className="flex m-auto justify-center flex-wrap gap-2 max-w-xl">
         {skills.map((skill: skill) => (
-          <li key={skill.id} className={`${switchText} px-3 rounded w-15 py-2`}>
+          <li
+            key={skill.id}
+            className={`${switchText} px-3 w-full sm:w-1/5 rounded py-2`}
+          >
             <img
-              className="bg-red max-w-[62px]"
+              className=" w-40 sm:w-30 lg:w-40  mx-auto"
               src={skill.img}
               alt={skill.name}
             />

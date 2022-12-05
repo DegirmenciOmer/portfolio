@@ -22,16 +22,12 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
         {translations.projects
           .sort((a, b) => +b.id - +a.id)
           .map((project) => (
-            <Link
-              key={project.id}
-              className="flex justify-center items-center"
-              href={`projects/${+project.id}`}
-            >
+            <Link key={project.id} href={`projects/${+project.id}`}>
               <li
-                className={`${switchText} flex items-center align-center justify-center`}
+                className={`${switchText} mb-9 flex flex-col items-center align-center justify-center`}
               >
                 <img src={project.img} alt="profile" />
-                <p className="text-center">{project.name}</p>
+                <p className="text-center mt-5">{project.name}</p>
               </li>
             </Link>
           ))}
