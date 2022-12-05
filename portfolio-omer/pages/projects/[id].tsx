@@ -85,6 +85,7 @@ const DynamicPage: FC<TProject> = ({ project }) => {
         <Skills
           skills={project.technologies}
           skillsTitle={translations.techTitle}
+          isPage={true}
         />
         <div className="flex gap-3 justify-center">
           {projectId < projects.length - 1 && (
