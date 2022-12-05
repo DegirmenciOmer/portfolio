@@ -44,8 +44,8 @@ export const translationHelper = (language: any) => {
           name: "Income & Expense Tracker",
           sourceUrl: "https://github.com/DegirmenciOmer/React-expense-tracker",
           technologies: [
-            { id: "1", name: "react" },
-            { id: "2", name: "react hooks" },
+            { id: "1", name: "react", img: "/images/skills/react.png" },
+            { id: "2", name: "react hooks", img: "/images/skills/react.png" },
           ],
           locale: "nl",
           description: [
@@ -67,8 +67,8 @@ export const translationHelper = (language: any) => {
           ],
           demoUrl: "https://starwars-react-app.netlify.app/",
           technologies: [
-            { id: "1", name: "React" },
-            { id: "2", name: "Context API" },
+            { id: "1", name: "React", img: "/images/skills/react.png" },
+            { id: "2", name: "Context API", img: "/images/skills/react.png" },
           ],
           img: "/images/swapi.PNG",
         },
@@ -78,12 +78,15 @@ export const translationHelper = (language: any) => {
           name: "Todo App",
           sourceUrl: "https://github.com/DegirmenciOmer/PERN-Stack-Todo-App",
           technologies: [
-            { id: "1", name: "NodeJS" },
-            { id: "2", name: "Express" },
-            { id: "3", name: "React" },
-            { id: "4", name: "Bootstrap" },
-            { id: "5", name: "Express" },
-            { id: "6", name: "PostgreSQL" },
+            { id: "1", name: "NodeJS", img: "/images/skills/nodejs.png" },
+            { id: "2", name: "Express", img: "/images/skills/express.png" },
+            { id: "3", name: "React", img: "/images/skills/react.png" },
+            { id: "4", name: "Bootstrap", img: "/images/skills/bootstrap.png" },
+            {
+              id: "5",
+              name: "PostgreSQL",
+              img: "/images/skills/postgresql.png",
+            },
           ],
           description: [
             "A basic todo app which has create, update, and delete features.",
@@ -98,11 +101,15 @@ export const translationHelper = (language: any) => {
           name: "Chat App",
           sourceUrl: "https://github.com/DegirmenciOmer/Chat-App",
           technologies: [
-            { id: "1", name: "NodeJS" },
-            { id: "2", name: "Express" },
-            { id: "3", name: "Socket.io" },
-            { id: "4", name: "React" },
-            { id: "5", name: "React Bootstrap" },
+            { id: "1", name: "NodeJS", img: "/images/skills/nodejs.png" },
+            { id: "2", name: "Express", img: "/images/skills/express.png" },
+            { id: "3", name: "Socket.io", img: "/images/skills/socket.png" },
+            { id: "4", name: "React", img: "/images/skills/react.png" },
+            {
+              id: "5",
+              name: "React Bootstrap",
+              img: "/images/skills/rbootstrap.png",
+            },
           ],
           description: [
             "A chat application which can be used not only for private messaging, but also as a group chat.",
@@ -119,11 +126,14 @@ export const translationHelper = (language: any) => {
           name: "Dev Blog",
           sourceUrl: "https://github.com/DegirmenciOmer/NextJs-Blog-Project",
           technologies: [
-            { id: "1", name: "NodeJS" },
-            { id: "2", name: "Express" },
-            { id: "3", name: "Socket.io" },
-            { id: "4", name: "React" },
-            { id: "5", name: "React Bootstrap" },
+            { id: "1", name: "NodeJS", img: "/images/skills/nodejs.png" },
+            { id: "2", name: "NextJS", img: "/images/skills/next.png" },
+            { id: "3", name: "React", img: "/images/skills/react.png" },
+            {
+              id: "4",
+              name: "React Bootstrap",
+              img: "/images/skills/rbootstrap.png",
+            },
           ],
           description: [
             "A NextJS blog application",
@@ -138,9 +148,13 @@ export const translationHelper = (language: any) => {
           name: "Shopify organicpro.nl Webshop",
           sourceUrl: "",
           technologies: [
-            { id: "1", name: "Shopify CMS" },
-            { id: "2", name: "Theme Development" },
-            { id: "3", name: "Liquid" },
+            { id: "1", name: "Shopify CMS", img: "/images/skills/shopify.png" },
+            {
+              id: "2",
+              name: "Theme Development",
+              img: "/images/skills/shopify.png",
+            },
+            { id: "3", name: "Liquid", img: "/images/skills/liquid.png" },
           ],
           description: [
             "I contributed to this project in terms of theme development",
@@ -157,9 +171,9 @@ export const translationHelper = (language: any) => {
           sourceUrl:
             "https://github.com/DegirmenciOmer/react-shopify-custom-storefront/tree/main/shopify-storefront",
           technologies: [
-            { id: "1", name: "React" },
-            { id: "2", name: "Shopify CMS" },
-            { id: "3", name: "Chakra UI" },
+            { id: "1", name: "React", img: "/images/skills/react.png" },
+            { id: "2", name: "Shopify CMS", img: "/images/skills/shopify.png" },
+            { id: "3", name: "Chakra UI", img: "/images/skills/chakra.png" },
           ],
           description: ["A webshop example using Shopify Headless CMS"],
         },
@@ -171,12 +185,16 @@ export const translationHelper = (language: any) => {
           img: "/images/system4.jpg",
           sourceUrl: "",
           technologies: [
-            { id: "1", name: "Typescript" },
-            { id: "2", name: "Express" },
-            { id: "3", name: "Strapi CMS" },
-            { id: "4", name: "React" },
-            { id: "5", name: "Material UI" },
-            { id: "6", name: "Docker" },
+            {
+              id: "1",
+              name: "Typescript",
+              img: "/images/skills/typescript.png",
+            },
+            { id: "2", name: "Express", img: "/images/skills/express.png" },
+            { id: "3", name: "Strapi CMS", img: "/images/skills/strapi.png" },
+            { id: "4", name: "React", img: "/images/skills/react.png" },
+            { id: "5", name: "Material UI", img: "/images/skills/mui.png" },
+            { id: "6", name: "Docker", img: "/images/skills/docker.png" },
           ],
           description: [
             "I was busy With this awesome investment project throughout my internship at System4.",
@@ -194,12 +212,24 @@ export const translationHelper = (language: any) => {
           img: "/images/system4.jpg",
           sourceUrl: "",
           technologies: [
-            { id: "1", name: "Typescript" },
-            { id: "2", name: "Angular" },
-            { id: "3", name: "Tailwind CSS" },
-            { id: "4", name: "React" },
-            { id: "5", name: "Javascript" },
-            { id: "6", name: "Storybook" },
+            {
+              id: "1",
+              name: "Typescript",
+              img: "/images/skills/typescript.png",
+            },
+            { id: "2", name: "Angular", img: "/images/skills/angular.png" },
+            {
+              id: "3",
+              name: "Tailwind CSS",
+              img: "/images/skills/tailwind.png",
+            },
+            { id: "4", name: "React", img: "/images/skills/react.png" },
+            {
+              id: "5",
+              name: "Javascript",
+              img: "/images/skills/js.png",
+            },
+            { id: "6", name: "Storybook", img: "/images/skills/storybook.png" },
           ],
           description: [
             "The purpose of the project is to build an admin UI to make life easier for the frontend developers",
@@ -214,7 +244,15 @@ export const translationHelper = (language: any) => {
           img: "/images/logo-onlinehoortoestel-nl.png",
           liveUrl: "https://online-hearingaids.com/",
           sourceUrl: "",
-          technologies: [{ id: "1", name: "Wordpress" }],
+          technologies: [
+            { id: "1", name: "Wordpress", img: "/images/skills/wordpress.png" },
+            { id: "2", name: "CSS", img: "/images/skills/css.png" },
+            {
+              id: "3",
+              name: "Javascript",
+              img: "/images/skills/js.png",
+            },
+          ],
           description: [
             "I supported the dev team in terms of responsive stying and content management",
           ],
@@ -228,9 +266,13 @@ export const translationHelper = (language: any) => {
           img: "/images/mypump.PNG",
           sourceUrl: "",
           technologies: [
-            { id: "1", name: "Typescript" },
-            { id: "2", name: "NextJs" },
-            { id: "3", name: "PM2" },
+            {
+              id: "1",
+              name: "Typescript",
+              img: "/images/skills/typescript.png",
+            },
+            { id: "2", name: "NextJs", img: "/images/skills/next.png" },
+            { id: "3", name: "PM2", img: "/images/skills/react.png" },
           ],
           description: [
             "I maintained the frontend implementations as well as editing some database issues requested by the customers.",
