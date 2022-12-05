@@ -26,15 +26,13 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
               key={project.id}
               className={`${switchText} rounded-lg p-3 flex flex-col items-center max-w-xl mx-auto gap-1 my-4`}
             >
-              <img
-                className="mx-auto rounded-lg w-2/3 my-5"
-                src={project.img}
-                alt="profile"
-              />
               <Link href={`projects/${+project.id}`}>
-                <button className="w-full bg:text-teal-600">
-                  {project.name}
-                </button>
+                <img
+                  className="mx-auto rounded-lg w-full my-5"
+                  src={project.img}
+                  alt="profile"
+                />
+                <p className="text-center">{project.name}</p>
               </Link>
             </li>
           ))}

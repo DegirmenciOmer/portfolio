@@ -5,6 +5,7 @@ import React, { FC } from "react";
 import { useAppContext } from "../../context/AppContext";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import Skills, { skill } from "../../components/Skills";
 
 const {
@@ -21,6 +22,7 @@ interface TProject {
     locale: string;
     description: string[];
     demoUrl: string;
+    img: string;
   };
 }
 
@@ -36,19 +38,26 @@ const DynamicPage: FC<TProject> = ({ project }) => {
     <div className={`md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg} `}>
       <Header switchText={switchText} switchBg={switchBg} />
       <main className={`${switchText} px-5 min-h-screen max-w-3xl mx-auto`}>
-        <Link href={`"/#projects"`}>
-          <button className="bg-teal-500 my-4 px-2 rounded-md">Back</button>
+        <Link href="/#projects">
+          <button className="bg-teal-500 my-4 p-2 px-3 rounded-md text-2xl">
+            <BsFillArrowLeftCircleFill />
+          </button>
         </Link>
         <h2 className="py-4 text-center text-teal-600 text-2xl mb-5">
           {translatedProject.name}{" "}
         </h2>
+        <img
+          className="mx-auto rounded-lg w-full my-5"
+          src={project.img}
+          alt="profile"
+        />
         {translatedProject.description.map((text, idx) => (
           <p key={idx} className="text-center">
             {text}
           </p>
         ))}
 
-        <div className="text-center">
+        <div className="text-center mt-10">
           <Link
             className={`text-teal-800 underline hover:text-teal-600 rounded-md `}
             href={project.liveUrl ? project.liveUrl : project.demoUrl}
