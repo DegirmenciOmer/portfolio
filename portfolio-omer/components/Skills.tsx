@@ -21,7 +21,7 @@ const Skills: FC<TSkillsProps> = ({
       className={`text-center shadow-lg py-10 rounded-xl my-10  flex-1 ${switchText}`}
     >
       <h3 className="py-4 text-teal-600 text-2xl mb-5">{skillsTitle}</h3>
-      <ul className="flex m-auto justify-center flex-wrap gap-2 max-w-xl">
+      <ul className="flex m-auto justify-center flex-wrap gap-5 max-w-xl">
         {skills.map((skill: skill) => (
           <li
             key={skill.id}
