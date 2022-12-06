@@ -22,3 +22,21 @@ a {
   font-family: "burtons";
   src: url("../public/Burtons.otf");
 }
+
+.en-flag {
+  position: relative;
+  top: 0;
+  left: 0px;
+  height: 24px;
+  width: 40px;
+  background-position: 85.5% 27.7%;
+}
+
+.nl-flag {
+  position: relative;
+  top: 0;
+  left: 0px;
+  height: 24px;
+  width: 40px;
+  background-position: 27% 66.1%;
+}

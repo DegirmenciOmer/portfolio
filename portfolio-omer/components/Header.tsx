@@ -32,18 +32,16 @@ const Header: FC<THeaderProps> = ({ switchText, switchBg }) => {
             </Link>
           </li>
           <li>
-            <button
-              onClick={() => setLocale(locale === "en" ? "nl" : "en")}
-              className={`px-4 py-2`}
-            >
-              <span className={`${locale === "nl" && "text-gray-500"}`}>
-                EN
-              </span>
-              &nbsp;|&nbsp;
-              <span className={`${locale === "en" && "text-gray-500"}`}>
-                NL
-              </span>
-            </button>
+            <div className={`px-4 py-2 flex`}>
+              <div
+                onClick={() => setLocale("en")}
+                className={`mr-1 bg-flags en-flag `}
+              ></div>
+              <div
+                onClick={() => setLocale("nl")}
+                className={` bg-flags nl-flag `}
+              ></div>
+            </div>
           </li>
           <li>
             <BsFillMoonStarsFill
