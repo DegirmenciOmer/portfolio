@@ -29,13 +29,24 @@ interface TProject {
   };
 }
 
-const DynamicPage: FC<TProject> = ({ project }) => {
+const DynamicPage: FC<TProject> = ({
+  project: {
+    id,
+    name,
+    img,
+    sourceUrl,
+    liveUrl,
+    technologies,
+    description,
+    demoUrl,
+  },
+}) => {
   const { darkMode, locale } = useAppContext();
   const { translations } = translationHelper(locale);
   const switchBg = darkMode ? "bg-slate-800" : "bg-slate-200";
   const switchText = darkMode ? "text-slate-100" : "text-slate-800";
 
-  const projectId = +project.id;
+  const projectId = +id;
 
   return (
     <div className={`md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg} `}>
@@ -47,35 +58,39 @@ const DynamicPage: FC<TProject> = ({ project }) => {
           </button>
         </Link>
         <h2 className="py-4 text-center text-teal-600 text-2xl mb-5">
-          {project.name}{" "}
+          {name}{" "}
         </h2>
         <img
           className="mx-auto rounded-lg w-full my-5"
-          src={project.img}
+          src={img}
           alt="profile"
         />
-        {project.description.map((text, idx) => (
+        {description.map((text, idx) => (
           <p key={idx} className="text-center">
             {text}
           </p>
         ))}
 
         <div className="text-center mt-10">
-          <Link
-            className={`text-teal-800 underline hover:text-teal-600 rounded-md `}
-            href={project.liveUrl ? project.liveUrl : project.demoUrl}
-          >
-            {translations.seeText}&nbsp;
-            {project.liveUrl
-              ? translations.liveText
-              : project.demoUrl
-              ? translations.demoText
-              : ""}
-          </Link>
-          {project.sourceUrl && (
+          {sourceUrl ||
+            demoUrl ||
+            (liveUrl && (
+              <Link
+                className={`text-teal-800 underline hover:text-teal-600 rounded-md `}
+                href={liveUrl ? liveUrl : demoUrl}
+              >
+                {translations.seeText}&nbsp;
+                {liveUrl
+                  ? translations.liveText
+                  : demoUrl
+                  ? translations.demoText
+                  : ""}
+              </Link>
+            ))}{" "}
+          {sourceUrl && (
             <Link
               className={`text-teal-800 underline hover:text-teal-600 rounded-md`}
-              href={project.sourceUrl}
+              href={sourceUrl}
             >
               &nbsp;|&nbsp;{translations.sourceText}
             </Link>
@@ -83,7 +98,7 @@ const DynamicPage: FC<TProject> = ({ project }) => {
         </div>
 
         <Skills
-          skills={project.technologies}
+          skills={technologies}
           skillsTitle={translations.techTitle}
           isPage={true}
         />

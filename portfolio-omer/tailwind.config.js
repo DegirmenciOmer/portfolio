@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         burtons: "burtons",
       },
+      backgroundImage: {
+        flags: "url('/images/flags.png')",
+      },
     },
   },
   plugins: [],
