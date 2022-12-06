@@ -72,21 +72,21 @@ const DynamicPage: FC<TProject> = ({
         ))}
 
         <div className="text-center mt-10">
-          {sourceUrl ||
-            demoUrl ||
-            (liveUrl && (
+          {(sourceUrl || demoUrl || liveUrl) && (
+            <>
+              {translations.seeText}&nbsp;
               <Link
                 className={`text-teal-800 underline hover:text-teal-600 rounded-md `}
                 href={liveUrl ? liveUrl : demoUrl}
               >
-                {translations.seeText}&nbsp;
                 {liveUrl
                   ? translations.liveText
                   : demoUrl
                   ? translations.demoText
                   : ""}
               </Link>
-            ))}{" "}
+            </>
+          )}
           {sourceUrl && (
             <Link
               className={`text-teal-800 underline hover:text-teal-600 rounded-md`}
