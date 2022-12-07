@@ -35,11 +35,11 @@ const Header: FC<THeaderProps> = ({ switchText, switchBg }) => {
             <div className={`px-4 py-2 flex`}>
               <div
                 onClick={() => setLocale("en")}
-                className={`mr-1 bg-flags en-flag `}
+                className={`mr-1 bg-flags en-flag cursor-pointer`}
               ></div>
               <div
                 onClick={() => setLocale("nl")}
-                className={` bg-flags nl-flag `}
+                className={` bg-flags nl-flag cursor-pointer`}
               ></div>
             </div>
           </li>
