@@ -278,6 +278,31 @@ export const translationHelper = (language: any) => {
             "I maintained the frontend implementations as well as editing some database issues requested by the customers.",
           ],
         },
+        {
+          id: "11",
+          name: "Events",
+          liveUrl: "",
+          demoUrl: "https://events-omer.vercel.app/",
+          img: "/images/events.PNG",
+          sourceUrl: "https://github.com/DegirmenciOmer/Events",
+          technologies: [
+            {
+              id: "1",
+              name: "Typescript",
+              img: "/images/skills/typescript.png",
+            },
+            { id: "2", name: "NextJs", img: "/images/skills/next.png" },
+            { id: "3", name: "Strapi CMS", img: "/images/skills/strapi.png" },
+            {
+              id: "4",
+              name: "PostgreSQL",
+              img: "/images/skills/postgresql.png",
+            },
+          ],
+          description: [
+            "Another cool fullstack Next App accompanied with Strapi CMS. Here you can register, login, create your own posts (as events). If you are not logged in yet, you can still see the list of events posted in this app.",
+          ],
+        },
       ],
       experienceTitle: NL ? "Ervaring" : "Experience",
       experience: [
