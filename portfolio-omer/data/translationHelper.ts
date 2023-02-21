@@ -89,7 +89,6 @@ export const translationHelper = (language: any) => {
           ],
           description: [
             'A basic todo app which has create, update, and delete features.',
-            'The app might not be working as expected anymore since the backend deployment service Heroku has updated its deploy policy',
           ],
           demoUrl: 'https://pern-todo-omer.netlify.app/',
           img: '/images/todo.png',
@@ -298,7 +297,9 @@ export const translationHelper = (language: any) => {
             },
           ],
           description: [
-            'Another cool fullstack Next App accompanied with Strapi CMS. Here you can register, login, create your own posts (as events). If you are not logged in yet, you can still see the list of events posted in this app.',
+            'Another cool fullstack Next App accompanied with Strapi CMS. Here you can register, login, create your own posts (as events). If you are not logged in yet, you can still see the list of events posted in this app. ',
+            "IMPORTANT: When you first visit the website, you will most probably encounter an error code 504. Because the  free tier (backend deployment service) stops running the app after 30 minutes of inactivity and only spins it back up on demand. So if it's not been used then the first requests will take a few minutes before it's up and running again.",
+            'In short, if you see an error code, refresh the page 60 sec later. It will be alright.',
           ],
         },
         {
@@ -318,31 +319,6 @@ export const translationHelper = (language: any) => {
           ],
           description: [
             'This one is special, because I built it for my wife, who is going to start her own business soon. You can easily view food categories and add the products to your cart, and finally send your orders via your email by getting redirected from the website with all your order details of course!',
-          ],
-        },
-        {
-          id: "11",
-          name: "Events",
-          liveUrl: "",
-          demoUrl: "https://events-omer.vercel.app/",
-          img: "/images/events.PNG",
-          sourceUrl: "https://github.com/DegirmenciOmer/Events",
-          technologies: [
-            {
-              id: "1",
-              name: "Typescript",
-              img: "/images/skills/typescript.png",
-            },
-            { id: "2", name: "NextJs", img: "/images/skills/next.png" },
-            { id: "3", name: "Strapi CMS", img: "/images/skills/strapi.png" },
-            {
-              id: "4",
-              name: "PostgreSQL",
-              img: "/images/skills/postgresql.png",
-            },
-          ],
-          description: [
-            "Another cool fullstack Next App accompanied with Strapi CMS. Here you can register, login, create your own posts (as events). If you are not logged in yet, you can still see the list of events posted in this app.",
           ],
         },
       ],
