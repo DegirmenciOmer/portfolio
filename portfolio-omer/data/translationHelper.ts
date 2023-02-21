@@ -321,31 +321,6 @@ export const translationHelper = (language: any) => {
             'This one is special, because I built it for my wife, who is going to start her own business soon. You can easily view food categories and add the products to your cart, and finally send your orders via your email by getting redirected from the website with all your order details of course!',
           ],
         },
-        {
-          id: '11',
-          name: 'Events',
-          liveUrl: '',
-          demoUrl: 'https://events-omer.vercel.app/',
-          img: '/images/events.PNG',
-          sourceUrl: 'https://github.com/DegirmenciOmer/Events',
-          technologies: [
-            {
-              id: '1',
-              name: 'Typescript',
-              img: '/images/skills/typescript.png',
-            },
-            { id: '2', name: 'NextJs', img: '/images/skills/next.png' },
-            { id: '3', name: 'Strapi CMS', img: '/images/skills/strapi.png' },
-            {
-              id: '4',
-              name: 'PostgreSQL',
-              img: '/images/skills/postgresql.png',
-            },
-          ],
-          description: [
-            'Another cool fullstack Next App accompanied with Strapi CMS. Here you can register, login, create your own posts (as events). If you are not logged in yet, you can still see the list of events posted in this app.',
-          ],
-        },
       ],
       experienceTitle: NL ? 'Ervaring' : 'Experience',
       experience: [
