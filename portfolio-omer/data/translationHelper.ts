@@ -122,7 +122,7 @@ export const translationHelper = (language: any) => {
             },
           ],
           descriptionNL: [
-            'Een chattoepassing die niet alleen kan worden gebruikt voor privéberichten, maar ook als groepschat.',
+            'Een chatapplicatie die niet alleen kan worden gebruikt voor privéberichten, maar ook als groepschat.',
             'Het vereist geen telefoonnummer, u kunt in plaats daarvan een uniek ID genereren om aan de slag te gaan met de applicatie. ',
             "Het enige wat je hoeft te doen is je vrienden met hun ID's aan je contactenlijst toe te voegen en te genieten van deze coole chat! 😎",
           ],
