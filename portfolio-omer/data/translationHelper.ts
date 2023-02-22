@@ -47,7 +47,10 @@ export const translationHelper = (language: any) => {
             { id: '2', name: 'react hooks', img: '/images/skills/react.png' },
           ],
           locale: 'nl',
-          description: [
+          descriptionEN: [
+            'My first React project waarin gebruikt React hooks (useState, useContext, useReducer) and the context API.',
+          ],
+          descriptionNL: [
             'Mijn eerst React project waarin I used react hooks (useState, useContext, useReducer) and the context API.',
           ],
           demoUrl: 'https://expensetracker-omer.netlify.app/',
@@ -58,7 +61,13 @@ export const translationHelper = (language: any) => {
           id: '1',
           name: 'Star Wars (SWAPI)',
           sourceUrl: 'https://github.com/DegirmenciOmer/SWAPI-Project',
-          description: [
+          descriptionNL: [
+            'Een webapp die de Star Wars API (SWAPI) gebruikt om een lijst met films en enkele andere functies over het StarWars-universum weer te geven.',
+            'De app geeft een gebruikersinterface weer die alle gerelateerde films weergeeft.',
+            'Gebruiker kan karakternaam invoeren in zoekvak en gefilterde lijst met karakters zien.',
+            'Geen lijst getoond tot <= 3 karakters in zoekbalk.',
+          ],
+          descriptionEN: [
             'A web app that uses the Star wars API (SWAPI) to display list of films and some other features about the StarWars universe.',
             'The app renders a UI that displays all the related movies.',
             'User can enter character name into search box and see filtered list of characters.',
@@ -87,7 +96,10 @@ export const translationHelper = (language: any) => {
               img: '/images/skills/postgresql.png',
             },
           ],
-          description: [
+          descriptionNL: [
+            'Een eenvoudige todo-app met functies voor maken, bijwerken en verwijderen.',
+          ],
+          descriptionEN: [
             'A basic todo app which has create, update, and delete features.',
           ],
           demoUrl: 'https://pern-todo-omer.netlify.app/',
@@ -109,7 +121,12 @@ export const translationHelper = (language: any) => {
               img: '/images/skills/rbootstrap.png',
             },
           ],
-          description: [
+          descriptionNL: [
+            'Een chatapplicatie die niet alleen kan worden gebruikt voor privéberichten, maar ook als groepschat.',
+            'Het vereist geen telefoonnummer, u kunt in plaats daarvan een uniek ID genereren om aan de slag te gaan met de applicatie. ',
+            "Het enige wat je hoeft te doen is je vrienden met hun ID's aan je contactenlijst toe te voegen en te genieten van deze coole chat! 😎",
+          ],
+          descriptionEN: [
             'A chat application which can be used not only for private messaging, but also as a group chat.',
             "It doesn't require a phone number, you can generate a unique ID instead to get started with the application. ",
             'All you need to do is add your friends into your contact list with their IDs and enjoy this cool chat! 😎',
@@ -132,7 +149,11 @@ export const translationHelper = (language: any) => {
               img: '/images/skills/rbootstrap.png',
             },
           ],
-          description: [
+          descriptionNL: [
+            'Een NextJS-blogapplicatie',
+            'Kan gemakkelijk worden hergebruikt om een geweldige statische website te maken met korting.',
+          ],
+          descriptionEN: [
             'A NextJS blog application',
             'Could be reused easily to generate an awesome static website with markdown.',
           ],
@@ -153,7 +174,10 @@ export const translationHelper = (language: any) => {
             },
             { id: '3', name: 'Liquid', img: '/images/skills/liquid.png' },
           ],
-          description: [
+          descriptionNL: [
+            'Ik heb bijgedragen aan dit project op het gebied van thema-ontwikkeling',
+          ],
+          descriptionEN: [
             'I contributed to this project in terms of theme development',
           ],
           liveUrl: 'https://www.organicpro.nl',
@@ -172,7 +196,10 @@ export const translationHelper = (language: any) => {
             { id: '2', name: 'Shopify CMS', img: '/images/skills/shopify.png' },
             { id: '3', name: 'Chakra UI', img: '/images/skills/chakra.png' },
           ],
-          description: ['A webshop example using Shopify Headless CMS'],
+          descriptionNL: [
+            'Een voorbeeld van een webshop met Shopify Headless CMS',
+          ],
+          descriptionEN: ['A webshop example using Shopify Headless CMS'],
         },
         {
           id: '7',
@@ -193,7 +220,14 @@ export const translationHelper = (language: any) => {
             { id: '5', name: 'Material UI', img: '/images/skills/mui.png' },
             { id: '6', name: 'Docker', img: '/images/skills/docker.png' },
           ],
-          description: [
+          descriptionNL: [
+            'Ik was bezig met dit geweldige investeringsproject tijdens mijn stage bij System4.',
+            'Ik implementeerde vertalingen zowel in Strapi als in frontend',
+            "Ik heb FAQ-pagina's gebouwd",
+            'Ik heb verbinding gemaakt met Jira API en Management Dashboard App en vervolgens voorzien van een automatisch genererend rapport voor de klant om de activiteiten van het ontwikkelteam te volgen',
+            'De projectimplementatie is helaas opgeschort',
+          ],
+          descriptionEN: [
             'I was busy With this awesome investment project throughout my internship at System4.',
             'I implemented translations both in Strapi and in frontend',
             'I built FAQ pages',
@@ -228,7 +262,11 @@ export const translationHelper = (language: any) => {
             },
             { id: '6', name: 'Storybook', img: '/images/skills/storybook.png' },
           ],
-          description: [
+          descriptionNL: [
+            'Het doel van het project is om een beheerdersinterface te bouwen om het leven van de frontend-ontwikkelaars gemakkelijker te maken',
+            'Naast het implementeren van enkele ontwerpen van de componenten met behulp van Vanilla Javascript, Tailwind en Storybook, was ik in principe verantwoordelijk voor de implementatie van deze componenten in React en Angular',
+          ],
+          descriptionEN: [
             'The purpose of the project is to build an admin UI to make life easier for the frontend developers',
             'Along with implementing some of the designs of the components by using Vanilla Javascript, Tailwind, and Storybook, I was basically responsible for the implementation of these components in React and Angular',
           ],
@@ -250,7 +288,10 @@ export const translationHelper = (language: any) => {
               img: '/images/skills/js.png',
             },
           ],
-          description: [
+          descriptionNL: [
+            'Ik ondersteunde het ontwikkelteam op het gebied van responsive styling en content management',
+          ],
+          descriptionEN: [
             'I supported the dev team in terms of responsive stying and content management',
           ],
         },
@@ -271,7 +312,10 @@ export const translationHelper = (language: any) => {
             { id: '2', name: 'NextJs', img: '/images/skills/next.png' },
             { id: '3', name: 'PM2', img: '/images/skills/react.png' },
           ],
-          description: [
+          descriptionNL: [
+            'Ik onderhield de frontend-implementaties en redigeerde enkele databaseproblemen die door de klanten waren aangevraagd.',
+          ],
+          descriptionEN: [
             'I maintained the frontend implementations as well as editing some database issues requested by the customers.',
           ],
         },
@@ -296,7 +340,12 @@ export const translationHelper = (language: any) => {
               img: '/images/skills/postgresql.png',
             },
           ],
-          description: [
+          descriptionNL: [
+            'Nog een coole fullstack Next-app vergezeld van Strapi CMS. Hier kunt u zich registreren, inloggen, uw eigen berichten maken (als evenementen). Als je nog niet bent ingelogd, kun je nog steeds de lijst met evenementen zien die in deze app zijn geplaatst. ',
+            'BELANGRIJK: wanneer u de website voor het eerst bezoekt, zult u hoogstwaarschijnlijk foutcode 504 tegenkomen. Omdat de gratis free tier (backend-implementatieservice) stopt met het uitvoeren van de app na 30 minuten inactiviteit en deze alleen weer op verzoek start. niet gebruikt, dan duurt het een paar minuten voordat de eerste verzoeken weer actief zijn.',
+            'Kortom, als je een foutcode ziet, vernieuw dan de pagina 60 sec later. Dat komt goed.',
+          ],
+          descriptionEN: [
             'Another cool fullstack Next App accompanied with Strapi CMS. Here you can register, login, create your own posts (as events). If you are not logged in yet, you can still see the list of events posted in this app. ',
             "IMPORTANT: When you first visit the website, you will most probably encounter an error code 504. Because the  free tier (backend deployment service) stops running the app after 30 minutes of inactivity and only spins it back up on demand. So if it's not been used then the first requests will take a few minutes before it's up and running again.",
             'In short, if you see an error code, refresh the page 60 sec later. It will be alright.',
@@ -317,7 +366,10 @@ export const translationHelper = (language: any) => {
             },
             { id: '2', name: 'NextJs', img: '/images/skills/next.png' },
           ],
-          description: [
+          descriptionNL: [
+            'Deze is bijzonder, want ik heb hem gebouwd voor mijn vrouw, die binnenkort voor zichzelf gaat beginnen. Je kunt eenvoudig voedselcategorieën bekijken en de producten aan je winkelwagentje toevoegen, en tenslotte je bestellingen via je e-mail verzenden door natuurlijk doorgestuurd te worden vanaf de website met al je bestelgegevens!',
+          ],
+          descriptionEN: [
             'This one is special, because I built it for my wife, who is going to start her own business soon. You can easily view food categories and add the products to your cart, and finally send your orders via your email by getting redirected from the website with all your order details of course!',
           ],
         },

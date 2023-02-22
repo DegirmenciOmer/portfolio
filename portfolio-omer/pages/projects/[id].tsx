@@ -23,7 +23,8 @@ interface TProject {
     liveUrl: string
     technologies: skill[]
     locale: string
-    description: string[]
+    descriptionEN: string[]
+    descriptionNL: string[]
     demoUrl: string
     img: string
   }
@@ -37,7 +38,8 @@ const DynamicPage: FC<TProject> = ({
     sourceUrl,
     liveUrl,
     technologies,
-    description,
+    descriptionEN,
+    descriptionNL,
     demoUrl,
   },
 }) => {
@@ -48,6 +50,8 @@ const DynamicPage: FC<TProject> = ({
 
   const projectId = +id
 
+  const descriptionToRender = locale === 'en' ? descriptionEN : descriptionNL
+
   return (
     <div className={`md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg} `}>
       <Header switchText={switchText} switchBg={switchBg} />
@@ -57,15 +61,13 @@ const DynamicPage: FC<TProject> = ({
             <BsFillArrowLeftCircleFill />
           </button>
         </Link>
-        <h2 className='py-4 text-center text-teal-600 text-2xl mb-5'>
-          {name}{' '}
-        </h2>
+        <h2 className='py-4 text-center text-teal-600 text-2xl mb-5'>{name}</h2>
         <img
           className='mx-auto rounded-lg w-full my-5'
           src={img}
           alt='profile'
         />
-        {description.map((text, idx) => (
+        {descriptionToRender.map((text: string, idx: number) => (
           <p key={idx} className='mb-3'>
             {text}
           </p>
