@@ -123,7 +123,7 @@ export const translationHelper = (language: any) => {
           ],
           descriptionNL: [
             'Een chatapplicatie die niet alleen kan worden gebruikt voor privéberichten, maar ook als groepschat.',
-            'Het vereist geen telefoonnummer, u kunt in plaats daarvan een uniek ID genereren om aan de slag te gaan met de applicatie. ',
+            'Het vereist geen telefoonnummer,je kunt in plaats daarvan een uniek ID genereren om aan de slag te gaan met de applicatie. ',
             "Het enige wat je hoeft te doen is je vrienden met hun ID's aan je contactenlijst toe te voegen en te genieten van deze coole chat! 😎",
           ],
           descriptionEN: [
@@ -341,8 +341,8 @@ export const translationHelper = (language: any) => {
             },
           ],
           descriptionNL: [
-            'Nog een coole fullstack Next-app vergezeld van Strapi CMS. Hier kunt u zich registreren, inloggen, uw eigen berichten maken (als evenementen). Als je nog niet bent ingelogd, kun je nog steeds de lijst met evenementen zien die in deze app zijn geplaatst. ',
-            'BELANGRIJK: wanneer u de website voor het eerst bezoekt, zult u hoogstwaarschijnlijk foutcode 504 tegenkomen. Omdat de gratis free tier (backend-implementatieservice) stopt met het uitvoeren van de app na 30 minuten inactiviteit en deze alleen weer op verzoek start. niet gebruikt, dan duurt het een paar minuten voordat de eerste verzoeken weer actief zijn.',
+            'Nog een coole fullstack Next-app vergezeld van Strapi CMS. Hier kuntje zich registreren, inloggen, jouw eigen berichten maken (als evenementen). Als je nog niet bent ingelogd, kun je nog steeds de lijst met evenementen zien die in deze app zijn geplaatst. ',
+            'BELANGRIJK: wanneerje de website voor het eerst bezoekt, zultje hoogstwaarschijnlijk foutcode 504 tegenkomen. Omdat de gratis free tier (backend-implementatieservice) stopt met het uitvoeren van de app na 30 minuten inactiviteit en deze alleen weer op verzoek start. niet gebruikt, dan duurt het een paar minuten voordat de eerste verzoeken weer actief zijn.',
             'Kortom, als je een foutcode ziet, vernieuw dan de pagina 60 sec later. Dat komt goed.',
           ],
           descriptionEN: [
@@ -371,6 +371,29 @@ export const translationHelper = (language: any) => {
           ],
           descriptionEN: [
             'This one is special, because I built it for my wife, who is going to start her own business soon. You can easily view food categories and add the products to your cart, and finally send your orders via your email by getting redirected from the website with all your order details of course!',
+          ],
+        },
+        {
+          id: '13',
+          name: 'Primy',
+          liveUrl: 'https://primy.nl',
+          demoUrl: '',
+          img: '/images/primy.jpg',
+          sourceUrl: 'https://github.com/DegirmenciOmer/primy',
+          technologies: [
+            {
+              id: '1',
+              name: 'Typescript',
+              img: '/images/skills/typescript.png',
+            },
+            { id: '2', name: 'NextJs', img: '/images/skills/next.png' },
+            { id: '3', name: 'Tailwind', img: '/images/skills/tailwind.png' },
+          ],
+          descriptionNL: [
+            'Ik heb het bouwen van de website van dit startende bedrijf overgenomen en heb de verzoeken van de klant geïmplementeerd door mijn UX/UI-vaardigheden in te zetten',
+          ],
+          descriptionEN: [
+            "I took over building the website for this startup company. I implemented the client's requests by contributing with my UX/UI skills.",
           ],
         },
       ],
