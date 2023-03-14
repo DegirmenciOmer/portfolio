@@ -342,7 +342,7 @@ export const translationHelper = (language: any) => {
           ],
           descriptionNL: [
             'Nog een coole fullstack Next-app vergezeld van Strapi CMS. Hier kuntje zich registreren, inloggen, jouw eigen berichten maken (als evenementen). Als je nog niet bent ingelogd, kun je nog steeds de lijst met evenementen zien die in deze app zijn geplaatst. ',
-            'BELANGRIJK: wanneerje de website voor het eerst bezoekt, zultje hoogstwaarschijnlijk foutcode 504 tegenkomen. Omdat de gratis free tier (backend-implementatieservice) stopt met het uitvoeren van de app na 30 minuten inactiviteit en deze alleen weer op verzoek start. niet gebruikt, dan duurt het een paar minuten voordat de eerste verzoeken weer actief zijn.',
+            'BELANGRIJK: wanneerje de website voor het eerst bezoekt, zal je hoogstwaarschijnlijk foutcode 504 tegenkomen. Omdat de gratis free tier (backend-implementatieservice) stopt met het uitvoeren van de app na 30 minuten inactiviteit en deze alleen weer op verzoek start. niet gebruikt, dan duurt het een paar minuten voordat de eerste verzoeken weer actief zijn.',
             'Kortom, als je een foutcode ziet, vernieuw dan de pagina 60 sec later. Dat komt goed.',
           ],
           descriptionEN: [
