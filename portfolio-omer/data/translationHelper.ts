@@ -37,6 +37,7 @@ export const translationHelper = (language: any) => {
         { id: '12', name: 'Strapi CMS', img: '/images/skills/strapi.png' },
         { id: '13', name: 'Angular', img: '/images/skills/angular.png' },
         { id: '14', name: 'Vue', img: '/images/skills/vue.png' },
+
       ],
       projectsTitle: NL ? 'Projecten' : 'Projects',
       projects: [
