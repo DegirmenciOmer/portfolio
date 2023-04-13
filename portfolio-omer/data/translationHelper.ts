@@ -35,6 +35,7 @@ export const translationHelper = (language: any) => {
         { id: '10', name: 'GraphQL', img: '/images/skills/graphql.png' },
         { id: '11', name: 'Strapi CMS', img: '/images/skills/strapi.png' },
         { id: '12', name: 'Angular', img: '/images/skills/angular.png' },
+        { id: '13', name: 'Vue', img: '/images/skills/vue.png' },
       ],
       projectsTitle: NL ? 'Projecten' : 'Projects',
       projects: [
@@ -395,6 +396,24 @@ export const translationHelper = (language: any) => {
           descriptionEN: [
             "I took over building the website for this startup company. I implemented the client's requests by contributing with my UX/UI skills.",
           ],
+        },
+        {
+          id: '14',
+          name: 'Vue Task Tracker',
+          liveUrl: 'https://vue-tracker-omer.netlify.app/',
+          demoUrl: '',
+          img: '/images/vue-tracker.jpg',
+          sourceUrl: 'https://github.com/DegirmenciOmer/vue-task-tracker',
+          technologies: [
+            {
+              id: '1',
+              name: 'Javascript',
+              img: '/images/skills/javascrript.png',
+            },
+            { id: '2', name: 'VueJS', img: '/images/skills/vue.png' },
+          ],
+          descriptionNL: ['Mijn eerste Vue app.'],
+          descriptionEN: ['My first vue app.'],
         },
       ],
       experienceTitle: NL ? 'Ervaring' : 'Experience',
