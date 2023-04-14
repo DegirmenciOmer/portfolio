@@ -32,7 +32,7 @@ const Skills: FC<TSkillsProps> = ({
           >
             <img
               className={`w-40 sm:w-30 lg:w-40 mx-auto mix-blend-${
-                darkMode ? 'lighten' : 'darken'
+                !darkMode ? 'darken' : 'lighten'
               }`}
               src={skill.img}
               alt={skill.name}
