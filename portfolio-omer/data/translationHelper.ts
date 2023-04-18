@@ -37,7 +37,6 @@ export const translationHelper = (language: any) => {
         { id: '12', name: 'Strapi CMS', img: '/images/skills/strapi.png' },
         { id: '13', name: 'Angular', img: '/images/skills/angular.png' },
         { id: '14', name: 'Vue', img: '/images/skills/vue.png' },
-
       ],
       projectsTitle: NL ? 'Projecten' : 'Projects',
       projects: [
@@ -367,7 +366,19 @@ export const translationHelper = (language: any) => {
               name: 'Typescript',
               img: '/images/skills/typescript.png',
             },
-            { id: '2', name: 'NextJs', img: '/images/skills/next.png' },
+            {
+              id: '2',
+              name: 'Javascript',
+              img: '/images/skills/js.png',
+            },
+            { id: '3', name: 'NextJs', img: '/images/skills/next.png' },
+            { id: '4', name: 'NodeJs', img: '/images/skills/nodejs.png' },
+            { id: '5', name: 'Strapi CMS', img: '/images/skills/strapi.png' },
+            {
+              id: '6',
+              name: 'PostgreSQL',
+              img: '/images/skills/postgresql.png',
+            },
           ],
           descriptionNL: [
             'Deze is bijzonder, want ik heb hem gebouwd voor mijn vrouw, die binnenkort voor zichzelf gaat beginnen. Je kunt eenvoudig voedselcategorieën bekijken en de producten aan je winkelwagentje toevoegen, en tenslotte je bestellingen via je e-mail verzenden door natuurlijk doorgestuurd te worden vanaf de website met al je bestelgegevens!',

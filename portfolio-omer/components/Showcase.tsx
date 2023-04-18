@@ -1,21 +1,21 @@
-import React, { FC, Dispatch, SetStateAction } from "react";
-import { useAppContext } from "../context/AppContext";
-import { translationHelper } from "../data/translationHelper";
+import React, { FC, Dispatch, SetStateAction } from 'react'
+import { useAppContext } from '../context/AppContext'
+import { translationHelper } from '../data/translationHelper'
 interface TShowcase {
-  switchText: string;
+  switchText: string
 }
 const Showcase: FC<TShowcase> = ({ switchText }) => {
-  const { locale } = useAppContext();
-  const { translations } = translationHelper(locale);
+  const { locale } = useAppContext()
+  const { translations } = translationHelper(locale)
 
   return (
-    <section className="shadow-lg px-5 py-8 text-center">
+    <section className='shadow-lg px-5 py-8 text-center'>
       <img
-        className="mx-auto rounded-full w-1/3 my-5"
-        src="/images/profile.png"
-        alt="profile"
+        className='mx-auto rounded-full w-1/3 my-5'
+        src='/images/profile.jpg'
+        alt='profile'
       />
-      <h2 className="text-4xl py-2 text-teal-600 font-medium">
+      <h2 className='text-4xl py-2 text-teal-600 font-medium'>
         {translations.ownerName}
       </h2>
       <h3 className={`text-2xl ${switchText} py-2 pb-8`}>
@@ -25,7 +25,7 @@ const Showcase: FC<TShowcase> = ({ switchText }) => {
         {translations.briefDescription}
       </p>
     </section>
-  );
-};
+  )
+}
 
-export default Showcase;
+export default Showcase
