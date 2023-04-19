@@ -3,44 +3,58 @@ import { useAppContext } from '../context/AppContext'
 
 interface TSkillsProps {
   switchText?: string
-  skills: skill[]
-  skillsTitle: string
-  isPage: boolean
+  skills: Tskill[]
+  whereToUse: 'showcase' | 'projects' | 'project-page'
 }
 
-export type skill = { id: string; name: string; img: string }
+export type Tskill = {
+  id: string
+  name: string
+  img: string
+  Icon?: React.ComponentType<any>
+}
 
-const Skills: FC<TSkillsProps> = ({
-  switchText,
-  skills,
-  skillsTitle,
-  isPage,
-}) => {
+const Skills: FC<TSkillsProps> = ({ switchText, skills, whereToUse }) => {
   const { darkMode } = useAppContext()
   return (
-    <div
-      className={`text-center shadow-lg py-10 rounded-xl my-10  flex-1 ${switchText}`}
-    >
-      <h3 className='py-4 text-teal-600 text-2xl mb-5'>{skillsTitle}</h3>
-      <ul className='flex m-auto justify-center flex-wrap gap-5 max-w-xl'>
-        {skills.map((skill: skill) => (
-          <li
-            key={skill.id}
-            className={`${switchText} ${
-              isPage ? 'w-1/4' : 'w-full sm:w-1/5'
-            } rounded py-2`}
-          >
-            <img
-              className={`w-40 sm:w-30 lg:w-40 mx-auto mix-blend-${
-                !darkMode ? 'darken' : 'lighten'
-              }`}
-              src={skill.img}
-              alt={skill.name}
-            />
-          </li>
-        ))}
+    <>
+      <ul
+        className={`flex flex-wrap ${
+          whereToUse === 'showcase' ? 'gap-5' : 'gap-1'
+        } m-auto w-full justify-center max-w-xl`}
+      >
+        {skills.map((skill: Tskill) => {
+          const { img, name, Icon, id } = skill
+          return (
+            <li
+              key={id}
+              className={`${switchText} ${
+                whereToUse === 'showcase'
+                  ? 'w-full sm:w-1/5'
+                  : whereToUse === 'project-page'
+                  ? 'w-1/5'
+                  : ''
+              } rounded p-2 m-auto`}
+            >
+              {whereToUse === 'projects' && Icon ? (
+                <p className=' inline-flex'>
+                  <Icon /> &nbsp;
+                  <span className='text-sm font-normal'>{name}</span>
+                </p>
+              ) : (
+                <img
+                  className={`w-40 sm:w-30 lg:w-40 mx-auto  ${
+                    !darkMode ? 'mix-blend-darken' : 'mix-blend-lighten'
+                  }`}
+                  src={img}
+                  alt={name}
+                />
+              )}
+            </li>
+          )
+        })}
       </ul>
-    </div>
+    </>
   )
 }
 

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React, { FC } from 'react'
 import { useAppContext } from '../context/AppContext'
 import { translationHelper } from '../data/translationHelper'
+import Skills from './Skills'
 
 interface TProjectsProps {
   switchText: string
@@ -13,7 +14,7 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
   return (
     <section
       id='projects'
-      className={`shadow-lg p-10 my-10 flex-1 ${switchText}`}
+      className={`shadow-lg p-10 my-10 flex flex-col flex-1 ${switchText}`}
     >
       <h3 className='text-center py-4 text-2xl mb-10 text-teal-600'>
         {translations.projectsTitle}
@@ -24,10 +25,11 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
           .map((project) => (
             <Link key={project.id} href={`projects/${+project.id}`}>
               <li
-                className={`${switchText} mb-9 flex flex-col items-center align-center justify-center`}
+                className={`${switchText} shadow-md mb-9 pb-7 flex flex-col items-center align-center justify-center`}
               >
-                <p className='text-center mb-9'>{project.name}</p>
-                <img src={project.img} alt='profile' />
+                <img width={500} src={project.img} alt='profile' />
+                <p className='text-center my-9'>{project.name}</p>
+                <Skills skills={project.technologies} whereToUse={'projects'} />
               </li>
             </Link>
           ))}

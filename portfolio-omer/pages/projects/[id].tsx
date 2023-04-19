@@ -9,7 +9,7 @@ import {
   BsFillArrowLeftCircleFill,
   BsFillArrowRightCircleFill,
 } from 'react-icons/bs'
-import Skills, { skill } from '../../components/Skills'
+import Skills, { Tskill } from '../../components/Skills'
 
 const {
   translations: { projects },
@@ -21,7 +21,7 @@ interface TProject {
     name: string
     sourceUrl: string
     liveUrl: string
-    technologies: skill[]
+    technologies: Tskill[]
     locale: string
     descriptionEN: string[]
     descriptionNL: string[]
@@ -73,7 +73,7 @@ const DynamicPage: FC<TProject> = ({
           </p>
         ))}
 
-        <div className='text-center mt-10'>
+        <div className='text-center my-12'>
           {(sourceUrl || demoUrl || liveUrl) && (
             <>
               {translations.seeText}&nbsp;
@@ -99,11 +99,7 @@ const DynamicPage: FC<TProject> = ({
           )}
         </div>
 
-        <Skills
-          skills={technologies}
-          skillsTitle={translations.techTitle}
-          isPage={true}
-        />
+        <Skills skills={technologies} whereToUse={'project-page'} />
         <div className='flex gap-3 justify-center'>
           {projectId < projects.length - 1 && (
             <Link href={`/projects/${projectId + 1}`}>
@@ -128,7 +124,15 @@ const DynamicPage: FC<TProject> = ({
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context?.params?.id
-  const project = id ? projects[+id] : undefined
+  const project = id
+    ? {
+        // Icons are not serialized so they are excluded in project page
+        ...projects[+id],
+        technologies: projects[+id].technologies.map((tech) => {
+          return { ...tech, Icon: null }
+        }),
+      }
+    : undefined
 
   return {
     props: { project },
