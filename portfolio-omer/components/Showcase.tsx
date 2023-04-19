@@ -11,7 +11,7 @@ const Showcase: FC<TShowcase> = ({ switchText }) => {
   return (
     <section className='shadow-lg px-5 py-8 text-center'>
       <img
-        className='mx-auto rounded-full w-1/3 my-5'
+        className='mx-auto rounded-full w-4/5 sm:w-2/5 my-7'
         src='/images/profile.jpg'
         alt='profile'
       />
