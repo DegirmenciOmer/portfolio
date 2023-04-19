@@ -22,12 +22,15 @@ export default function Home() {
         <Header switchText={switchText} switchBg={switchBg} />
         <main className='min-h-screen max-w-3xl mx-auto'>
           <Showcase switchText={switchText} />
-          <Skills
-            switchText={switchText}
-            skills={translations.skills}
-            skillsTitle={translations.skillsTitle}
-            isPage={false}
-          />
+          <div
+            className={`text-center shadow-lg py-10 rounded-xl my-10  flex-1 ${switchText}`}
+          >
+            <h3 className='py-4 text-teal-600 text-2xl mb-5'>
+              {translations.skillsTitle}
+            </h3>
+            <Skills skills={translations.skills} whereToUse={'showcase'} />
+          </div>
+
           <Projects switchText={switchText} />
           <Experience switchText={switchText} />
         </main>
