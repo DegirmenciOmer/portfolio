@@ -660,10 +660,14 @@ export const translationHelper = (language: any) => {
             },
           ],
           descriptionNL: [
-            'Deze is bijzonder, want ik heb hem gebouwd voor mijn vrouw, die binnenkort voor zichzelf gaat beginnen. Je kunt eenvoudig voedselcategorieën bekijken en de producten aan je winkelwagentje toevoegen, en tenslotte je bestellingen via je e-mail verzenden door natuurlijk doorgestuurd te worden vanaf de website met al je bestelgegevens!',
+            'Deze website is bijzonder omdat ik hem heb gebouwd voor mijn vrouw, die binnenkort haar eigen bedrijf start. Het heeft een gebruiksvriendelijke interface waar bezoekers moeiteloos door verschillende voedselcategorieën kunnen bladeren en producten aan hun winkelwagen kunnen toevoegen. Vervolgens kunnen ze hun bestelling verzenden, waardoor deze in onze database wordt opgeslagen met de status "in behandeling". De beheerder kan de bestelling onderzoeken en de status bijwerken totdat deze aan de klant is geleverd.',
+            'Met behulp van het Strapi content management systeem (een headless CMS) heeft de beheerder volledige controle over het beheren van producten en categorieën. Ze kunnen eenvoudig elementen toevoegen, verwijderen of bijwerken, waardoor de website altijd up-to-date blijft met de nieuwste aanbiedingen.',
+            'Al met al biedt deze website een naadloze en plezierige winkelervaring voor klanten, terwijl de beheerder moeiteloos productinformatie kan beheren en bijwerken.',
           ],
           descriptionEN: [
-            'This one is special, because I built it for my wife, who is going to start her own business soon. You can easily view food categories and add the products to your cart, and finally send your orders via your email by getting redirected from the website with all your order details of course!',
+            'This website holds a special place as it was created for my wife, who will soon be launching her own business. It features a user-friendly interface where visitors can easily browse through various food categories and add products to their cart. Once they have completed their selection, they can submit their order, which will be stored in our database with a pending status. The admin can then review the order and update its status until it is delivered to the customer.',
+            'With the assistance of the Strapi content management system (a headless CMS), the admin has full control over managing the products and categories. They can effortlessly add, delete, or update these elements, ensuring that the website always reflects the latest offerings.',
+            'Overall, this website provides a seamless and enjoyable shopping experience for customers while empowering the admin to effortlessly manage and update product information.',
           ],
         },
         {
@@ -724,6 +728,58 @@ export const translationHelper = (language: any) => {
           descriptionNL: ['Mijn eerste Vue app.'],
           descriptionEN: ['My first vue app.'],
         },
+        {
+          id: '15',
+          name: 'Stichting Harmonie Limburg',
+          liveUrl: 'https://sthlimburg.nl',
+          demoUrl: '',
+          img: '/images/sthlimburg.jpeg',
+          sourceUrl: '',
+          technologies: [
+            {
+              id: '1',
+              name: 'Typescript',
+              Icon: SiTypescript,
+              img: '/images/skills/typescript.png',
+            },
+            {
+              id: '2',
+              Icon: SiJavascript,
+              name: 'Javascript',
+              img: '/images/skills/js.png',
+            },
+            {
+              id: '3',
+              name: 'NextJs',
+              Icon: SiNextdotjs,
+              img: '/images/skills/next.png',
+            },
+            {
+              id: '4',
+              name: 'NodeJs',
+              Icon: SiNodedotjs,
+              img: '/images/skills/nodejs.png',
+            },
+            {
+              id: '5',
+              name: 'Strapi',
+              Icon: SiStrapi,
+              img: '/images/skills/strapi.png',
+            },
+            {
+              id: '6',
+              name: 'PostgreSQL',
+              Icon: SiPostgresql,
+              img: '/images/skills/postgresql.png',
+            },
+          ],
+          descriptionNL: [
+            "I have developed the official website for this foundation, utilizing the Strapi content management system. This platform provides administrators with a user-friendly interface, making it exceptionally easy for them to manage the foundation's activities and other content on the live website. Administrators have the freedom to add, update, or delete content independently, without requiring technical assistance. This streamlined process empowers them to maintain an up-to-date and engaging website effortlessly.",
+          ],
+          descriptionEN: [
+            'Ik heb de officiële website voor deze stichting ontwikkeld, waarbij ik gebruik heb gemaakt van het Strapi content management systeem. Dit platform biedt beheerders een gebruiksvriendelijke interface, waardoor het uitzonderlijk eenvoudig is om de activiteiten van de stichting en andere inhoud op de live website te beheren. Beheerders hebben de vrijheid om zelfstandig inhoud toe te voegen, bij te werken of te verwijderen, zonder technische assistentie nodig te hebben. Dit gestroomlijnde proces stelt hen in staat om moeiteloos een up-to-date en aantrekkelijke website te onderhouden.',
+          ],
+        },
       ],
       experienceTitle: NL ? 'Ervaring' : 'Experience',
       experience: [
@@ -758,7 +814,13 @@ export const translationHelper = (language: any) => {
           id: '5',
           role: NL ? 'Frontend Webontwikkelaar' : 'Frontend Web Developer',
           company: 'System4, Uden',
-          date: NL ? 'jul 2022 - Momenteel' : 'Jul 2022 - Dec 2022',
+          date: NL ? 'jul 2022 - dec 2022' : 'Jul 2022 - Dec 2022',
+        },
+        {
+          id: '6',
+          role: NL ? 'Frontend Webontwikkelaar' : 'Frontend Web Developer',
+          company: 'Advacom, Geleen',
+          date: NL ? 'jul 2023 - Momenteel' : 'Jul 2023 - Currently',
         },
       ],
     },
