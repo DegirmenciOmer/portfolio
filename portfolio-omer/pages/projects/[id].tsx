@@ -53,7 +53,7 @@ const DynamicPage: FC<TProject> = ({
   const descriptionToRender = locale === 'en' ? descriptionEN : descriptionNL
 
   return (
-    <div className={`md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg} `}>
+    <div className={`md:px-20 lg:px-40 text-blue-100 font-medium ${switchBg} `}>
       <Header switchText={switchText} switchBg={switchBg} />
       <main className={`${switchText} px-5 min-h-screen max-w-3xl mx-auto`}>
         <Link href='/#projects'>
@@ -68,7 +68,7 @@ const DynamicPage: FC<TProject> = ({
           alt='profile'
         />
         {descriptionToRender.map((text: string, idx: number) => (
-          <p key={idx} className='mb-3'>
+          <p key={idx} className='mb-3 font-medium'>
             {text}
           </p>
         ))}

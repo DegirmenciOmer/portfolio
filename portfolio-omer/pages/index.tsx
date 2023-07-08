@@ -18,7 +18,7 @@ export default function Home() {
       <Head>
         <title>{translations.title}</title>
       </Head>
-      <div className={`md:px-20 lg:px-40 text-blue-100 font-bold ${switchBg} `}>
+      <div className={`md:px-20 lg:px-40 text-blue-100 ${switchBg} `}>
         <Header switchText={switchText} switchBg={switchBg} />
         <main className='min-h-screen max-w-3xl mx-auto'>
           <Showcase switchText={switchText} />

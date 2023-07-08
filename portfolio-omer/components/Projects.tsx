@@ -16,9 +16,9 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
       id='projects'
       className={`shadow-lg p-10 my-10 flex flex-col flex-1 ${switchText}`}
     >
-      <h3 className='text-center py-4 text-2xl mb-10 text-teal-600'>
+      <h2 className='text-center py-4 text-2xl mb-10 text-teal-600'>
         {translations.projectsTitle}
-      </h3>
+      </h2>
       <ul className='flex flex-col gap-8 items-center justify-center'>
         {translations.projects
           .sort((a, b) => +b.id - +a.id)
@@ -28,7 +28,7 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
                 className={`${switchText} shadow-md mb-9 pb-7 flex flex-col items-center align-center justify-center`}
               >
                 <img width={500} src={project.img} alt='profile' />
-                <p className='text-center my-9'>{project.name}</p>
+                <h3 className='text-center my-9'>{project.name}</h3>
                 <Skills skills={project.technologies} whereToUse={'projects'} />
               </li>
             </Link>

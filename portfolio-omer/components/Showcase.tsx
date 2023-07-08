@@ -18,10 +18,10 @@ const Showcase: FC<TShowcase> = ({ switchText }) => {
       <h2 className='text-4xl py-2 text-teal-600 font-medium'>
         {translations.ownerName}
       </h2>
-      <h3 className={`text-2xl ${switchText} py-2 pb-8`}>
+      <h3 className={`text-2xl ${switchText} py-2 pb-8 font-semibold`}>
         {translations.occupationText}
       </h3>
-      <p className={`text-md py-2 leading-8 ${switchText}`}>
+      <p className={`text-md py-2 leading-8 font-medium ${switchText}`}>
         {translations.briefDescription}
       </p>
     </section>
