@@ -733,7 +733,7 @@ export const translationHelper = (language: any) => {
         {
           id: '15',
           name: 'Stichting Harmonie Limburg',
-          liveUrl: 'https://sthlimburg.nl',
+          liveUrl: 'https://stharmonie.nl',
           demoUrl: '',
           img: '/images/sthlimburg.jpeg',
           sourceUrl: '',
