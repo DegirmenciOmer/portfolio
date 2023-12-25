@@ -77,7 +77,8 @@ const DynamicPage: FC<TProject> = ({
           {(sourceUrl || demoUrl || liveUrl) && (
             <>
               {translations.seeText}&nbsp;
-              <Link
+              <a
+                target='_blank'
                 className={`text-teal-800 underline hover:text-teal-600 rounded-md `}
                 href={liveUrl ? liveUrl : demoUrl}
               >
@@ -86,16 +87,17 @@ const DynamicPage: FC<TProject> = ({
                   : demoUrl
                   ? translations.demoText
                   : ''}
-              </Link>
+              </a>
             </>
           )}
           {sourceUrl && (
-            <Link
+            <a
+              target='_blank'
               className={`text-teal-800 underline hover:text-teal-600 rounded-md`}
               href={sourceUrl}
             >
               &nbsp;|&nbsp;{translations.sourceText}
-            </Link>
+            </a>
           )}
         </div>
 

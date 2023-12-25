@@ -33,14 +33,21 @@ const Header: FC<THeaderProps> = ({ switchText, switchBg }) => {
           </li>
           <li>
             <div className={`px-4 py-2 flex gap-1`}>
-              <div
-                onClick={() => setLocale('en')}
-                className={`bg-flags flag en-flag cursor-pointer`}
-              ></div>
-              <div
-                onClick={() => setLocale('nl')}
-                className={` bg-flags flag nl-flag cursor-pointer`}
-              ></div>
+              {locale === 'en' ? (
+                <div
+                  onClick={() => setLocale('nl')}
+                  className={`cursor-pointer`}
+                >
+                  EN
+                </div>
+              ) : (
+                <div
+                  onClick={() => setLocale('en')}
+                  className={` cursor-pointer`}
+                >
+                  NL
+                </div>
+              )}
             </div>
           </li>
           <li>

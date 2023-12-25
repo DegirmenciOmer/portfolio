@@ -733,7 +733,7 @@ export const translationHelper = (language: any) => {
         {
           id: '15',
           name: 'Stichting Harmonie Limburg',
-          liveUrl: 'https://stharmonie.nl',
+          liveUrl: 'http://stharmonie.nl',
           demoUrl: '',
           img: '/images/sthlimburg.jpeg',
           sourceUrl: '',
@@ -810,7 +810,7 @@ export const translationHelper = (language: any) => {
             },
           ],
           descriptionNL: [
-            'I was ecstatic when I was offered a job opportunity after delivering an outstanding performance on a challenging technical assignment. Working on this project allowed me to refine and enhance my fundamental frontend skills. I firmly believe that the level of dedication and effort I invested in this task warrants its inclusion as a valuable portfolio piece!',
+            'I was ecstatic when I was offered a job opportunity after delivering an outstanding performance on a challenging technical assignment. Working on this project allowed me to refine and enhance my fundamental frontend skills. I believe that the level of dedication and effort I invested in this task warrants its inclusion as a valuable portfolio piece!',
           ],
           descriptionEN: [
             'Ik was ontzettend blij toen ik werd aangenomen na het leveren van een uitstekende prestatie op een veeleisende technische opdracht. Het werken aan dit project heeft mijn basisvaardigheden op het gebied van frontend-ontwikkeling scherp gesteld. Ik ben ervan overtuigd dat de toewijding en inzet die ik in deze opdracht heb gestoken, rechtvaardigt dat het een waardevol onderdeel van mijn portfolio wordt!',
