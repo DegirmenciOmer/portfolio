@@ -79,6 +79,7 @@ const DynamicPage: FC<TProject> = ({
               {translations.seeText}&nbsp;
               <a
                 target='_blank'
+                rel='noreferrer'
                 className={`text-teal-800 underline hover:text-teal-600 rounded-md `}
                 href={liveUrl ? liveUrl : demoUrl}
               >
@@ -93,6 +94,7 @@ const DynamicPage: FC<TProject> = ({
           {sourceUrl && (
             <a
               target='_blank'
+              rel='noreferrer'
               className={`text-teal-800 underline hover:text-teal-600 rounded-md`}
               href={sourceUrl}
             >

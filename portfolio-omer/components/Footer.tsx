@@ -15,7 +15,7 @@ const Footer: FC<TFooterProps> = ({ switchText }) => {
   return (
     <footer id='contact' className='py-5'>
       <div className='text-5xl flex justify-center gap-16 py-3 text-gray-600 my-5'>
-        <Link target='_blank' href={translations.linkedinUrl}>
+        <Link target='_blank' rel='noreferrer' href={translations.linkedinUrl}>
           <AiFillLinkedin />
         </Link>
 
@@ -23,7 +23,7 @@ const Footer: FC<TFooterProps> = ({ switchText }) => {
           <AiFillMail />
         </Link>
 
-        <Link target='_blank' href={translations.githubUrl}>
+        <Link target='_blank' rel='noreferrer' href={translations.githubUrl}>
           <AiFillGithub />
         </Link>
       </div>

@@ -17,6 +17,10 @@ export default function Home() {
     <div>
       <Head>
         <title>{translations.title}</title>
+        <meta
+          name='google-site-verification'
+          content='KMXIazCvCftfk6ZYi6XzMQtXTWxdZJ3y4RTdcB3t5ao'
+        />
       </Head>
       <div className={`md:px-20 lg:px-40 text-blue-100 ${switchBg} `}>
         <Header switchText={switchText} switchBg={switchBg} />
