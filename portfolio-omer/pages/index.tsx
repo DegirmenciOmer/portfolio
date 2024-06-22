@@ -21,10 +21,11 @@ export default function Home() {
           name='google-site-verification'
           content='KMXIazCvCftfk6ZYi6XzMQtXTWxdZJ3y4RTdcB3t5ao'
         />
+        <meta property='og:image' content='' />
       </Head>
       <div className={`md:px-20 lg:px-40 text-blue-100 ${switchBg} `}>
         <Header switchText={switchText} switchBg={switchBg} />
-        <main className='min-h-screen max-w-3xl mx-auto'>
+        <main className='min-h-screen max-w-3xl mx-auto overflow-hidden'>
           <Showcase switchText={switchText} />
           <div
             className={`text-center shadow-lg py-10 rounded-xl my-10  flex-1 ${switchText}`}
