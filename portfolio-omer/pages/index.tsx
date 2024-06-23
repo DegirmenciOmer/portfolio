@@ -15,7 +15,7 @@ export default function Home() {
   const switchText = darkMode ? 'text-slate-100' : 'text-slate-800'
   const { translations } = translationHelper(locale)
   return (
-    <Layout>
+    <>
       <Head>
         <title>{translations.title}</title>
         <meta
@@ -24,28 +24,30 @@ export default function Home() {
         />
         <meta property='og:image' content='' />
       </Head>
-      <div className={` text-blue-100 ${switchBg} `}>
-        <Header switchText={switchText} switchBg={switchBg} />
-        <main className='min-h-screen overflow-hidden'>
-          <Showcase switchText={switchText} />
-          <div
-            className={`text-center py-10 rounded-xl my-10  flex-1 ${switchText}`}
-          >
-            <h2
-              className={`${
-                darkMode ? 'text-lightgreen/70' : 'text-teal-600'
-              } py-4  mb-5`}
+      <Layout>
+        <div className={` text-blue-100 ${switchBg} `}>
+          <Header switchText={switchText} switchBg={switchBg} />
+          <main className='min-h-screen overflow-hidden'>
+            <Showcase switchText={switchText} />
+            <div
+              className={`text-center py-10 rounded-xl my-10  flex-1 ${switchText}`}
             >
-              {translations.skillsTitle}
-            </h2>
-            <Skills skills={translations.skills} whereToUse={'showcase'} />
-          </div>
+              <h2
+                className={`${
+                  darkMode ? 'text-lightgreen/70' : 'text-teal-600'
+                } py-4  mb-5`}
+              >
+                {translations.skillsTitle}
+              </h2>
+              <Skills skills={translations.skills} whereToUse={'showcase'} />
+            </div>
 
-          <Projects switchText={switchText} />
-          <Experience switchText={switchText} />
-        </main>
-        <Footer switchText={switchText} />
-      </div>
-    </Layout>
+            <Projects switchText={switchText} />
+            <Experience switchText={switchText} />
+          </main>
+          <Footer switchText={switchText} />
+        </div>
+      </Layout>
+    </>
   )
 }

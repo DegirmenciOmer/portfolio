@@ -235,6 +235,42 @@ export const translationHelper = (language: any) => {
           demoUrl: 'https://pern-todo-omer.netlify.app/',
           img: '/images/todo.png',
         },
+        {
+          locale: 'nl',
+          id: '3',
+          name: 'Advacom Tech Assignment',
+          liveUrl: 'https://limburgsport.netlify.app/',
+          demoUrl: '',
+          img: '/images/advacom-opdracht.JPG',
+          sourceUrl: 'https://github.com/DegirmenciOmer/advacom-opdracht',
+          technologies: [
+            {
+              id: '1',
+              name: 'HTML',
+              Icon: SiHtml5,
+              img: '/images/skills/html.png',
+            },
+            {
+              id: '2',
+              Icon: SiCss3,
+              name: 'CSS',
+              img: '/images/skills/css.png',
+            },
+            {
+              id: '3',
+              Icon: SiJquery,
+              name: 'Jquery',
+              img: '/images/skills/js.png',
+            },
+          ],
+          descriptionNL: [
+            'I was ecstatic when I was offered a job opportunity after delivering an outstanding performance on a challenging technical assignment. Working on this project allowed me to refine and enhance my fundamental frontend skills. I believe that the level of dedication and effort I invested in this task warrants its inclusion as a valuable portfolio piece!',
+          ],
+          descriptionEN: [
+            'Ik was ontzettend blij toen ik werd aangenomen na het leveren van een uitstekende prestatie op een veeleisende technische opdracht. Het werken aan dit project heeft mijn basisvaardigheden op het gebied van frontend-ontwikkeling scherp gesteld. Ik ben ervan overtuigd dat de toewijding en inzet die ik in deze opdracht heb gestoken, rechtvaardigt dat het een waardevol onderdeel van mijn portfolio wordt!',
+          ],
+        },
+
         // {
         //   locale: 'nl',
         //   id: '3',
@@ -780,40 +816,6 @@ export const translationHelper = (language: any) => {
           ],
           descriptionEN: [
             'Ik heb de officiële website voor deze stichting ontwikkeld, waarbij ik gebruik heb gemaakt van het Strapi content management systeem. Dit platform biedt beheerders een gebruiksvriendelijke interface, waardoor het uitzonderlijk eenvoudig is om de activiteiten van de stichting en andere inhoud op de live website te beheren. Beheerders hebben de vrijheid om zelfstandig inhoud toe te voegen, bij te werken of te verwijderen, zonder technische assistentie nodig te hebben. Dit gestroomlijnde proces stelt hen in staat om moeiteloos een up-to-date en aantrekkelijke website te onderhouden.',
-          ],
-        },
-        {
-          id: '16',
-          name: 'Advacom Tech Assignment',
-          liveUrl: 'https://limburgsport.netlify.app/',
-          demoUrl: '',
-          img: '/images/advacom-opdracht.JPG',
-          sourceUrl: 'https://github.com/DegirmenciOmer/advacom-opdracht',
-          technologies: [
-            {
-              id: '1',
-              name: 'HTML',
-              Icon: SiHtml5,
-              img: '/images/skills/html.png',
-            },
-            {
-              id: '2',
-              Icon: SiCss3,
-              name: 'CSS',
-              img: '/images/skills/css.png',
-            },
-            {
-              id: '3',
-              Icon: SiJquery,
-              name: 'Jquery',
-              img: '/images/skills/js.png',
-            },
-          ],
-          descriptionNL: [
-            'I was ecstatic when I was offered a job opportunity after delivering an outstanding performance on a challenging technical assignment. Working on this project allowed me to refine and enhance my fundamental frontend skills. I believe that the level of dedication and effort I invested in this task warrants its inclusion as a valuable portfolio piece!',
-          ],
-          descriptionEN: [
-            'Ik was ontzettend blij toen ik werd aangenomen na het leveren van een uitstekende prestatie op een veeleisende technische opdracht. Het werken aan dit project heeft mijn basisvaardigheden op het gebied van frontend-ontwikkeling scherp gesteld. Ik ben ervan overtuigd dat de toewijding en inzet die ik in deze opdracht heb gestoken, rechtvaardigt dat het een waardevol onderdeel van mijn portfolio wordt!',
           ],
         },
       ],
