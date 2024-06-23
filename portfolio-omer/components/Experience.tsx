@@ -54,13 +54,12 @@ const Experience: FC<TExperienceProps> = ({ switchText }) => {
         {translations.experience
           .sort((a, b) => +b.id - +a.id)
           .map((exp) => (
-            <div className='slider-card'>
+            <div key={exp.id} className='slider-card'>
               <div
                 className={`${switchText} mx-auto flex flex-col justify-around h-full border sm:mx-1 w-11/12  
               ${
                 darkMode ? 'border-lightgreen/70' : 'border-teal-600'
               } rounded-xl px-2 py-5`}
-                key={exp.id}
               >
                 <p className='date'>{exp.date}</p>
                 <p className='role'>{exp.role}</p>
