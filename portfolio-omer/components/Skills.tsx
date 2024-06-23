@@ -30,11 +30,11 @@ const Skills: FC<TSkillsProps> = ({ switchText, skills, whereToUse }) => {
               key={id}
               className={`${switchText} ${
                 whereToUse === 'showcase'
-                  ? 'w-full sm:w-1/5'
+                  ? `w-2/5 sm:w-1/5 ${darkMode && 'bg-[#fff]'}`
                   : whereToUse === 'project-page'
-                  ? 'w-1/5'
+                  ? `w-2/5 sm:w-1/5 ${darkMode && 'bg-[#fff]'}`
                   : ''
-              } rounded p-2 m-auto`}
+              }  rounded px-3 flex justify-center items-center`}
             >
               {whereToUse === 'projects' && Icon ? (
                 <p className=' inline-flex'>
@@ -43,8 +43,8 @@ const Skills: FC<TSkillsProps> = ({ switchText, skills, whereToUse }) => {
                 </p>
               ) : (
                 <img
-                  className={`w-40 sm:w-30 lg:w-40 mx-auto  ${
-                    !darkMode ? 'mix-blend-darken' : 'mix-blend-lighten'
+                  className={`w-full h-full max-h-[90%] m-auto object-contain ${
+                    !darkMode ? 'mix-blend-darken' : 'mix-blend-multiply'
                   }`}
                   src={img}
                   alt={name}

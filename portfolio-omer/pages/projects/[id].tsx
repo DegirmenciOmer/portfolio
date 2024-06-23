@@ -61,7 +61,7 @@ const DynamicPage: FC<TProject> = ({
             <BsFillArrowLeftCircleFill />
           </button>
         </Link>
-        <h2 className='py-4 text-center text-teal-600 text-2xl mb-5'>{name}</h2>
+        <h1 className='py-4 text-center text-teal-600 h2  mb-5'>{name}</h1>
         <img
           className='mx-auto rounded-lg w-full my-5'
           src={img}

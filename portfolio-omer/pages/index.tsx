@@ -7,6 +7,7 @@ import Projects from '../components/Projects'
 import Experience from '../components/Experience'
 import Footer from '../components/Footer'
 import { useAppContext } from '../context/AppContext'
+import Layout from '../components/Layout'
 
 export default function Home() {
   const { locale, darkMode } = useAppContext()
@@ -14,7 +15,7 @@ export default function Home() {
   const switchText = darkMode ? 'text-slate-100' : 'text-slate-800'
   const { translations } = translationHelper(locale)
   return (
-    <div>
+    <Layout>
       <Head>
         <title>{translations.title}</title>
         <meta
@@ -23,16 +24,20 @@ export default function Home() {
         />
         <meta property='og:image' content='' />
       </Head>
-      <div className={`md:px-20 lg:px-40 text-blue-100 ${switchBg} `}>
+      <div className={` text-blue-100 ${switchBg} `}>
         <Header switchText={switchText} switchBg={switchBg} />
-        <main className='min-h-screen max-w-3xl mx-auto overflow-hidden'>
+        <main className='min-h-screen overflow-hidden'>
           <Showcase switchText={switchText} />
           <div
-            className={`text-center shadow-lg py-10 rounded-xl my-10  flex-1 ${switchText}`}
+            className={`text-center py-10 rounded-xl my-10  flex-1 ${switchText}`}
           >
-            <h3 className='py-4 text-teal-600 text-2xl mb-5'>
+            <h2
+              className={`${
+                darkMode ? 'text-lightgreen/70' : 'text-teal-600'
+              } py-4  mb-5`}
+            >
               {translations.skillsTitle}
-            </h3>
+            </h2>
             <Skills skills={translations.skills} whereToUse={'showcase'} />
           </div>
 
@@ -41,6 +46,6 @@ export default function Home() {
         </main>
         <Footer switchText={switchText} />
       </div>
-    </div>
+    </Layout>
   )
 }

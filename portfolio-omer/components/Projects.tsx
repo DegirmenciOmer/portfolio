@@ -3,37 +3,55 @@ import React, { FC } from 'react'
 import { useAppContext } from '../context/AppContext'
 import { translationHelper } from '../data/translationHelper'
 import Skills from './Skills'
+import Slider from 'react-slick'
 
 interface TProjectsProps {
   switchText: string
 }
 const Projects: FC<TProjectsProps> = ({ switchText }) => {
-  const { locale } = useAppContext()
+  const { locale, darkMode } = useAppContext()
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  }
 
   const { translations } = translationHelper(locale)
   return (
     <section
       id='projects'
-      className={`shadow-lg p-10 my-10 flex flex-col flex-1 ${switchText}`}
+      className={`p-10 my-10 flex flex-col flex-1 ${switchText}`}
     >
-      <h2 className='text-center py-4 text-2xl mb-10 text-teal-600'>
+      <h2
+        className={`${
+          darkMode ? 'text-lightgreen/70' : 'text-teal-600'
+        } py-4 text-center mb-10`}
+      >
         {translations.projectsTitle}
       </h2>
-      <ul className='flex flex-col gap-8 items-center justify-center'>
-        {translations.projects
-          .sort((a, b) => +b.id - +a.id)
-          .map((project) => (
-            <Link key={project.id} href={`projects/${+project.id}`}>
-              <li
-                className={`${switchText} shadow-md mb-9 pb-7 flex flex-col items-center align-center justify-center`}
-              >
-                <img width={500} src={project.img} alt='profile' />
-                <h3 className='text-center my-9'>{project.name}</h3>
-                <Skills skills={project.technologies} whereToUse={'projects'} />
-              </li>
-            </Link>
-          ))}
-      </ul>
+      <div className='slider-wrapper'>
+        <Slider {...settings} className=''>
+          {translations.projects
+            .sort((a, b) => +b.id - +a.id)
+            .map((project) => (
+              <Link key={project.id} href={`projects/${+project.id}`}>
+                <div
+                  className={`${switchText} flex flex-col items-center align-center justify-center`}
+                >
+                  <img width={500} src={project.img} alt='profile' />
+                  <h3 className='text-center my-9'>{project.name}</h3>
+                  <Skills
+                    skills={project.technologies}
+                    whereToUse={'projects'}
+                  />
+                </div>
+              </Link>
+            ))}
+        </Slider>
+      </div>
     </section>
   )
 }
