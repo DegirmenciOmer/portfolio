@@ -31,14 +31,22 @@ a {
 
 h1 {
   @apply font-extrabold;
+  font-size: clamp(3rem, 8vw, 7.8rem);
+  line-height: 1;
 }
 
-h2 {
+h2,
+.h2 {
+  font-size: clamp(2.6rem, 5vw, 5rem);
   @apply font-bold;
+  line-height: 1.1;
 }
 
-h3 {
+h3,
+.h3 {
+  font-size: clamp(1.8rem, 3vw, 3rem);
   @apply font-semibold;
+  line-height: 1.1;
 }
 
 * {
@@ -55,4 +63,22 @@ h3 {
 
 .nl-flag {
   background-position: 27% 66.1%;
+}
+
+.slider-card {
+  @apply justify-center aspect-[6/5] w-80;
+  display: flex !important;
+}
+
+.slider-card p {
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+.slider-card .company,
+.slider-card .date {
+  font-size: clamp(12px, 1.6vw, 14px);
+}
+
+.slider-card .role {
+  line-height: 1.1;
 }

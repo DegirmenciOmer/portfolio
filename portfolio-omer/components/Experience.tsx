@@ -1,36 +1,75 @@
-import React, { FC } from "react";
-import { useAppContext } from "../context/AppContext";
-import { translationHelper } from "../data/translationHelper";
+import React, { FC } from 'react'
+import { useAppContext } from '../context/AppContext'
+import { translationHelper } from '../data/translationHelper'
+import Slider from 'react-slick'
 interface TExperienceProps {
-  switchText: string;
+  switchText: string
 }
 
 const Experience: FC<TExperienceProps> = ({ switchText }) => {
-  const { locale } = useAppContext();
-  const { translations } = translationHelper(locale);
+  const { locale, darkMode } = useAppContext()
+  const { translations } = translationHelper(locale)
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+
+    responsive: [
+      {
+        breakpoint: 1024, // lg
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 640, // sm
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480, // default, can be adjusted as needed
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  }
   return (
     <section
-      className={`text-center shadow-lg p-10  rounded-xl my-10  flex-1 ${switchText}`}
+      className={`text-center p-10  rounded-xl my-10  flex-1 ${switchText}`}
     >
-      <h3 className="py-4 text-2xl mb-5 text-teal-600">
+      <h2
+        className={`${
+          darkMode ? 'text-lightgreen/70' : 'text-teal-600'
+        } py-4 text-center mb-5`}
+      >
         {translations.experienceTitle}
-      </h3>
-      <ul className="flex gap-4 flex-wrap items-center justify-center">
+      </h2>
+
+      <Slider {...settings} className=''>
         {translations.experience
           .sort((a, b) => +b.id - +a.id)
           .map((exp) => (
-            <li
-              className={`${switchText} flex flex-col gap-4 border h-40 w-80 border-teal-600 rounded-xl px-2 py-5`}
-              key={exp.id}
-            >
-              <p>{exp.date}</p>
-              <p>{exp.role}</p>
-              <p>{exp.company}</p>
-            </li>
+            <div key={exp.id} className='slider-card'>
+              <div
+                className={`${switchText} mx-auto flex flex-col justify-around h-full border sm:mx-1 w-11/12  
+              ${
+                darkMode ? 'border-lightgreen/70' : 'border-teal-600'
+              } rounded-xl px-2 py-5`}
+              >
+                <p className='date'>{exp.date}</p>
+                <p className='role'>{exp.role}</p>
+                <p className='company'>{exp.company}</p>
+              </div>
+            </div>
           ))}
-      </ul>
+      </Slider>
     </section>
-  );
-};
+  )
+}
 
-export default Experience;
+export default Experience

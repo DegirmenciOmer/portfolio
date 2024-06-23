@@ -40,8 +40,8 @@ export const translationHelper = (language: any) => {
         ? 'Frontend Webontwikkelaar'
         : 'Frontend Web Developer',
       briefDescription: NL
-        ? "Als zeer gemotiveerde en zorgzame webontwikkelaar ben ik vastbesloten om voortdurend te leren, te groeien en resultaten te behalen. Na zeven jaar als docent Engels voor jongvolwassenen te hebben gewerkt, besloot ik naar Nederland te verhuizen en kreeg ik de kans om de opwindende wereld van technologie en probleemoplossing te verkennen, waar ik nu een passie voor heb ontwikkeld. Sinds maart 2020 is coderen een dagelijkse routine voor mij geworden. Het afgelopen jaar heb ik gewerkt als frontend developer bij System4, waar ik mijn vaardigheden verder heb kunnen ontwikkelen. Ik geniet ervan om boeiende en gebruiksvriendelijke webapplicaties te creëren die aan de behoeften van gebruikers voldoen. Ik ben altijd op zoek naar nieuwe uitdagingen en ik ben enthousiast om bij te dragen aan innovatieve projecten. Ik ben een teamspeler, communicatief sterk en in staat om effectief samen te werken met collega's om gemeenschappelijke doelen te bereiken. Ik blijf mezelf voortdurend verbeteren en ben altijd op zoek naar nieuwe technologieën en trends in de webontwikkeling. Ik geloof dat door voortdurend te blijven leren, ik waardevolle bijdragen kan leveren en mezelf kan blijven ontwikkelen als een competente webontwikkelaar."
-        : 'I am a highly motivated and caring web developer with a strong determination to learn, grow, and get things done. After working as an English teacher for young adults for seven years, I made the move to the Netherlands and had the opportunity to delve into the vast world of technology and problem-solving, which I have developed a passion for. Since March 2020, coding has become a daily routine for me, with the past year spent as a frontend developer at System4, where I have been able to further refine my skills. I enjoy creating engaging and user-friendly web applications that meet the needs of users. \n  I am always seeking new challenges and excited to contribute to innovative projects. I am a team player, with strong communication skills, and I am able to collaborate effectively with colleagues to achieve common goals. \n I continuously strive to improve myself and stay updated with new technologies and trends in web development. I believe that by constantly learning, I can make valuable contributions and continue to evolve as a competent web developer.',
+        ? "Als zeer gemotiveerde en zorgzame webontwikkelaar ben ik vastbesloten om voortdurend te leren, te groeien en resultaten te behalen. Na zeven jaar als docent Engels voor jongvolwassenen te hebben gewerkt, besloot ik naar Nederland te verhuizen en kreeg ik de kans om de opwindende wereld van technologie en probleemoplossing te verkennen, waar ik nu een passie voor heb ontwikkeld. Sinds maart 2020 is coderen een dagelijkse routine voor mij geworden.  Ik geniet ervan om boeiende en gebruiksvriendelijke webapplicaties te creëren die aan de behoeften van gebruikers voldoen. Ik ben altijd op zoek naar nieuwe uitdagingen en ik ben enthousiast om bij te dragen aan innovatieve projecten. Ik ben een teamspeler, communicatief sterk en in staat om effectief samen te werken met collega's om gemeenschappelijke doelen te bereiken. Ik blijf mezelf voortdurend verbeteren en ben altijd op zoek naar nieuwe technologieën en trends in de webontwikkeling. Ik geloof dat door voortdurend te blijven leren, ik waardevolle bijdragen kan leveren en mezelf kan blijven ontwikkelen als een competente webontwikkelaar."
+        : 'I am a highly motivated and caring web developer with a strong determination to learn, grow, and get things done. After working as an English teacher for young adults for seven years, I made the move to the Netherlands and had the opportunity to delve into the vast world of technology and problem-solving, which I have developed a passion for. Since March 2020, coding has become a daily routine for me. I enjoy creating engaging and user-friendly web applications that meet the needs of users. \n  I am always seeking new challenges and excited to contribute to innovative projects. I am a team player, with strong communication skills, and I am able to collaborate effectively with colleagues to achieve common goals. \n I continuously strive to improve myself and stay updated with new technologies and trends in web development. I believe that by constantly learning, I can make valuable contributions and continue to evolve as a competent web developer.',
       text1: NL ? 'Consulting' : 'Overleg plegen',
       contactTitle: 'Contact',
       githubUrl: 'https://github.com/DegirmenciOmer',
@@ -99,11 +99,11 @@ export const translationHelper = (language: any) => {
           name: 'Storybook',
           img: '/images/skills/storybook.png',
         },
-        {
-          id: '11',
-          name: 'GraphQL',
-          img: '/images/skills/graphql.png',
-        },
+        // {
+        //   id: '11',
+        //   name: 'GraphQL',
+        //   img: '/images/skills/graphql.png',
+        // },
         {
           id: '12',
           name: 'Strapi',
@@ -116,13 +116,13 @@ export const translationHelper = (language: any) => {
         },
         {
           id: '14',
-          name: 'Vue',
-          img: '/images/skills/vue.png',
+          name: 'Sass',
+          img: '/images/skills/sass-logo.svg',
         },
         {
           id: '15',
           name: 'Shopify',
-          img: '/images/skills/shopify.png',
+          img: '/images/skills/shopify.svg',
         },
       ],
       projectsTitle: NL ? 'Projecten' : 'Projects',
@@ -238,53 +238,89 @@ export const translationHelper = (language: any) => {
         {
           locale: 'nl',
           id: '3',
-          name: 'Chat App',
-          sourceUrl: 'https://github.com/DegirmenciOmer/Chat-App',
+          name: 'Advacom Tech Assignment',
+          liveUrl: 'https://limburgsport.netlify.app/',
+          demoUrl: '',
+          img: '/images/advacom-opdracht.JPG',
+          sourceUrl: 'https://github.com/DegirmenciOmer/advacom-opdracht',
           technologies: [
             {
               id: '1',
-              name: 'NodeJS',
-              Icon: SiNodedotjs,
-              img: '/images/skills/nodejs.png',
+              name: 'HTML',
+              Icon: SiHtml5,
+              img: '/images/skills/html.png',
             },
             {
               id: '2',
-              name: 'Express',
-              img: '/images/skills/express.png',
-              Icon: SiExpress,
+              Icon: SiCss3,
+              name: 'CSS',
+              img: '/images/skills/css.png',
             },
             {
               id: '3',
-              name: 'Socket.io',
-              img: '/images/skills/socket.png',
-              Icon: SiSocketdotio,
-            },
-            {
-              id: '4',
-              name: 'React',
-              Icon: SiReact,
-              img: '/images/skills/react.png',
-            },
-            {
-              id: '5',
-              name: 'React Bootstrap',
-              Icon: SiBootstrap,
-              img: '/images/skills/rbootstrap.png',
+              Icon: SiJquery,
+              name: 'Jquery',
+              img: '/images/skills/js.png',
             },
           ],
           descriptionNL: [
-            'Een chatapplicatie die niet alleen kan worden gebruikt voor privéberichten, maar ook als groepschat.',
-            'Het vereist geen telefoonnummer,je kunt in plaats daarvan een uniek ID genereren om aan de slag te gaan met de applicatie. ',
-            "Het enige wat je hoeft te doen is je vrienden met hun ID's aan je contactenlijst toe te voegen en te genieten van deze coole chat! 😎",
+            'I was ecstatic when I was offered a job opportunity after delivering an outstanding performance on a challenging technical assignment. Working on this project allowed me to refine and enhance my fundamental frontend skills. I believe that the level of dedication and effort I invested in this task warrants its inclusion as a valuable portfolio piece!',
           ],
           descriptionEN: [
-            'A chat application which can be used not only for private messaging, but also as a group chat.',
-            "It doesn't require a phone number, you can generate a unique ID instead to get started with the application. ",
-            'All you need to do is add your friends into your contact list with their IDs and enjoy this cool chat! 😎',
+            'Ik was ontzettend blij toen ik werd aangenomen na het leveren van een uitstekende prestatie op een veeleisende technische opdracht. Het werken aan dit project heeft mijn basisvaardigheden op het gebied van frontend-ontwikkeling scherp gesteld. Ik ben ervan overtuigd dat de toewijding en inzet die ik in deze opdracht heb gestoken, rechtvaardigt dat het een waardevol onderdeel van mijn portfolio wordt!',
           ],
-          demoUrl: 'https://fun-chat-omer.netlify.app/',
-          img: '/images/chat.jpg',
         },
+
+        // {
+        //   locale: 'nl',
+        //   id: '3',
+        //   name: 'Chat App',
+        //   sourceUrl: 'https://github.com/DegirmenciOmer/Chat-App',
+        //   technologies: [
+        //     {
+        //       id: '1',
+        //       name: 'NodeJS',
+        //       Icon: SiNodedotjs,
+        //       img: '/images/skills/nodejs.png',
+        //     },
+        //     {
+        //       id: '2',
+        //       name: 'Express',
+        //       img: '/images/skills/express.png',
+        //       Icon: SiExpress,
+        //     },
+        //     {
+        //       id: '3',
+        //       name: 'Socket.io',
+        //       img: '/images/skills/socket.png',
+        //       Icon: SiSocketdotio,
+        //     },
+        //     {
+        //       id: '4',
+        //       name: 'React',
+        //       Icon: SiReact,
+        //       img: '/images/skills/react.png',
+        //     },
+        //     {
+        //       id: '5',
+        //       name: 'React Bootstrap',
+        //       Icon: SiBootstrap,
+        //       img: '/images/skills/rbootstrap.png',
+        //     },
+        //   ],
+        //   descriptionNL: [
+        //     'Een chatapplicatie die niet alleen kan worden gebruikt voor privéberichten, maar ook als groepschat.',
+        //     'Het vereist geen telefoonnummer,je kunt in plaats daarvan een uniek ID genereren om aan de slag te gaan met de applicatie. ',
+        //     "Het enige wat je hoeft te doen is je vrienden met hun ID's aan je contactenlijst toe te voegen en te genieten van deze coole chat! 😎",
+        //   ],
+        //   descriptionEN: [
+        //     'A chat application which can be used not only for private messaging, but also as a group chat.',
+        //     "It doesn't require a phone number, you can generate a unique ID instead to get started with the application. ",
+        //     'All you need to do is add your friends into your contact list with their IDs and enjoy this cool chat! 😎',
+        //   ],
+        //   demoUrl: 'https://fun-chat-omer.netlify.app/',
+        //   img: '/images/chat.jpg',
+        // },
         {
           locale: 'nl',
           id: '4',
@@ -780,40 +816,6 @@ export const translationHelper = (language: any) => {
           ],
           descriptionEN: [
             'Ik heb de officiële website voor deze stichting ontwikkeld, waarbij ik gebruik heb gemaakt van het Strapi content management systeem. Dit platform biedt beheerders een gebruiksvriendelijke interface, waardoor het uitzonderlijk eenvoudig is om de activiteiten van de stichting en andere inhoud op de live website te beheren. Beheerders hebben de vrijheid om zelfstandig inhoud toe te voegen, bij te werken of te verwijderen, zonder technische assistentie nodig te hebben. Dit gestroomlijnde proces stelt hen in staat om moeiteloos een up-to-date en aantrekkelijke website te onderhouden.',
-          ],
-        },
-        {
-          id: '16',
-          name: 'Advacom Tech Assignment',
-          liveUrl: 'https://limburgsport.netlify.app/',
-          demoUrl: '',
-          img: '/images/advacom-opdracht.JPG',
-          sourceUrl: 'https://github.com/DegirmenciOmer/advacom-opdracht',
-          technologies: [
-            {
-              id: '1',
-              name: 'HTML',
-              Icon: SiHtml5,
-              img: '/images/skills/html.png',
-            },
-            {
-              id: '2',
-              Icon: SiCss3,
-              name: 'CSS',
-              img: '/images/skills/css.png',
-            },
-            {
-              id: '3',
-              Icon: SiJquery,
-              name: 'Jquery',
-              img: '/images/skills/js.png',
-            },
-          ],
-          descriptionNL: [
-            'I was ecstatic when I was offered a job opportunity after delivering an outstanding performance on a challenging technical assignment. Working on this project allowed me to refine and enhance my fundamental frontend skills. I believe that the level of dedication and effort I invested in this task warrants its inclusion as a valuable portfolio piece!',
-          ],
-          descriptionEN: [
-            'Ik was ontzettend blij toen ik werd aangenomen na het leveren van een uitstekende prestatie op een veeleisende technische opdracht. Het werken aan dit project heeft mijn basisvaardigheden op het gebied van frontend-ontwikkeling scherp gesteld. Ik ben ervan overtuigd dat de toewijding en inzet die ik in deze opdracht heb gestoken, rechtvaardigt dat het een waardevol onderdeel van mijn portfolio wordt!',
           ],
         },
       ],

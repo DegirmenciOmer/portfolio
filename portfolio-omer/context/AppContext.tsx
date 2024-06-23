@@ -19,7 +19,7 @@ export const AppContext = createContext<Partial<TContext>>({})
 export const useAppContext = () => useContext(AppContext)
 
 export const AppProvider: FC<PropsWithChildren<TContext>> = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
   const [locale, setLocale] = useState('en')
 
   return (
