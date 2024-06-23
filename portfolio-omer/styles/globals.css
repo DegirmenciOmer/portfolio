@@ -64,3 +64,21 @@ h3,
 .nl-flag {
   background-position: 27% 66.1%;
 }
+
+.slider-card {
+  @apply justify-center aspect-[6/5] w-80;
+  display: flex !important;
+}
+
+.slider-card p {
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+.slider-card .company,
+.slider-card .date {
+  font-size: clamp(12px, 1.6vw, 14px);
+}
+
+.slider-card .role {
+  line-height: 1.1;
+}

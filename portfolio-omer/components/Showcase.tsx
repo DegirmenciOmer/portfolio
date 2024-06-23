@@ -16,7 +16,7 @@ const Showcase: FC<TShowcase> = ({ switchText }) => {
         <div className='title-block col-span-4 sm:relative'>
           <h1
             className={`z-10 relative sm:absolute sm:top-1/2 sm:left-0 sm:-translate-y-1/2 py-2   ${
-              darkMode ? 'text-lightgreen' : 'text-teal-600'
+              darkMode ? 'text-teal-600' : 'text-teal-600'
             } text-center sm:text-left max-sm:min-h-[10rem]`}
           >
             <TypeAnimation
