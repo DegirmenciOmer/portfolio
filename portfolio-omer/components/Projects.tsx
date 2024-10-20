@@ -61,10 +61,10 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
             .map((project) => (
               <div
                 className={`${switchText} w-11/12 mx-auto flex flex-col items-center align-center justify-center aspect[48/47] mr-2`}
+                key={project.id}
               >
                 <Link
                   className='block w-11/12 mx-auto'
-                  key={project.id}
                   href={`projects/${+project.id}`}
                 >
                   <Image

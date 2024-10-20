@@ -7,18 +7,26 @@ import React, {
   ReactNode,
 } from 'react'
 
+// Define the context shape
 interface TContext {
   darkMode: boolean
-  setDarkMode: any
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>
   locale: string
-  setLocale: any
-  children: Element & ReactNode
+  setLocale: React.Dispatch<React.SetStateAction<string>>
 }
-export const AppContext = createContext<Partial<TContext>>({})
+
+// Initialize the context with an empty object but make it non-partial (with default values)
+export const AppContext = createContext<TContext>({
+  darkMode: false,
+  setDarkMode: () => {},
+  locale: 'en',
+  setLocale: () => {},
+})
 
 export const useAppContext = () => useContext(AppContext)
 
-export const AppProvider: FC<PropsWithChildren<TContext>> = ({ children }) => {
+// AppProvider with corrected typing for children (ReactNode)
+export const AppProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
   const [darkMode, setDarkMode] = useState(true)
   const [locale, setLocale] = useState('en')
 
