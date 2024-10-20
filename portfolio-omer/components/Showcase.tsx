@@ -15,7 +15,7 @@ const Showcase: FC<TShowcase> = ({ switchText }) => {
       <div className='flex items-center flex-col-reverse sm:grid grid-cols-12 gap-4'>
         <div className='title-block col-span-4 sm:relative'>
           <h1
-            className={`z-10 relative sm:absolute sm:top-1/2 sm:left-0 sm:-translate-y-1/2 py-2   ${
+            className={`z-10 relative sm:absolute top-1/2 sm:-translate-y-1/2 sm:left-0 py-2 ${
               darkMode ? 'text-teal-600' : 'text-teal-600'
             } text-center sm:text-left max-sm:min-h-[10rem]`}
           >
@@ -41,7 +41,7 @@ const Showcase: FC<TShowcase> = ({ switchText }) => {
             />
           </h1>
         </div>
-        <div className=' col-span-8'>
+        <div className='col-span-8'>
           <Image
             className='mx-auto rounded-full w-full h-full my-7 sm:mr-[-7%] xl:mr-0 object-cover aspect-square object-top'
             src='/images/Omer.webp'

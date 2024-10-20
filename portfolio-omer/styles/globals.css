@@ -42,11 +42,14 @@ h2,
   line-height: 1.1;
 }
 
-h3,
-.h3 {
+h3 {
   font-size: clamp(1.8rem, 3vw, 3rem);
   @apply font-semibold;
   line-height: 1.1;
+}
+
+h3.h4 {
+  font-size: clamp(2.1rem, 3vw, 2.4rem);
 }
 
 * {

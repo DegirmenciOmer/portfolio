@@ -4,6 +4,7 @@ import { useAppContext } from '../context/AppContext'
 import { translationHelper } from '../data/translationHelper'
 import Skills from './Skills'
 import Slider from 'react-slick'
+import Image from 'next/image'
 
 interface TProjectsProps {
   switchText: string
@@ -15,8 +16,29 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1240, // xl
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1024, // lg
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+
+      {
+        breakpoint: 480, // default, can be adjusted as needed
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   }
 
   const { translations } = translationHelper(locale)
@@ -37,18 +59,30 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
           {translations.projects
             .sort((a, b) => +b.id - +a.id)
             .map((project) => (
-              <Link key={project.id} href={`projects/${+project.id}`}>
-                <div
-                  className={`${switchText} flex flex-col items-center align-center justify-center`}
+              <div
+                className={`${switchText} w-11/12 mx-auto flex flex-col items-center align-center justify-center aspect[48/47] mr-2`}
+                key={project.id}
+              >
+                <Link
+                  className='block w-11/12 mx-auto'
+                  href={`projects/${+project.id}`}
                 >
-                  <img width={500} src={project.img} alt='profile' />
-                  <h3 className='text-center my-9'>{project.name}</h3>
-                  <Skills
-                    skills={project.technologies}
-                    whereToUse={'projects'}
+                  <Image
+                    className='w-full aspect-video object-cover'
+                    width={500}
+                    height={500}
+                    src={project.img}
+                    alt='profile'
                   />
-                </div>
-              </Link>
+                  <div className='min-h-full'>
+                    <h3 className='text-center h4 my-9'>{project.name}</h3>
+                    <Skills
+                      skills={project.technologies}
+                      whereToUse={'projects'}
+                    />
+                  </div>
+                </Link>
+              </div>
             ))}
         </Slider>
       </div>
