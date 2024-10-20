@@ -1,6 +1,5 @@
 import React, { FC, PropsWithChildren } from 'react'
 import { useAppContext } from '../context/AppContext'
-import { log } from 'console'
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   const { darkMode, setDarkMode } = useAppContext()

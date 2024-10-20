@@ -59,7 +59,7 @@ const DynamicPage: FC<TProject> = ({ project }) => {
   return (
     <>
       <Head>
-        <title>Omer&apos;s&nbsp;Projects-&nbsp;{name}</title>
+        <title>{`Omer's Projects - ${name}`}</title>
         <meta
           name='google-site-verification'
           content='KMXIazCvCftfk6ZYi6XzMQtXTWxdZJ3y4RTdcB3t5ao'

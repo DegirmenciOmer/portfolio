@@ -17,12 +17,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{translations.title}</title>
+        <title>Omer Degirmenci</title>
         <meta
           name='google-site-verification'
           content='KMXIazCvCftfk6ZYi6XzMQtXTWxdZJ3y4RTdcB3t5ao'
         />
-        <meta property='og:image' content='' />
+        <meta property='og:image' content='/og-image.jpg' />
       </Head>
       <Layout>
         <div className={` text-blue-100 ${switchBg} `}>
