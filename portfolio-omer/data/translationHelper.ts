@@ -24,8 +24,67 @@ import {
   SiVuedotjs,
   SiWordpress,
 } from 'react-icons/si'
+// import { Tskill } from '../components/Skills'
 
-export const translationHelper = (language: string) => {
+type TSkill = {
+  id: string
+  name: string
+  img: string
+}
+
+type TTechnology = {
+  id: string
+  name: string
+  img: string
+  Icon?: any // Optional icon type if available
+}
+
+type TProject = {
+  id: string
+  name: string
+  sourceUrl?: string
+  demoUrl?: string
+  liveUrl?: string
+  img: string
+  locale?: string
+  descriptionEN: string[]
+  descriptionNL: string[]
+  technologies: TTechnology[] // Array of TTechnology type
+}
+
+export type TExperience = {
+  id: string
+  role: string
+  company: string
+  date: string
+}
+
+type TPortfolioData = {
+  translations: {
+    title: string
+    ownerName: string
+    seeText: string
+    sourceText: string
+    demoText: string
+    liveText: string
+    techTitle: string
+    occupationText: string
+    briefDescription: string
+    contactTitle: string
+    experienceTitle: string
+    text1: string
+    projects: TProject[] // Array of TProject type
+    experiences: TExperience[]
+    skills: TSkill[]
+    githubUrl: string
+    linkedinUrl: string
+    projectsTitle: string
+    gmail: string
+    skillsTitle: string
+  }
+}
+
+export const translationHelper = (language: string): TPortfolioData => {
   const NL = language === 'nl'
 
   return {
@@ -687,7 +746,7 @@ export const translationHelper = (language: string) => {
         },
       ],
       experienceTitle: NL ? 'Ervaring' : 'Experience',
-      experience: [
+      experiences: [
         {
           id: '1',
           role: NL ? 'Leraar Engels' : 'English Teacher',
