@@ -25,7 +25,7 @@ import {
   SiWordpress,
 } from 'react-icons/si'
 
-export const translationHelper = (language: any) => {
+export const translationHelper = (language: string) => {
   const NL = language === 'nl'
 
   return {
@@ -81,11 +81,6 @@ export const translationHelper = (language: any) => {
           img: '/images/skills/css.png',
         },
         {
-          id: '7',
-          name: 'MongoDB',
-          img: '/images/skills/mongodb.png',
-        },
-        {
           id: '8',
           name: 'HTML',
           img: '/images/skills/html.png',
@@ -96,19 +91,9 @@ export const translationHelper = (language: any) => {
           img: '/images/skills/git.png',
         },
         {
-          id: '10',
-          name: 'Storybook',
-          img: '/images/skills/storybook.png',
-        },
-        {
           id: '12',
           name: 'Strapi',
           img: '/images/skills/strapi.png',
-        },
-        {
-          id: '13',
-          name: 'Angular',
-          img: '/images/skills/angular.png',
         },
         {
           id: '14',
