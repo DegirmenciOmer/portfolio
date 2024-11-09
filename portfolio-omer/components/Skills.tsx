@@ -5,6 +5,7 @@ interface TSkillsProps {
   switchText?: string
   skills: Tskill[]
   whereToUse: 'showcase' | 'projects' | 'project-page'
+  skillsTitle?: string
 }
 
 export type Tskill = {
@@ -14,10 +15,24 @@ export type Tskill = {
   Icon?: React.ComponentType<any>
 }
 
-const Skills: FC<TSkillsProps> = ({ switchText, skills, whereToUse }) => {
+const Skills: FC<TSkillsProps> = ({
+  switchText,
+  skills,
+  whereToUse,
+  skillsTitle,
+}) => {
   const { darkMode } = useAppContext()
+
   return (
     <>
+      <h2
+        className={`${
+          darkMode ? 'text-lightgreen/70' : 'text-teal-600'
+        } py-4 mb-5 text-center`}
+      >
+        {skillsTitle}
+      </h2>
+
       <ul
         className={`flex flex-wrap ${
           whereToUse === 'showcase' ? 'gap-5' : 'gap-1'

@@ -1,15 +1,17 @@
 import Link from 'next/link'
 import React, { FC } from 'react'
 import { useAppContext } from '../context/AppContext'
-import { translationHelper } from '../data/translationHelper'
+import { TProject, translationHelper } from '../data/translationHelper'
 import Skills from './Skills'
 import Slider from 'react-slick'
 import Image from 'next/image'
+import { supabase } from '../supabaseClient'
 
 interface TProjectsProps {
   switchText: string
+  projects: TProject[]
 }
-const Projects: FC<TProjectsProps> = ({ switchText }) => {
+const Projects: FC<TProjectsProps> = ({ switchText, projects }) => {
   const { locale, darkMode } = useAppContext()
 
   const settings = {
@@ -42,6 +44,7 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
   }
 
   const { translations } = translationHelper(locale)
+
   return (
     <section
       id='projects'
@@ -55,8 +58,8 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
         {translations.projectsTitle}
       </h2>
       <div className='slider-wrapper'>
-        <Slider {...settings} className=''>
-          {translations.projects
+        <Slider {...settings}>
+          {projects
             .sort((a, b) => +b.id - +a.id)
             .map((project) => (
               <div
@@ -76,10 +79,10 @@ const Projects: FC<TProjectsProps> = ({ switchText }) => {
                   />
                   <div className='min-h-full'>
                     <h3 className='text-center h4 my-9'>{project.name}</h3>
-                    <Skills
+                    {/* <Skills
                       skills={project.technologies}
                       whereToUse={'projects'}
-                    />
+                    /> */}
                   </div>
                 </Link>
               </div>
