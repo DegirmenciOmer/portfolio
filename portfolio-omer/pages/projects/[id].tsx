@@ -14,6 +14,7 @@ import Head from 'next/head'
 import Layout from '../../components/Layout'
 import { supabase } from '../../supabaseClient'
 import { fetchProjectsQueryString } from '../../utils/util'
+import Image from 'next/image'
 
 interface TProject {
   project: {
@@ -72,10 +73,12 @@ const DynamicPage: FC<TProject> = ({ project }) => {
             </button>
           </Link>
           <h1 className='py-4 text-center text-teal-600 h2  mb-5'>{name}</h1>
-          <img
+          <Image
             className='mx-auto rounded-lg w-full my-5'
             src={img}
             alt='profile'
+            width={500}
+            height={500}
           />
           {descriptionToRender.map((text: string, idx: number) => (
             <p key={idx} className='mb-3 font-medium'>
