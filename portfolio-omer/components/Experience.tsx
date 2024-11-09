@@ -50,8 +50,8 @@ const Experience: FC<TExperienceProps> = ({ switchText }) => {
         {translations.experienceTitle}
       </h2>
 
-      <Slider {...settings} className=''>
-        {translations.experience
+      <Slider {...settings}>
+        {translations.experiences
           .sort((a, b) => +b.id - +a.id)
           .map((exp) => (
             <div key={exp.id} className='slider-card'>

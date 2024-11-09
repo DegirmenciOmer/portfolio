@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { translationHelper } from '../data/translationHelper'
+import { TProject, translationHelper } from '../data/translationHelper'
 import Header from '../components/Header'
 import Showcase from '../components/Showcase'
 import Skills from '../components/Skills'
@@ -8,12 +8,20 @@ import Experience from '../components/Experience'
 import Footer from '../components/Footer'
 import { useAppContext } from '../context/AppContext'
 import Layout from '../components/Layout'
+import { supabase } from '../supabaseClient'
+import { FC } from 'react'
+import { fetchProjectsQueryString } from '../utils/util'
 
-export default function Home() {
+interface THomeProps {
+  projects: TProject[]
+}
+
+const Home: FC<THomeProps> = ({ projects }) => {
   const { locale, darkMode } = useAppContext()
   const switchBg = darkMode ? 'bg-slate-800' : 'bg-slate-200'
   const switchText = darkMode ? 'text-slate-100' : 'text-slate-800'
   const { translations } = translationHelper(locale)
+
   return (
     <>
       <Head>
@@ -22,27 +30,21 @@ export default function Home() {
           name='google-site-verification'
           content='KMXIazCvCftfk6ZYi6XzMQtXTWxdZJ3y4RTdcB3t5ao'
         />
-        <meta property='og:image' content='/og-image.jpg' />
+        <meta property='og:image' content='../public/og-image.png' />
       </Head>
       <Layout>
         <div className={` text-blue-100 ${switchBg} `}>
           <Header switchText={switchText} switchBg={switchBg} />
           <main className='min-h-screen overflow-hidden'>
             <Showcase switchText={switchText} />
-            <div
-              className={`text-center py-10 rounded-xl my-10  flex-1 ${switchText}`}
-            >
-              <h2
-                className={`${
-                  darkMode ? 'text-lightgreen/70' : 'text-teal-600'
-                } py-4  mb-5`}
-              >
-                {translations.skillsTitle}
-              </h2>
-              <Skills skills={translations.skills} whereToUse={'showcase'} />
-            </div>
 
-            <Projects switchText={switchText} />
+            <Skills
+              skillsTitle={translations.skillsTitle}
+              skills={translations.skills}
+              whereToUse={'showcase'}
+            />
+
+            <Projects projects={projects} switchText={switchText} />
             <Experience switchText={switchText} />
           </main>
           <Footer switchText={switchText} />
@@ -51,3 +53,19 @@ export default function Home() {
     </>
   )
 }
+
+export async function getStaticProps() {
+  // Fetch projects and their technologies
+  const { data: projects, error } = await supabase
+    .from('projects')
+    .select(fetchProjectsQueryString)
+
+  if (error) {
+    console.log(error)
+    return { props: { projects: [] } }
+  }
+
+  return { props: { projects } }
+}
+
+export default Home

@@ -12,22 +12,21 @@ import {
 import Skills, { Tskill } from '../../components/Skills'
 import Head from 'next/head'
 import Layout from '../../components/Layout'
-
-const {
-  translations: { projects },
-} = translationHelper('en')
+import { supabase } from '../../supabaseClient'
+import { fetchProjectsQueryString } from '../../utils/util'
+import Image from 'next/image'
 
 interface TProject {
   project: {
     id: string
     name: string
-    sourceUrl: string
-    liveUrl: string
+    source_url: string
+    live_url: string
     technologies: Tskill[]
     locale: string
-    descriptionEN: string[]
-    descriptionNL: string[]
-    demoUrl: string
+    description_en: string[]
+    description_nl: string[]
+    demo_url: string
     img: string
   } | null
 }
@@ -46,16 +45,16 @@ const DynamicPage: FC<TProject> = ({ project }) => {
     id,
     name,
     img,
-    sourceUrl,
-    liveUrl,
+    source_url,
+    live_url,
     technologies,
-    descriptionEN,
-    descriptionNL,
-    demoUrl,
+    description_en,
+    description_nl,
+    demo_url,
   } = project
 
   const projectId = +id
-  const descriptionToRender = locale === 'en' ? descriptionEN : descriptionNL
+  const descriptionToRender = locale === 'en' ? description_en : description_nl
   return (
     <>
       <Head>
@@ -66,7 +65,6 @@ const DynamicPage: FC<TProject> = ({ project }) => {
         />
       </Head>
       <Layout>
-        {' '}
         <Header switchText={switchText} switchBg={switchBg} />
         <main className={`${switchText} px-5 min-h-screen max-w-3xl mx-auto`}>
           <Link href='/#projects'>
@@ -75,10 +73,12 @@ const DynamicPage: FC<TProject> = ({ project }) => {
             </button>
           </Link>
           <h1 className='py-4 text-center text-teal-600 h2  mb-5'>{name}</h1>
-          <img
+          <Image
             className='mx-auto rounded-lg w-full my-5'
             src={img}
             alt='profile'
+            width={500}
+            height={500}
           />
           {descriptionToRender.map((text: string, idx: number) => (
             <p key={idx} className='mb-3 font-medium'>
@@ -87,29 +87,29 @@ const DynamicPage: FC<TProject> = ({ project }) => {
           ))}
 
           <div className='text-center my-12'>
-            {(sourceUrl || demoUrl || liveUrl) && (
+            {(source_url || demo_url || live_url) && (
               <>
                 {translations.seeText}&nbsp;
                 <a
                   target='_blank'
                   rel='noreferrer'
                   className={`text-teal-800 underline hover:text-teal-600 rounded-md `}
-                  href={liveUrl ? liveUrl : demoUrl}
+                  href={live_url ? live_url : demo_url}
                 >
-                  {liveUrl
+                  {live_url
                     ? translations.liveText
-                    : demoUrl
+                    : demo_url
                     ? translations.demoText
                     : ''}
                 </a>
               </>
             )}
-            {sourceUrl && (
+            {source_url && (
               <a
                 target='_blank'
                 rel='noreferrer'
                 className={`text-teal-800 underline hover:text-teal-600 rounded-md`}
-                href={sourceUrl}
+                href={source_url}
               >
                 &nbsp;|&nbsp;{translations.sourceText}
               </a>
@@ -117,7 +117,7 @@ const DynamicPage: FC<TProject> = ({ project }) => {
           </div>
 
           <Skills skills={technologies} whereToUse={'project-page'} />
-          <div className='flex gap-3 justify-center'>
+          {/* <div className='flex gap-3 justify-center'>
             {projectId < projects.length - 1 && (
               <Link href={`/projects/${projectId + 1}`}>
                 <button className='text-teal-500 my-4 p-2 px-3 rounded-md text-4xl'>
@@ -132,7 +132,7 @@ const DynamicPage: FC<TProject> = ({ project }) => {
                 </button>
               </Link>
             )}
-          </div>
+          </div> */}
         </main>
         <Footer switchText={switchText} />
       </Layout>
@@ -142,27 +142,47 @@ const DynamicPage: FC<TProject> = ({ project }) => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context?.params?.id
-  let project = null
 
-  if (id !== undefined && projects[+id]) {
-    project = {
-      ...projects[+id],
-      technologies: projects[+id].technologies.map((tech) => {
-        return { ...tech, Icon: null }
-      }),
-    }
+  // Query Supabase for the specific project data
+  const { data: project, error } = await supabase
+    .from('projects')
+    .select(fetchProjectsQueryString)
+    .eq('id', id)
+    .single() // Fetch only one item
+
+  if (error || !project) {
+    console.error(
+      'Error fetching project:',
+      error ? error.message : 'Project not found'
+    )
+    return { notFound: true }
+  }
+
+  // Map technologies and remove `Icon` property if necessary
+  const cleanProject = {
+    ...project,
+    technologies: project.technologies.map((tech) => ({ ...tech, Icon: null })),
   }
 
   return {
-    props: { project },
+    props: { project: cleanProject },
+    revalidate: 60, // Optional: revalidate after 60 seconds to keep data fresh
   }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const { data: projects, error } = await supabase.from('projects').select('id')
+
+  if (error) {
+    console.error('Error fetching project paths:', error.message)
+    return { paths: [], fallback: 'blocking' }
+  }
+
+  // Generate paths for existing projects
   const paths = projects.map((project) => ({
     params: { id: project.id.toString() },
   }))
 
-  return { paths, fallback: false }
+  return { paths, fallback: 'blocking' }
 }
 export default DynamicPage
