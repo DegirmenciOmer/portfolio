@@ -43,12 +43,12 @@ export type TProject = {
   id: string
   name: string
   sourceUrl?: string
-  demoUrl?: string
-  liveUrl?: string
+  demo_url?: string
+  live_url?: string
   img: string
   locale?: string
-  descriptionEN: string[]
-  descriptionNL: string[]
+  description_en: string[]
+  description_nl: string[]
   technologies: TTechnology[] // Array of TTechnology type
 }
 
@@ -69,7 +69,7 @@ type TPortfolioData = {
     liveText: string
     techTitle: string
     occupationText: string
-    briefDescription: string
+    briefDescription: string[]
     contactTitle: string
     experienceTitle: string
     text1: string
@@ -99,8 +99,19 @@ export const translationHelper = (language: string): TPortfolioData => {
         ? 'Frontend Webontwikkelaar'
         : 'Frontend Web Developer',
       briefDescription: NL
-        ? "Als zeer gemotiveerde en zorgzame webontwikkelaar ben ik vastbesloten om voortdurend te leren, te groeien en resultaten te behalen. Na zeven jaar als docent Engels voor jongvolwassenen te hebben gewerkt, besloot ik naar Nederland te verhuizen en kreeg ik de kans om de opwindende wereld van technologie en probleemoplossing te verkennen, waar ik nu een passie voor heb ontwikkeld. Sinds maart 2020 is coderen een dagelijkse routine voor mij geworden.  Ik geniet ervan om boeiende en gebruiksvriendelijke webapplicaties te creëren die aan de behoeften van gebruikers voldoen. Ik ben altijd op zoek naar nieuwe uitdagingen en ik ben enthousiast om bij te dragen aan innovatieve projecten. Ik ben een teamspeler, communicatief sterk en in staat om effectief samen te werken met collega's om gemeenschappelijke doelen te bereiken. Ik blijf mezelf voortdurend verbeteren en ben altijd op zoek naar nieuwe technologieën en trends in de webontwikkeling. Ik geloof dat door voortdurend te blijven leren, ik waardevolle bijdragen kan leveren en mezelf kan blijven ontwikkelen als een competente webontwikkelaar."
-        : 'I am a highly motivated and caring web developer with a strong determination to learn, grow, and get things done. After working as an English teacher for young adults for seven years, I made the move to the Netherlands and had the opportunity to delve into the vast world of technology and problem-solving, which I have developed a passion for. Since March 2020, coding has become a daily routine for me. I enjoy creating engaging and user-friendly web applications that meet the needs of users. \n  I am always seeking new challenges and excited to contribute to innovative projects. I am a team player, with strong communication skills, and I am able to collaborate effectively with colleagues to achieve common goals. \n I continuously strive to improve myself and stay updated with new technologies and trends in web development. I believe that by constantly learning, I can make valuable contributions and continue to evolve as a competent web developer.',
+        ? [
+            'Als zeer gemotiveerde en zorgzame webontwikkelaar ben ik vastbesloten om voortdurend te leren, te groeien en resultaten te behalen.',
+            'Na zeven jaar als docent Engels voor jongvolwassenen te hebben gewerkt, verhuisde ik naar Nederland en kreeg ik de kans om de brede wereld van technologie en probleemoplossing te verkennen, waar ik een passie voor heb ontwikkeld. Sinds maart 2020 is coderen een dagelijkse routine voor mij geworden.',
+            "Ik ben altijd op zoek naar nieuwe uitdagingen en enthousiast om bij te dragen aan innovatieve projecten. Ik ben een teamspeler, met sterke communicatieve vaardigheden, en ik kan effectief samenwerken met collega's om gemeenschappelijke doelen te bereiken.",
+            'Ik blijf mezelf voortdurend verbeteren en op de hoogte van nieuwe technologieën en trends in webontwikkeling. Ik geloof dat ik door voortdurend te leren waardevolle bijdragen kan leveren en mezelf kan blijven ontwikkelen als een competente webontwikkelaar.',
+          ]
+        : [
+            'I am a highly motivated and caring web developer with a strong determination to learn, grow, and get things done. ',
+            'After working as an English teacher for young adults for seven years, I made the move to the Netherlands and had the opportunity to delve into the vast world of technology and problem-solving, which I have developed a passion for. Since March 2020, coding has become a daily routine for me. ',
+            'I am always seeking new challenges and excited to contribute to innovative projects. I am a team player, with strong communication skills, and I am able to collaborate effectively with colleagues to achieve common goals. ',
+            'I continuously strive to improve myself and stay updated with new technologies and trends in web development. I believe that by constantly learning, I can make valuable contributions and continue to evolve as a competent web developer. ',
+          ],
+
       text1: NL ? 'Consulting' : 'Overleg plegen',
       contactTitle: 'Contact',
       githubUrl: 'https://github.com/DegirmenciOmer',

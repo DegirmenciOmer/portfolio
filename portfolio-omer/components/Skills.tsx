@@ -24,7 +24,7 @@ const Skills: FC<TSkillsProps> = ({
   const { darkMode } = useAppContext()
 
   return (
-    <>
+    <section className='my-12'>
       <h2
         className={`${
           darkMode ? 'text-lightgreen/70' : 'text-teal-600'
@@ -69,7 +69,7 @@ const Skills: FC<TSkillsProps> = ({
           )
         })}
       </ul>
-    </>
+    </section>
   )
 }
 

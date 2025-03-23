@@ -21,9 +21,8 @@ const Showcase: FC<TShowcase> = ({ switchText }) => {
           >
             <TypeAnimation
               sequence={[
-                // Same substring at the start will only be typed out once, initially
                 translations.ownerName,
-                1000, // wait 1s before replacing "Mice" with "Hamsters"
+                1000,
                 translations.occupationText,
                 1000,
                 'Team player',
@@ -48,17 +47,23 @@ const Showcase: FC<TShowcase> = ({ switchText }) => {
             alt='profile'
             width={900}
             height={900}
+            priority={true}
           />
         </div>
       </div>
 
-      <p
-        className={`text-md py-2 leading-8 font-medium ${switchText} ${
-          darkMode ? 'text-lightgreen' : 'text-black'
-        }`}
-      >
-        {translations.briefDescription}
-      </p>
+      {translations.briefDescription.map((description, idx) => {
+        return (
+          <p
+            key={idx}
+            className={`text-md py-2 leading-8 font-medium ${switchText} ${
+              darkMode ? 'text-lightgreen' : 'text-black'
+            } text-left lg:w-11/12 xl-`}
+          >
+            {description}
+          </p>
+        )
+      })}
     </section>
   )
 }

@@ -6,7 +6,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <div className={`bg-slate-${darkMode ? '800' : '200'}`}>
-      <div className='container mx-auto'>{children} </div>
+      <div className='container mx-auto max-w-[1640px]'>{children} </div>
     </div>
   )
 }

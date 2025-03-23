@@ -6,6 +6,7 @@ import Skills from './Skills'
 import Slider from 'react-slick'
 import Image from 'next/image'
 import { supabase } from '../supabaseClient'
+import { log } from 'console'
 
 interface TProjectsProps {
   switchText: string
@@ -13,6 +14,8 @@ interface TProjectsProps {
 }
 const Projects: FC<TProjectsProps> = ({ switchText, projects }) => {
   const { locale, darkMode } = useAppContext()
+
+  console.log(projects[0])
 
   const settings = {
     dots: false,
@@ -48,7 +51,7 @@ const Projects: FC<TProjectsProps> = ({ switchText, projects }) => {
   return (
     <section
       id='projects'
-      className={`p-10 my-10 flex flex-col flex-1 ${switchText}`}
+      className={`my-16 flex flex-col flex-1 ${switchText}`}
     >
       <h2
         className={`${
@@ -66,25 +69,58 @@ const Projects: FC<TProjectsProps> = ({ switchText, projects }) => {
                 className={`${switchText} w-11/12 mx-auto flex flex-col items-center align-center justify-center aspect[48/47] mr-2`}
                 key={project.id}
               >
-                <Link
-                  className='block w-11/12 mx-auto'
-                  href={`projects/${+project.id}`}
-                >
-                  <Image
-                    className='w-full aspect-video object-cover'
-                    width={500}
-                    height={500}
-                    src={project.img}
-                    alt='profile'
-                  />
-                  <div className='min-h-full'>
-                    <h3 className='text-center h4 my-9'>{project.name}</h3>
-                    {/* <Skills
-                      skills={project.technologies}
-                      whereToUse={'projects'}
-                    /> */}
+                {project.live_url || project.demo_url ? (
+                  <a
+                    className='block w-11/12 mx-auto'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    href={project.live_url || project.demo_url}
+                  >
+                    <Image
+                      className='w-full aspect-video rounded object-cover'
+                      width={500}
+                      height={500}
+                      src={project.img}
+                      alt='profile'
+                    />
+                  </a>
+                ) : (
+                  <Link
+                    className='block w-11/12 mx-auto'
+                    href={`projects/${project.id}`}
+                  >
+                    <Image
+                      className='w-full aspect-video rounded object-cover'
+                      width={500}
+                      height={500}
+                      src={project.img}
+                      alt='profile'
+                    />
+                  </Link>
+                )}
+                <div className='min-h-full'>
+                  <h3 className='text-center h5 my-5'>{project.name}</h3>
+                  <div className='flex gap-2 justify-center'>
+                    {project.technologies.map((tech) => (
+                      <Image
+                        className='h-auto w-12'
+                        alt={tech.name}
+                        src={tech.img}
+                        key={tech.id}
+                        width={20}
+                        height={10}
+                      />
+                    ))}
                   </div>
-                </Link>
+                  {project.description_en && (
+                    <Link
+                      className='text-center text-teal-600 block mt-4 font-bold'
+                      href={`projects/${project.id}`}
+                    >
+                      Details
+                    </Link>
+                  )}
+                </div>
               </div>
             ))}
         </Slider>
