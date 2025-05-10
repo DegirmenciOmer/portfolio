@@ -25,13 +25,7 @@ const Skills: FC<TSkillsProps> = ({
 
   return (
     <section className='my-12'>
-      <h2
-        className={`${
-          darkMode ? 'text-lightgreen/70' : 'text-teal-600'
-        } py-4 mb-5 text-center`}
-      >
-        {skillsTitle}
-      </h2>
+      <h2 className={`text-teal-600 py-4 mb-5 text-center`}>{skillsTitle}</h2>
 
       <ul
         className={`flex flex-wrap ${

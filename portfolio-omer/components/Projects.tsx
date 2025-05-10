@@ -53,11 +53,7 @@ const Projects: FC<TProjectsProps> = ({ switchText, projects }) => {
       id='projects'
       className={`my-16 flex flex-col flex-1 ${switchText}`}
     >
-      <h2
-        className={`${
-          darkMode ? 'text-lightgreen/70' : 'text-teal-600'
-        } py-4 text-center mb-10`}
-      >
+      <h2 className={`text-teal-600 py-4 text-center mb-10`}>
         {translations.projectsTitle}
       </h2>
       <div className='slider-wrapper'>

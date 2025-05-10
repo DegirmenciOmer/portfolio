@@ -13,7 +13,7 @@ module.exports = {
       backgroundImage: {
         flags: "url('/images/flags.png')",
       },
-      colors: { lightgreen: '#a9bbae' },
+      colors: { lightgreen: '#e4e4e4' },
     },
   },
   plugins: [],

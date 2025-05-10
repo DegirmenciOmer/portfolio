@@ -15,9 +15,7 @@ const Showcase: FC<TShowcase> = ({ switchText }) => {
       <div className='flex items-center flex-col-reverse sm:grid grid-cols-12 gap-4'>
         <div className='title-block col-span-4 sm:relative'>
           <h1
-            className={`z-10 relative sm:absolute top-1/2 sm:-translate-y-1/2 sm:left-0 py-2 ${
-              darkMode ? 'text-teal-600' : 'text-teal-600'
-            } text-center sm:text-left max-sm:min-h-[10rem]`}
+            className={`z-10 relative sm:absolute top-1/2 sm:-translate-y-1/2 sm:left-0 py-2 text-center text-teal-600 sm:text-left max-sm:min-h-[10rem]`}
           >
             <TypeAnimation
               sequence={[
@@ -42,7 +40,7 @@ const Showcase: FC<TShowcase> = ({ switchText }) => {
         </div>
         <div className='col-span-8'>
           <Image
-            className='mx-auto rounded-full w-full h-full my-7 sm:mr-[-7%] xl:mr-0 object-cover aspect-square object-top'
+            className='mx-auto rounded-full w-full h-full my-7 sm:mr-[-7%] xl:mr-0 object-cover aspect-square max-w-4xl object-top'
             src='/images/Omer.webp'
             alt='profile'
             width={900}
@@ -56,7 +54,7 @@ const Showcase: FC<TShowcase> = ({ switchText }) => {
         return (
           <p
             key={idx}
-            className={`text-md py-2 leading-8 font-medium ${switchText} ${
+            className={`text-md py-2 leading-8 font-medium max-w-5xl mx-auto text-center ${switchText} ${
               darkMode ? 'text-lightgreen' : 'text-black'
             } text-left lg:w-11/12 xl-`}
           >

@@ -40,11 +40,7 @@ const Experience: FC<TExperienceProps> = ({ switchText }) => {
   }
   return (
     <section className={`text-center rounded-xl my-12  flex-1 ${switchText}`}>
-      <h2
-        className={`${
-          darkMode ? 'text-lightgreen/70' : 'text-teal-600'
-        } py-4 text-center mb-5`}
-      >
+      <h2 className={`text-teal-600 py-4 text-center mb-5`}>
         {translations.experienceTitle}
       </h2>
 
