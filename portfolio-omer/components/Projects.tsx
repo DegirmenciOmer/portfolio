@@ -2,11 +2,8 @@ import Link from 'next/link'
 import React, { FC } from 'react'
 import { useAppContext } from '../context/AppContext'
 import { TProject, translationHelper } from '../data/translationHelper'
-import Skills from './Skills'
 import Slider from 'react-slick'
 import Image from 'next/image'
-import { supabase } from '../supabaseClient'
-import { log } from 'console'
 
 interface TProjectsProps {
   switchText: string
@@ -14,8 +11,6 @@ interface TProjectsProps {
 }
 const Projects: FC<TProjectsProps> = ({ switchText, projects }) => {
   const { locale, darkMode } = useAppContext()
-
-  console.log(projects[0])
 
   const settings = {
     dots: false,
@@ -98,14 +93,19 @@ const Projects: FC<TProjectsProps> = ({ switchText, projects }) => {
                   <h3 className='text-center h5 my-5'>{project.name}</h3>
                   <div className='flex gap-2 justify-center'>
                     {project.technologies.map((tech) => (
-                      <Image
-                        className='h-auto w-12'
-                        alt={tech.name}
-                        src={tech.img}
-                        key={tech.id}
-                        width={20}
-                        height={10}
-                      />
+                      <div key={tech.id} className='image'>
+                        <Image
+                          className={`h-5 w-auto ${
+                            !darkMode
+                              ? 'mix-blend-darken'
+                              : 'mix-blend-multiply'
+                          }`}
+                          alt={tech.name}
+                          src={tech.img}
+                          width={40}
+                          height={40}
+                        />
+                      </div>
                     ))}
                   </div>
                   {project.description_en && (
