@@ -43,7 +43,7 @@ h2,
 }
 
 h3 {
-  font-size: clamp(1.8rem, 2.1vw, 3rem);
+  font-size: clamp(1.8rem, 2.2vw, 2.6rem);
   @apply font-semibold;
   line-height: 1.1;
 }
