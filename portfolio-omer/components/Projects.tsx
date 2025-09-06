@@ -16,13 +16,14 @@ const Projects: FC<TProjectsProps> = ({ switchText, projects }) => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: 4,
+    slidesToScroll: 4,
 
     responsive: [
       {
-        breakpoint: 1240, // xl
+        breakpoint: 1640, // xl
         settings: {
+          slidesToScroll: 3,
           slidesToShow: 3,
         },
       },
@@ -30,6 +31,7 @@ const Projects: FC<TProjectsProps> = ({ switchText, projects }) => {
         breakpoint: 1024, // lg
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
 
@@ -37,6 +39,8 @@ const Projects: FC<TProjectsProps> = ({ switchText, projects }) => {
         breakpoint: 480, // default, can be adjusted as needed
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
         },
       },
     ],
